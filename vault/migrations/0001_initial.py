@@ -2,38 +2,32 @@
 from __future__ import unicode_literals
 
 from django.db import migrations, models
+from django.conf import settings
 
 
 class Migration(migrations.Migration):
 
     dependencies = [
+        migrations.swappable_dependency(settings.AUTH_USER_MODEL),
     ]
 
     operations = [
-        migrations.CreateModel(
-            name='cust_indiv_account',
-            fields=[
-                ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
-                ('cust_account_type', models.CharField(default=b'Individual', max_length=250)),
-                ('cust_balance', models.FloatField()),
-            ],
-        ),
         migrations.CreateModel(
             name='cust_transaction',
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
                 ('transaction_date', models.DateTimeField(null=True)),
-                ('from_account_no', models.IntegerField()),
-                ('to_account_no', models.IntegerField()),
+                ('pending', models.BooleanField(default=True)),
                 ('Amount', models.FloatField()),
             ],
         ),
         migrations.CreateModel(
-            name='merch_org_account',
+            name='user_account',
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
-                ('merch_account_type', models.CharField(default=b'merch/org', max_length=250)),
-                ('merch_balance', models.FloatField()),
+                ('cust_account_type', models.CharField(default=b'Individual', max_length=250)),
+                ('cust_balance', models.FloatField()),
+                ('cust_user_id', models.ForeignKey(to=settings.AUTH_USER_MODEL)),
             ],
         ),
         migrations.CreateModel(
@@ -61,13 +55,13 @@ class Migration(migrations.Migration):
             field=models.ForeignKey(to='vault.user_type'),
         ),
         migrations.AddField(
-            model_name='merch_org_account',
-            name='merch_user_id',
-            field=models.ForeignKey(to='vault.user_info'),
+            model_name='cust_transaction',
+            name='from_account',
+            field=models.ForeignKey(related_name='from_account', to='vault.user_account'),
         ),
         migrations.AddField(
-            model_name='cust_indiv_account',
-            name='cust_user_id',
-            field=models.ForeignKey(to='vault.user_info'),
+            model_name='cust_transaction',
+            name='to_account',
+            field=models.ForeignKey(related_name='to_account', to='vault.user_account'),
         ),
     ]

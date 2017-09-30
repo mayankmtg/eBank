@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+PFA
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Page</title>
+
+</head>
+<body bgcolor="#ffefd5">
+    <div align="center">
+        <h1 style="color:blue;"> A Secure Banking System</h1>
+    </div>
+
+    <p>
+        <hr style="color:blue; width: 100%; border-width: thick">
+    </p>
+    <p>
+        <marquee scrollamount="4">
+            <h3 style="color:Red; width: 100%;"> Your Bank....Your Future.....Your Security!!!</h3>
+
+        </marquee>
+        <div align="center">
+              <h3 style="color:royalblue; width: 100%;">Because you deserve the best!!!</h3>
+        </div>
+        <p>
+             <form method="post">
+             {% csrf_token %}
+             {{ form.as_p }}
+                 <p>
+                 <b> Captcha</b> <img src=""/>
+                <p></p>
+                 <input type="submit" Value="Submit"/>
+
+             </form>
+
+        </p>
+
+</body>
+
+</html>

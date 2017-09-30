@@ -90,6 +90,9 @@ LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'UTC'
 
+LOGIN_REQUIRED="accounts/login"
+LOGIN_REDIRECT_URL='login_success'
+
 USE_I18N = True
 
 USE_L10N = True
@@ -101,3 +104,5 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_URL = '/static/'
+
+
