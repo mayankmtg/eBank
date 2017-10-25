@@ -1,11 +1,15 @@
-<table>
+<a href="{% url 'vault:vaultDebit' %}">Debit</a>
+<br>
+<a href="{% url 'vault:vaultCredit' %}">Credit</a>
+<br>
+<table border="1">
 	<tr>
 		<th>transaction_date</th>
 		<th>from_account</th>
 		<th>to_account</th>
 		<th>pending</th>
 		<th>Amount</th>
-		<th></th>
+		<th>Approve</th>
 	</tr>
 	{% for transaction in cust_transaction %}
 	<tr>
@@ -14,7 +18,7 @@
 		<td>{{ transaction.to_account}}</td>
 		<td>{{ transaction.pending}}</td>
 		<td>{{ transaction.Amount}}</td>
-		<td></td>
+		<td><a href="{% url 'vault:vaultTransactionApprove' transaction.pk %}">Approve</a></td>
 	</tr>
 	{% endfor %}
 </table>

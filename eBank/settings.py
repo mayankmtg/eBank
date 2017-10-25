@@ -25,7 +25,7 @@ SECRET_KEY = '_o*%#02ebd&m&vf@ail7pin28s*r4ccnsgk0kcq+hsy8(ktw%)'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', '192.168.60.56']
 
 
 # Application definition
@@ -91,7 +91,7 @@ LANGUAGE_CODE = 'en-us'
 TIME_ZONE = 'UTC'
 
 LOGIN_REQUIRED="accounts/login"
-LOGIN_REDIRECT_URL="/login_success"
+LOGIN_REDIRECT_URL="login_success"
 
 USE_I18N = True
 
