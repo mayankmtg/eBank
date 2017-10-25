@@ -19,7 +19,7 @@
                 <div>Balance: {{ account.cust_balance }}</div>
                 <div> <a href="#">Debit Funds</a></div>
                 <div><a href="#">Credit Funds</a></div>
-                <div><a href="#">Transfer Funds</a></div>
+                <div><a href="{% url 'vault:transferfunds' account.pk %}">Transfer Funds</a></div>
                 <div><a href="#">Payments</a></div>
             </div>
             <div>

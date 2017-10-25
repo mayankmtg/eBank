@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+import datetime
 
 class user_type(models.Model):
 	user_super_type = models.CharField(max_length=250, null=False)
@@ -33,12 +34,12 @@ class user_account(models.Model):
 
 
 class cust_transaction(models.Model):
-	transaction_date = models.DateTimeField(null=True)
+	transaction_date = models.DateTimeField(auto_now_add=True, blank=True)
 	from_account = models.ForeignKey(user_account, related_name='from_account')
 	to_account = models.ForeignKey(user_account, related_name='to_account')
-	pending =models.BooleanField(default=True)
+	pending =models.BooleanField(default=True, blank=True)
 	# todo : check on amount
 	Amount = models.FloatField(null=False)
 
 	def __str__(self):
-		return str(self.pk) +", "+ self.transaction_date
+		return str(self.pk) +", "+ str(self.transaction_date)

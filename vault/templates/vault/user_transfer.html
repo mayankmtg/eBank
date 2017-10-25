@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SBS</title>
+
+</head>
+<body>
+    <div>
+        <h1>Transfer Funds</h1>
+        <br>
+        <h2>Balance: {{ account.cust_balance }}</h2><br>
+        <h3>Account Type: {{ account.cust_account_type }}</h3>
+    </div>
+    <form method="POST">
+    {% csrf_token %}
+        <input type="text" name="amount" placeholder="Amount">
+        <br>
+        <input type="text" name="acno" placeholder="Account Number">
+        <br>
+        <input type="submit" name="Submit">
+    </form>
+<a href="/logout">Logout</a>
+</body>
+</html>

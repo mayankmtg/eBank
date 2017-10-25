@@ -91,7 +91,7 @@ LANGUAGE_CODE = 'en-us'
 TIME_ZONE = 'UTC'
 
 LOGIN_REQUIRED="accounts/login"
-LOGIN_REDIRECT_URL='login_success'
+LOGIN_REDIRECT_URL="/login_success"
 
 USE_I18N = True
 
