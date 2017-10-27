@@ -1,0 +1,9 @@
+{% extends 'vault/accountBase.html' %}
+{% load staticfiles %}
+{% block nav %}
+<h1>Account Details</h1>
+<hr>
+<h3>Account Type: {{ account.cust_account_type }}</h3>
+<br>
+<h3>Balance: {{ account.cust_balance }}</h3>
+{% endblock %}

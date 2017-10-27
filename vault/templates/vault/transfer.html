@@ -1,0 +1,14 @@
+{% extends 'vault/accountBase.html' %}
+{% load staticfiles %}
+{% block nav %}
+<h1>Transfer Funds</h1>
+<hr>
+<form method="POST">
+{% csrf_token %}
+    <input type="text" name="amount" placeholder="Amount">
+    <br>
+    <input type="text" name="acno" placeholder="Account Number">
+    <br>
+    <input type="submit" name="Submit">
+</form>
+{% endblock %}

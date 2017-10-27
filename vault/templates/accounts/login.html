@@ -1,41 +1,27 @@
-<!DOCTYPE html>
-
-
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Login Page</title>
-
-</head>
-<body bgcolor="#ffefd5">
-    <div align="center">
-        <h1 style="color:blue;"> A Secure Banking System</h1>
+{% extends 'vault/base.html' %}
+{% load staticfiles %}
+{% block title %}Auth{% endblock %}
+{% block body %}
+<link rel="stylesheet" type="text/css" href="{% static 'vault/css/login.css' %}">
+<div class="container">
+  <div class="panel panel-success width-fix">
+    <div class="panel-heading">
+      <h2 class="panel-title">Sign In</h2>
     </div>
-
-    <p>
-        <hr style="color:blue; width: 100%; border-width: thick">
-    </p>
-    <p>
-        <marquee scrollamount="4">
-            <h3 style="color:Red; width: 100%;"> Your Bank....Your Future.....Your Security!!!</h3>
-
-        </marquee>
-        <div align="center">
-              <h3 style="color:royalblue; width: 100%;">Because you deserve the best!!!</h3>
-        </div>
+    <div class="panel-body">
+      <form class="form-signin" method="POST">
+        <center>
+        <h2 class="form-signin-heading">Please sign in</h2>
+        <br>
+        {% csrf_token %}
+        {{ form.as_p }}
         <p>
-             <form method="post">
-             {% csrf_token %}
-             {{ form.as_p }}
-                 <p>
-                 <b> Captcha</b> <img src=""/>
-                <p></p>
-                 <input type="submit" Value="Submit"/>
-
-             </form>
-
+            <b> Captcha</b> <img src=""/>
         </p>
-
-</body>
-
-</html>
+        </center>
+        <br>
+        <input class="btn btn-lg btn-success btn-block" type="submit" value="Sign In">
+      </form> 
+  </div>
+</div>
+{% endblock %}

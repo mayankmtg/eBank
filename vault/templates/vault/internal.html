@@ -1,21 +1,30 @@
+{% extends 'vault/base.html' %}
+{% load staticfiles %}
+{% block title %}Internal{% endblock %}
+{% block body %}
+<div class="container">
+	<center><h1>Transactions</h1></center>
+	<br>
 
-<table border="1">
-	<tr>
-		<th>transaction_date</th>
-		<th>from_account</th>
-		<th>to_account</th>
-		<th>pending</th>
-		<th>Amount</th>
-		<th>Approve</th>
-	</tr>
-	{% for transaction in cust_transaction %}
-	<tr>
-		<td>{{ transaction.transaction_date}}</td>
-		<td>{{ transaction.from_account}}</td>
-		<td>{{ transaction.to_account}}</td>
-		<td>{{ transaction.pending}}</td>
-		<td>{{ transaction.Amount}}</td>
-		<td><a href="{% url 'vault:vaultTransactionApprove' transaction.pk %}">Approve</a></td>
-	</tr>
-	{% endfor %}
-</table>
+	<table class="table table-striped">
+		<tr>
+			<th>transaction_date</th>
+			<th>from_account</th>
+			<th>to_account</th>
+			<th>pending</th>
+			<th>Amount</th>
+			<th>Approve</th>
+		</tr>
+		{% for transaction in cust_transaction %}
+		<tr>
+			<td>{{ transaction.transaction_date}}</td>
+			<td>{{ transaction.from_account}}</td>
+			<td>{{ transaction.to_account}}</td>
+			<td>{{ transaction.pending}}</td>
+			<td>{{ transaction.Amount}}</td>
+			<td><a href="{% url 'vault:vaultTransactionApprove' transaction.pk %}">Approve</a></td>
+		</tr>
+		{% endfor %}
+	</table>
+</div>
+{% endblock %}

@@ -5,9 +5,9 @@ from . import views
 
 urlpatterns = [
 	# url(r'^login$', views.vaultLogin, name='vaultLogin'),
+	url(r'login/$', login, {'template_name':'accounts/login.html'}),
 	url(r'^$', views.vaultExternal, name='vaultExternal'),
 	url(r'^home/$', views.vaultHome, name='vaultHome'),
-	url(r'login/$', login, {'template_name':'accounts/login.html'}),
 	url(r'login_success/$', views.login_success, name='login_success'),
 	url(r'logout$', auth_views.logout, {'next_page': '/'}, name='logout'),
 	url(r'^accounts/(?P<account_no_pk>\d+)/$', views.accountInfo, name='accountInfo'),

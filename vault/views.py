@@ -5,8 +5,6 @@ from django.contrib.auth.decorators import login_required
 from django.shortcuts import redirect
 from .models import user_account, cust_transaction
 
-
-
 def vaultHome(request):
 	context={}
 	return render(request, 'vault/home.html', context)
@@ -20,7 +18,7 @@ def vaultExternal(request):
 	context={
 		'accounts':user_account.objects.filter(cust_user_id=request.user),
 	}
-	return render(request, 'vault/user_home.html', context)
+	return render(request, 'vault/external.html', context)
 
 
 @login_required(login_url='/login')
@@ -33,6 +31,7 @@ def vaultInternal(request):
 		'cust_transaction':cust_transaction.objects.filter(Amount__lte=100000, pending=True) & cust_transaction.objects.filter(Amount__gte=-100000, pending=True),
 	}
 	return render(request, 'vault/internal.html', context)
+
 
 @login_required(login_url='/login')
 def vaultManager(request):
@@ -54,7 +53,7 @@ def accountInfo(request, account_no_pk):
 	context={
 		'account':cust_user,
 	}
-	return render(request, 'vault/user_account.html', context)
+	return render(request, 'vault/accountInfo.html', context)
 
 @login_required(login_url='/login')
 def transferfunds(request, account_no_pk):
@@ -74,7 +73,54 @@ def transferfunds(request, account_no_pk):
 	context={
 		'account':user_account.objects.filter(pk=account_no_pk)[0],
 	}
-	return render(request, 'vault/user_transfer.html', context)
+	return render(request, 'vault/transfer.html', context)
+
+@login_required(login_url='/login')
+def vaultDebit(request, account_no_pk):
+	cust_user=user_account.objects.filter(pk=account_no_pk)[0]
+	if request.user!=cust_user.cust_user_id:
+		return login_success(request)
+	context={
+		'account':cust_user,
+	}
+	if request.method=='POST':
+		amount=int(request.POST['amount'])
+		if amount>0:
+			amount=-1*amount
+			account_from=user_account.objects.filter(pk=account_no_pk)[0]
+			account_to=account_from
+			t=cust_transaction(from_account=account_from, to_account=account_to, Amount=int(amount))
+			t.save()			
+			return redirect('vault:accountInfo',account_no_pk)
+
+		else:
+			HttpResponse("Invalid Amount")
+
+	if request.method=='GET':
+		return render(request, 'vault/debit.html', context)
+
+@login_required(login_url='/login')
+def vaultCredit(request, account_no_pk):
+	cust_user=user_account.objects.filter(pk=account_no_pk)[0]
+	if request.user!=cust_user.cust_user_id:
+		return login_success(request)
+	context={
+		'account':cust_user,
+	}
+	if request.method=='POST':
+		amount=int(request.POST['amount'])
+		if amount>0:
+			account_from=user_account.objects.filter(pk=account_no_pk)[0]
+			account_to=account_from
+			t=cust_transaction(from_account=account_from, to_account=account_to, Amount=int(amount))
+			t.save()			
+			return redirect('vault:accountInfo',account_no_pk)
+		else:
+			return HttpResponse("Invalid Amount")
+	
+	if request.method=='GET':
+		return render(request, 'vault/credit.html', context)
+
 @login_required(login_url='/login')
 def vaultTransactionApprove(request, transaction_pk):
 	group=login_success(request)
@@ -109,47 +155,6 @@ def vaultTransactionApprove(request, transaction_pk):
 	else:
 		return HttpResponse("Transaction Tackled")
 
-@login_required(login_url='/login')
-def vaultDebit(request, account_no_pk):
-	cust_user=user_account.objects.filter(pk=account_no_pk)[0]
-	if request.user!=cust_user.cust_user_id:
-		return login_success(request)
-	context={}
-	if request.method=='POST':
-		amount=int(request.POST['amount'])
-		if amount>0:
-			amount=-1*amount
-			account_from=user_account.objects.filter(pk=account_no_pk)[0]
-			account_to=account_from
-			t=cust_transaction(from_account=account_from, to_account=account_to, Amount=int(amount))
-			t.save()			
-			return redirect('vault:accountInfo',account_no_pk)
-
-		else:
-			HttpResponse("Invalid Amount")
-
-	if request.method=='GET':
-		return render(request, 'vault/debit.html', context)
-
-@login_required(login_url='/login')
-def vaultCredit(request, account_no_pk):
-	cust_user=user_account.objects.filter(pk=account_no_pk)[0]
-	if request.user!=cust_user.cust_user_id:
-		return login_success(request)
-	context={}
-	if request.method=='POST':
-		amount=int(request.POST['amount'])
-		if amount>0:
-			account_from=user_account.objects.filter(pk=account_no_pk)[0]
-			account_to=account_from
-			t=cust_transaction(from_account=account_from, to_account=account_to, Amount=int(amount))
-			t.save()			
-			return redirect('vault:accountInfo',account_no_pk)
-		else:
-			return HttpResponse("Invalid Amount")
-	
-	if request.method=='GET':
-		return render(request, 'vault/credit.html', context)
 
 
 def login_success(request):
