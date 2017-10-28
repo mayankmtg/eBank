@@ -1,0 +1,9 @@
+{% extends 'vault/accountBase.html' %}
+{% load staticfiles %}
+{% block nav %}
+<h1>Help and Contact</h1>
+<hr>
+<form method="POST">
+  {% csrf_token%}
+  <h3> Contact Us at fcs7@gmail.com </h3>
+{% endblock %}
