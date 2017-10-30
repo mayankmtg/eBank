@@ -4,6 +4,7 @@ from django.views import generic
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import redirect
 from .models import user_account, cust_transaction
+# from .utils import OTPSend
 
 def vaultHome(request):
 	context={}
@@ -120,6 +121,10 @@ def vaultCredit(request, account_no_pk):
 	
 	if request.method=='GET':
 		return render(request, 'vault/credit.html', context)
+# @login_required(login_url='/login')
+# def vaultDebitOTP(request, account_no_pk):
+	
+
 
 @login_required(login_url='/login')
 def vaultTransactionApprove(request, transaction_pk):
