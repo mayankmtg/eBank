@@ -14,6 +14,7 @@
 			<th>pending</th>
 			<th>Amount</th>
 			<th>Approve</th>
+			<th>Dis-approve</th>
 		</tr>
 		{% for transaction in cust_transaction %}
 		<tr>
@@ -23,6 +24,7 @@
 			<td>{{ transaction.pending}}</td>
 			<td>{{ transaction.Amount}}</td>
 			<td><a href="{% url 'vault:vaultTransactionApprove' transaction.pk %}">Approve</a></td>
+			<td><a href="{% url 'vault:vaultTransactionDisapprove' transaction.pk %}">Dis-Approve</a></td>
 		</tr>
 		{% endfor %}
 	</table>

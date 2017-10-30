@@ -4,7 +4,7 @@ from django.views import generic
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import redirect
 from .models import user_account, cust_transaction
-# from .utils import OTPSend
+from .utils import OTPSend, OTPVerify
 
 def vaultHome(request):
 	context={}
@@ -84,21 +84,26 @@ def vaultDebit(request, account_no_pk):
 	context={
 		'account':cust_user,
 	}
+	if request.method=='GET':
+		return render(request, 'vault/debit.html', context)
+
 	if request.method=='POST':
 		amount=int(request.POST['amount'])
-		if amount>0:
+		otp=int(request.POST['otp'])
+
+		if amount>0 and OTPVerify(otp):
 			amount=-1*amount
 			account_from=user_account.objects.filter(pk=account_no_pk)[0]
 			account_to=account_from
 			t=cust_transaction(from_account=account_from, to_account=account_to, Amount=int(amount))
 			t.save()			
-			return redirect('vault:accountInfo',account_no_pk)
+			return redirect('vault:accountInfo', account_no_pk)
 
 		else:
-			HttpResponse("Invalid Amount")
+			return HttpResponse("Invalid Amount or OTP")
+	else:
+		return HttpResponse("Error")
 
-	if request.method=='GET':
-		return render(request, 'vault/debit.html', context)
 
 @login_required(login_url='/login')
 def vaultCredit(request, account_no_pk):
@@ -121,10 +126,14 @@ def vaultCredit(request, account_no_pk):
 	
 	if request.method=='GET':
 		return render(request, 'vault/credit.html', context)
-# @login_required(login_url='/login')
-# def vaultDebitOTP(request, account_no_pk):
-	
 
+@login_required(login_url='/login')
+def vaultDebitOTP(request, account_no_pk):
+	totp=OTPSend()
+	if totp:
+		return redirect('vault:vaultDebit', account_no_pk)
+	else:
+		return HttpResponse("Error")
 
 @login_required(login_url='/login')
 def vaultTransactionApprove(request, transaction_pk):
@@ -160,6 +169,18 @@ def vaultTransactionApprove(request, transaction_pk):
 	else:
 		return HttpResponse("Transaction Tackled")
 
+def vaultTransactionDisapprove(request, transaction_pk):
+	group=login_success(request)
+	if not (request.user.groups.filter(name="Regular").exists() or request.user.groups.filter(name="Manager").exists()):
+		# print(request.user.groups.filter(name="Ind_user").exists())
+		return group
+	transaction=get_object_or_404(cust_transaction, pk=transaction_pk)
+	if(request.user.groups.filter(name="Regular").exists() and abs(transaction.Amount)>10000) or (request.user.groups.filter(name="Manager").exists() and abs(transaction.Amount)<=100000):
+		return group
+	if transaction.pending==True:
+		transaction.delete()
+
+	return redirect('vault:vaultInternal')
 
 
 def login_success(request):

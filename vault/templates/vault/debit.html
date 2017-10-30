@@ -5,9 +5,10 @@
 <hr>
 <form method="POST">
 	{% csrf_token%}
-	<input type="text" name="amount" placeholder="Amount">
+	<input type="text" name="amount" placeholder="Amount" required="True">
 	<br>
-	<!-- <input type="text" name="otp" placeholder="OTP"> <a href="#">Send OTP</a> -->
-	<input type="submit" name="Submit">
+	<input type="text" name="otp" placeholder="OTP" required="True"><a id="send" href="{% url 'vault:vaultDebitOTP' account.pk %}">Send OTP</a>
+	<input type="submit" name="Submit" id="submit">
+
 </form>
 {% endblock %}

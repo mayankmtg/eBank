@@ -3,20 +3,21 @@ import pyotp
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
-def OTPSend(to_addr, OTP):
+def OTPSend():
+	print("random")
 	fromaddr = "fcsgrp7@gmail.com"
-	toaddr=to_addr
+	toaddr = "mayank15056@iiitd.ac.in"
 	msg = MIMEMultipart()
 	msg['From'] = fromaddr
 	msg['To'] = toaddr
-	msg['Subject'] = "OTP for Vault Bank"
+	msg['Subject'] = "OTP for banking"
 	 
-	# totp = pyotp.TOTP('base32secret3232',interval=300)
-
-	body = "Your OTP for the this banking session is " +OTP
+	totp = pyotp.TOTP('base32secret3232',interval=300)
+	body = "Your OTP for the this banking session is " + totp.now()
 	msg.attach(MIMEText(body, 'plain'))
 
 	server = smtplib.SMTP('smtp.gmail.com', 587)
+
 
 	#'------call to starttls() before you login:---------------------'
 	server.ehlo()
@@ -30,10 +31,11 @@ def OTPSend(to_addr, OTP):
 
 	text = msg.as_string()
 	server.sendmail(fromaddr, toaddr, text)
-	
-	# otp_verification=totp.verify(user_otp)
 	server.quit()
-def OTP(to_addr):
+	return totp
+def OTPVerify(user_otp):
 	totp = pyotp.TOTP('base32secret3232',interval=300)
-	OTPSend(to_addr, totp.now())
-	
+	otp_verification=totp.verify(user_otp)
+	print(otp_verification)
+	return otp_verification
+
