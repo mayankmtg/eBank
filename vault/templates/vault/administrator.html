@@ -1,7 +1,6 @@
-{% extends 'vault/base.html' %}
+{% extends 'vault/administratorBase.html' %}
 {% load staticfiles %}
-{% block title %}Internal{% endblock %}
-{% block body %}
+{% block nav %}
 <div class="container">
 	<center><h1>User Requests</h1></center>
 	<br>
@@ -23,8 +22,8 @@
 			<td>{{ request.last_name }}</td>
 			<td>{{ request.e_mail }}</td>
 			<td>{{ request.group }}</td>
-			<td><a href="{% url 'vault:requestApprove' request.pk %}">Approve</a></td>
-			<td><a href="{% url 'vault:requestDisapprove' request.pk %}">Dis-Approve</a></td>
+			<td><a href="{% url 'vault:requestApprove' request_type request.pk %}">Approve</a></td>
+			<td><a href="{% url 'vault:requestDisapprove' request_type request.pk %}">Dis-Approve</a></td>
 		</tr>
 		{% endfor %}
 	</table>

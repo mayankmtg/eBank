@@ -33,6 +33,7 @@
             <tr>
               <th>#</th>
               <th>Account Number</th>
+              <th><a href="{% url 'vault:generateAccountRequest' %}">Add account</a></th>
             </tr>
           </thead>
           <tbody>
@@ -40,6 +41,7 @@
             <tr>
               <td>{{ forloop.counter }}</td>
               <td><a href="{% url 'vault:accountInfo' account.pk %}">{{ account }}</a></td>
+              <td>&nbsp;</td>
             </tr>
             {% endfor %}
           </tbody>

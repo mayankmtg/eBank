@@ -4,10 +4,12 @@ import datetime
 
 
 class registerRequests(models.Model):
+	user_data = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
 	first_name = models.CharField(max_length=250, blank=False)
 	last_name = models.CharField(max_length=250, blank=False)
 	e_mail = models.CharField(max_length=250, blank=False)
 	group = models.CharField(max_length=250, blank=False)
+	type_of_req=models.CharField(max_length=250, blank=False)
 
 	def __str__(self):
 		return self.first_name + " " + self.last_name

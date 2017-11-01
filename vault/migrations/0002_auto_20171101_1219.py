@@ -2,7 +2,7 @@
 from __future__ import unicode_literals
 
 from django.db import migrations, models
-import datetime
+from django.conf import settings
 
 
 class Migration(migrations.Migration):
@@ -13,8 +13,8 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.AlterField(
-            model_name='cust_transaction',
-            name='transaction_date',
-            field=models.DateTimeField(default=datetime.datetime.now, blank=True),
+            model_name='registerrequests',
+            name='user',
+            field=models.ForeignKey(to=settings.AUTH_USER_MODEL, null=True),
         ),
     ]

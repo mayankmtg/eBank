@@ -8,6 +8,8 @@ from django.shortcuts import redirect
 from .models import user_account, cust_transaction, registerRequests
 from .utils import OTPSend, OTPVerify, sendEmail
 from django.utils.crypto import get_random_string
+from django.http import Http404
+
 
 def vaultHome(request):
 	context={}
@@ -20,7 +22,8 @@ def vaultRegisterRequest(request):
 		last_name=request.POST['last_name']
 		e_mail=request.POST['email']
 		group=request.POST['group']
-		r=registerRequests(first_name=first_name, last_name=last_name, e_mail=e_mail, group=group)
+		type_of_req="Register"
+		r=registerRequests(user_data=None, first_name=first_name, last_name=last_name, e_mail=e_mail, group=group, type_of_req=type_of_req)
 		r.save()
 		return HttpResponse("Request Sent")
 
@@ -28,31 +31,71 @@ def vaultRegisterRequest(request):
 
 
 @login_required(login_url='/login')
-def administrator(request):
+def administrator(request, request_type):
 	group=login_success(request)
 	if not(request.user.groups.filter(name="Administrator").exists()):
 		return group
-	context={
-		'register_requests':registerRequests.objects.all(),
-	}
-	return render(request, 'vault/administrator.html', context)
+
+	valid_types=[
+		'Register',
+		'Account',
+	]
+	if(request_type in valid_types):
+
+		context={
+			'request_type': request_type,
+			'register_requests':registerRequests.objects.filter(type_of_req=request_type),
+		}
+		return render(request, 'vault/administrator.html', context)
+	else:
+		raise Http404("Incorrect Account Type")
 
 @login_required(login_url='/login')
-def requestApprove(request, request_pk):
+def generateAccountRequest(request):
+	group=login_success(request)
+	if not (request.user.groups.filter(name="Ind_user").exists() or request.user.groups.filter(name="Organization").exists()):
+		# print(request.user.groups.filter(name="Ind_user").exists())
+		return group
+	type_of_req="Account"
+	first_name=request.user.first_name
+	last_name=request.user.last_name
+	e_mail=request.user.email
+	if(request.user.groups.filter(name="Ind_user")):
+		group="Ind_user"
+	elif(request.user.groups.filter(name="Organization")):
+		group="Organization"
+	r=registerRequests(user=request.user, first_name=first_name, last_name=last_name, e_mail=e_mail, group=group, type_of_req=type_of_req)
+	r.save()
+	return redirect('vault:vaultExternal')
+
+@login_required(login_url='/login')
+def requestApprove(request, request_type, request_pk):
 	group=login_success(request)
 	if not(request.user.groups.filter(name="Administrator").exists()):
 		return group
 
 	req=get_object_or_404(registerRequests, pk=request_pk)
-	userName=req.first_name[0]+req.last_name[0]+str(req.pk)
-	password=get_random_string(length=10)
-	new_user=User.objects.create_user(userName, password=password, email=req.e_mail)
-	group=Group.objects.get(name=req.group)
-	group.user_set.add(new_user)
+	if(request_type=="Register"):
+		userName=req.first_name[0]+req.last_name[0]+str(req.pk)
+		password=get_random_string(length=10)
+		new_user=User.objects.create_user(userName,first_name=req.first_name, last_name=req.last_name, password=password, email=req.e_mail)
+		group=Group.objects.get(name=req.group)
+		group.user_set.add(new_user)
+		message="You account has been created\n\n\n User Name:"+userName+"\nPassword:"+password
+		subject="Vault Account Successfully Created"
+	elif(request_type=="Account"):
+		if(req.user_data.groups.filter(name="Ind_user").exists()):
+			account_type="Individual"
+		elif(req.user_data.groups.filter(name="Organization").exists()):
+			account_type="Organization"
+
+		acc=user_account(cust_user_id=req.user_data, cust_account_type=account_type, cust_balance=0)
+		acc.save()
+		subject="Account Has been Created"
+		message="Your Account Has been Created \nAccount Number:" + str(acc)
 	req.delete()
-	message="You account has been created\n\n\n User Name:"+userName+"\nPassword:"+password
-	sendEmail(message, req.e_mail, "Vault Account Successfully Created")
-	return redirect('vault:administrator')
+	sendEmail(message, req.e_mail, subject)
+	return redirect('vault:administrator', request_type)
 
 @login_required(login_url='/login')
 def requestDisapprove(request, request_pk):
@@ -262,7 +305,7 @@ def login_success(request):
 	if request.user.groups.filter(name="Regular").exists():	
 		return redirect('/internal')
 	elif request.user.groups.filter(name="Administrator").exists():
-		return redirect('/administrator')
+		return redirect('vault:administrator', 'Register')
 	elif request.user.groups.filter(name="Manager").exists():
 		return redirect('/manager')
 	elif request.user.groups.filter(name="Ind_user").exists():

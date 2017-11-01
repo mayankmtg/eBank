@@ -1,0 +1,20 @@
+{% extends 'vault/base.html' %}
+{% load staticfiles %}
+{% block title %}Administrator{% endblock %}
+{% block body %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js" type="text/javascript"></script>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-2">
+      <ul class="nav">
+        <li><a href="{% url 'vault:administrator' 'Register' %}">Register Requests</a></li>
+        <li><a href="{% url 'vault:administrator' 'Account'%}">Account Requests</a></li>
+      </ul>
+    </div>
+    <div class="col-sm-10">
+    {% block nav %}
+    {% endblock %}
+    </div>
+  </div>
+</div>
+{% endblock %}

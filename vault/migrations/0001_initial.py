@@ -16,9 +16,21 @@ class Migration(migrations.Migration):
             name='cust_transaction',
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
-                ('transaction_date', models.DateTimeField(null=True)),
+                ('transaction_date', models.DateTimeField(auto_now_add=True)),
                 ('pending', models.BooleanField(default=True)),
                 ('Amount', models.FloatField()),
+            ],
+        ),
+        migrations.CreateModel(
+            name='registerRequests',
+            fields=[
+                ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
+                ('first_name', models.CharField(max_length=250)),
+                ('last_name', models.CharField(max_length=250)),
+                ('e_mail', models.CharField(max_length=250)),
+                ('group', models.CharField(max_length=250)),
+                ('type_of_req', models.CharField(max_length=250)),
+                ('user', models.ForeignKey(to=settings.AUTH_USER_MODEL)),
             ],
         ),
         migrations.CreateModel(
