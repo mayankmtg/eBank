@@ -1,14 +1,77 @@
 from django.http import HttpResponse
+from django.contrib.auth.models import Group, User
 from django.shortcuts import render, get_object_or_404
 from django.views import generic
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.forms import UserCreationForm
 from django.shortcuts import redirect
-from .models import user_account, cust_transaction
-from .utils import OTPSend, OTPVerify
+from .models import user_account, cust_transaction, registerRequests
+from .utils import OTPSend, OTPVerify, sendEmail
+from django.utils.crypto import get_random_string
 
 def vaultHome(request):
 	context={}
 	return render(request, 'vault/home.html', context)
+
+def vaultRegisterRequest(request):
+	context={}
+	if request.method=='POST':
+		first_name=request.POST['first_name']
+		last_name=request.POST['last_name']
+		e_mail=request.POST['email']
+		group=request.POST['group']
+		r=registerRequests(first_name=first_name, last_name=last_name, e_mail=e_mail, group=group)
+		r.save()
+		return HttpResponse("Request Sent")
+
+	return render(request, 'vault/registerRequest.html', context)
+
+
+@login_required(login_url='/login')
+def administrator(request):
+	group=login_success(request)
+	if not(request.user.groups.filter(name="Administrator").exists()):
+		return group
+	context={
+		'register_requests':registerRequests.objects.all(),
+	}
+	return render(request, 'vault/administrator.html', context)
+
+@login_required(login_url='/login')
+def requestApprove(request, request_pk):
+	group=login_success(request)
+	if not(request.user.groups.filter(name="Administrator").exists()):
+		return group
+
+	req=get_object_or_404(registerRequests, pk=request_pk)
+	userName=req.first_name[0]+req.last_name[0]+str(req.pk)
+	password=get_random_string(length=10)
+	new_user=User.objects.create_user(userName, password=password, email=req.e_mail)
+	group=Group.objects.get(name=req.group)
+	group.user_set.add(new_user)
+	req.delete()
+	message="You account has been created\n\n\n User Name:"+userName+"\nPassword:"+password
+	sendEmail(message, req.e_mail, "Vault Account Successfully Created")
+	return redirect('vault:administrator')
+
+@login_required(login_url='/login')
+def requestDisapprove(request, request_pk):
+	group=login_success(request)
+	if not(request.user.groups.filter(name="Administrator").exists()):
+		return group
+	
+	if (request.method=='GET'):
+		context={}
+		return render(request, 'vault/requestDisapprove.html', context)
+
+	elif(request.method=='POST'):
+		
+		req=get_object_or_404(registerRequests, pk=request_pk)
+		req.delete()
+		sendEmail(request.POST['decline_message'], req.e_mail, request.POST['subject'])
+		return redirect('vault:administrator')
+
+
 
 @login_required(login_url='/login')
 def vaultExternal(request):
@@ -56,6 +119,17 @@ def accountInfo(request, account_no_pk):
 	}
 	return render(request, 'vault/accountInfo.html', context)
 
+@login_required(login_url='/login')
+def payments(request, account_no_pk):
+	cust_user=user_account.objects.filter(pk=account_no_pk)[0]
+	if request.user!=cust_user.cust_user_id:
+		return login_success(request)
+	from_trans=cust_transaction.objects.filter(from_account=cust_user).filter(panding=False)
+	to_trans=cust_transaction.objects.filter(to_account=cust_user).filter(pending=False)
+	context={
+		
+
+	}
 @login_required(login_url='/login')
 def transferfunds(request, account_no_pk):
 	cust_user=user_account.objects.filter(pk=account_no_pk)[0]
@@ -169,6 +243,7 @@ def vaultTransactionApprove(request, transaction_pk):
 	else:
 		return HttpResponse("Transaction Tackled")
 
+@login_required(login_url='/login')
 def vaultTransactionDisapprove(request, transaction_pk):
 	group=login_success(request)
 	if not (request.user.groups.filter(name="Regular").exists() or request.user.groups.filter(name="Manager").exists()):

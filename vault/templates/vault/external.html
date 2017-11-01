@@ -48,4 +48,10 @@
     </div>
   </div>
 </div>
+<script type="text/javascript">
+console.log(1);
+{% for account in accounts %}
+console.log({{account.pk | safe | escapejs}});
+{% endfor %}
+</script>
 {% endblock %}

@@ -3,8 +3,31 @@ import pyotp
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
+
+def sendEmail(message, toaddr, subject):
+	fromaddr = "fcsgrp7@gmail.com"
+	toaddr = toaddr
+	msg = MIMEMultipart()
+	msg['From'] = fromaddr
+	msg['To'] = toaddr
+	msg['Subject'] = subject
+	 
+	
+	body = message
+	msg.attach(MIMEText(body, 'plain'))
+
+	server = smtplib.SMTP('smtp.gmail.com', 587)
+	server.ehlo()
+	server.starttls()
+
+	server.login(fromaddr,"adgms111")
+
+	text = msg.as_string()
+	server.sendmail(fromaddr, toaddr, text)
+	server.quit()
+	return True
 def OTPSend():
-	print("random")
+	# print("random")
 	fromaddr = "fcsgrp7@gmail.com"
 	toaddr = "mayank15056@iiitd.ac.in"
 	msg = MIMEMultipart()

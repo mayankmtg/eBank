@@ -8,6 +8,11 @@ body{
 	/*background-color: #decba4;*/
 	 margin-bottom: 60px;
 }
+.width-fix{
+    max-width: 400px; 
+    padding: 15px;
+    margin: 0 auto;
+}
 .footer {
   position: absolute;
   bottom: 0;

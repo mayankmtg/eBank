@@ -1,0 +1,31 @@
+{% extends 'vault/base.html' %}
+{% load staticfiles %}
+{% block title%}Register Request{% endblock %}
+{% block body %}
+<div class="panel panel-success width-fix">
+	<div class="panel-heading">
+		<h2 class="panel-title">Register Request</h2>
+	</div>
+	<div class="panel-body">
+
+		<form class="form-signin" method="POST">
+		{% csrf_token %}
+			<h2 class="form-signin-heading">Provide your Details</h2>
+
+			<input type="text" class="form-control" placeholder="First Name" name="first_name" required autofocus>
+			<br>
+			<input type="text" class="form-control" placeholder="Last Name" name="last_name" required autofocus>
+			<br>
+			<input type="email" class="form-control" placeholder="Email address" name="email" required>
+			<br>
+			<select name="group">
+				<option value="Ind_user">Individual User</option>
+				<option value="Organization">Organization</option>
+				<option value="Regular">Regular Employee</option>
+				<option value="Manager">Manager</option>
+			</select>
+			<button class="btn btn-lg btn-info btn-block" type="submit">Register Request</button>
+		</form> 
+	</div>
+</div>
+{% endblock %}

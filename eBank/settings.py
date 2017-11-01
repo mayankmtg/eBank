@@ -31,6 +31,7 @@ ALLOWED_HOSTS = ['localhost', '127.0.0.1', '192.168.60.56']
 # Application definition
 
 INSTALLED_APPS = (
+    'sslserver',
     'vault.apps.vaultConfig',
     'django.contrib.admin',
     'django.contrib.auth',
