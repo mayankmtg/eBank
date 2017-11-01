@@ -3,40 +3,52 @@
 {% block nav %}
 <h1>Transaction History</h1>
 <hr>
-<center>
-<div class="wrapper" style="max-width: 800px">
-      <canvas id="Chart" width="640" height="360" style="display: block;max-width: 800px;max-height: 340px"></canvas>
-</div>
-</center>
+<h3>Transaction Table</h3>
 <div class="table-responsive">
             <table class="table table-striped">
               <thead>
                 <tr>
                   <th>Transaction Date</th>
                   <th>To Account</th>
-                  <th>Amount</th>
                   <th>Status</th>
+                  <th>Amount</th>
                   
                 </tr>
               </thead>
               <tbody>
-               
+                {% for trans in result_trans%}
                 <tr>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
+                  <td>{{trans.transaction_date}}</td>
+                  <td>{{trans.to_account}}</td>
+                  <td>{{trans.pending}}</td>
+                  <td>{{trans.Amount}}</td>
                  </tr>
-                
+                {% endfor %}
               </tbody>
             </table>
 </div>
+<br><br><br>
+<hr>
+<br><br><br>
+<h3>Transaction Graph</h3>
+<br>
+<center>
+<div class="wrapper" style="max-width: 800px">
+      <canvas id="Chart" width="640" height="360" style="display: block;max-width: 800px;max-height: 340px"></canvas>
+</div>
+</center>
 <script type="text/javascript">
-  
-    var dates = [1500,1600,1700,1750,1800,1850,1900,1950,1999,2050];
+      var dates=[]
+    {% for  trans in result_trans %}
+      console.log("hello");
+        dates = dates.concat([{{trans.transaction_date}}]);
+    {% endfor %}
     // For drawing the lines
     // y-axis
-    var transactions = [86,114,106,106,107,111,133,221,783,2478];
+        var transactions = [];
+    {% for trans in result_trans %}
+        transactions=transactions.concat([{{trans.Amount}}]);
+    {% endfor %}
     var ctx = document.getElementById("Chart");
     var myChart = new Chart(ctx, {
       type: 'line',
@@ -53,4 +65,5 @@
               }
     });
 </script>
+<br><br><br>
 {% endblock %}

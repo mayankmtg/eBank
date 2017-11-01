@@ -13,11 +13,10 @@
         <li><a href="{% url 'vault:transferfunds' account.pk %}">Transfer Funds</a></li>
       </ul>
       <ul class="nav">
-        <li><a href="#">Payments</a></li>
-        <li><a href="#">View Statements</a></li>
+        <li><a href="{% url 'vault:payments' account.pk %}">Payments</a></li>
       </ul>
       <ul class="nav">
-        <li><a href="#">Help and Contact</a></li>
+        <li><a href="{% url 'vault:support' account.pk %}">Help and Contact</a></li>
       </ul>
     </div>
     <div class="col-sm-10">

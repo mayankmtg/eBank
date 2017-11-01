@@ -17,6 +17,7 @@ urlpatterns = [
 	url(r'^accounts/generateAccountRequest/$', views.generateAccountRequest, name='generateAccountRequest'),
 	url(r'^accounts/(?P<account_no_pk>\d+)/$', views.accountInfo, name='accountInfo'),
 	url(r'^accounts/(?P<account_no_pk>\d+)/payments/$', views.payments, name='payments'),
+	url(r'^accounts/(?P<account_no_pk>\d+)/support/$', views.support, name='support'),
 	url(r'^accounts/(?P<account_no_pk>\d+)/transferfunds/$', views.transferfunds, name='transferfunds'),
 	url(r'^accounts/(?P<account_no_pk>\d+)/debit/$', views.vaultDebit, name='vaultDebit'),
 	url(r'^accounts/(?P<account_no_pk>\d+)/debit/otp/$', views.vaultDebitOTP, name='vaultDebitOTP'),

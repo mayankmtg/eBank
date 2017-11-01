@@ -9,7 +9,8 @@ from .models import user_account, cust_transaction, registerRequests
 from .utils import OTPSend, OTPVerify, sendEmail
 from django.utils.crypto import get_random_string
 from django.http import Http404
-
+from itertools import chain
+from django.db.models import Q
 
 def vaultHome(request):
 	context={}
@@ -167,12 +168,31 @@ def payments(request, account_no_pk):
 	cust_user=user_account.objects.filter(pk=account_no_pk)[0]
 	if request.user!=cust_user.cust_user_id:
 		return login_success(request)
-	from_trans=cust_transaction.objects.filter(from_account=cust_user).filter(panding=False)
-	to_trans=cust_transaction.objects.filter(to_account=cust_user).filter(pending=False)
+	result_trans=cust_transaction.objects.filter(Q(from_account=cust_user) | Q(to_account=cust_user)).filter(pending=False)
+
+
 	context={
-		
+		'account':cust_user,
+		'result_trans':result_trans,
 
 	}
+	return render(request, 'vault/payments.html', context)
+
+@login_required(login_url='/login')
+def support(request, account_no_pk):
+	cust_user=user_account.objects.filter(pk=account_no_pk)[0]
+	if request.user!=cust_user.cust_user_id:
+		return login_success(request)
+	if request.method=='POST':
+		sendEmail("From: "+str(request.user.email)+"\n"+request.POST['decline_message'],"fcsgrp7@gmail.com", "HELP:"+request.POST['subject'])
+		return HttpResponse("Message Sent")
+	elif request.method=='GET':
+		context={
+			'account':cust_user,
+		}
+		return render(request, 'vault/support.html', context)
+
+
 @login_required(login_url='/login')
 def transferfunds(request, account_no_pk):
 	cust_user=user_account.objects.filter(pk=account_no_pk)[0]
