@@ -7,6 +7,8 @@
 	{% csrf_token%}
 	<input type="text" name="amount" placeholder="Amount">
 	<br>
+	<input type="text" name="otp" placeholder="OTP" required="True"><a id="send" href="{% url 'vault:vaultCreditOTP' account.pk %}">Send OTP</a>
+	<br>
 	<input type="submit" name="Submit">
 </form>
 {% endblock %}

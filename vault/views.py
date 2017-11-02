@@ -11,7 +11,7 @@ from django.utils.crypto import get_random_string
 from django.http import Http404
 from itertools import chain
 from django.db.models import Q
-
+from django.contrib.admin.views.decorators import staff_member_required
 def vaultHome(request):
 	context={}
 	return render(request, 'vault/home.html', context)
@@ -40,6 +40,7 @@ def administrator(request, request_type):
 	valid_types=[
 		'Register',
 		'Account',
+		'Delete',
 	]
 	if(request_type in valid_types):
 
@@ -65,7 +66,25 @@ def generateAccountRequest(request):
 		group="Ind_user"
 	elif(request.user.groups.filter(name="Organization")):
 		group="Organization"
-	r=registerRequests(user=request.user, first_name=first_name, last_name=last_name, e_mail=e_mail, group=group, type_of_req=type_of_req)
+	r=registerRequests(user_data=request.user, first_name=first_name, last_name=last_name, e_mail=e_mail, group=group, type_of_req=type_of_req)
+	r.save()
+	return redirect('vault:vaultExternal')
+
+@login_required(login_url='/login')
+def generateDeleteRequest(request):
+	group=login_success(request)
+	if not (request.user.groups.filter(name="Ind_user").exists() or request.user.groups.filter(name="Organization").exists()):
+		# print(request.user.groups.filter(name="Ind_user").exists())
+		return group
+	type_of_req="Delete"
+	first_name=request.user.first_name
+	last_name=request.user.last_name
+	e_mail=request.user.email
+	if(request.user.groups.filter(name="Ind_user")):
+		group="Ind_user"
+	elif(request.user.groups.filter(name="Organization")):
+		group="Organization"
+	r=registerRequests(user_data=request.user, first_name=first_name, last_name=last_name, e_mail=e_mail, group=group, type_of_req=type_of_req)
 	r.save()
 	return redirect('vault:vaultExternal')
 
@@ -94,12 +113,26 @@ def requestApprove(request, request_type, request_pk):
 		acc.save()
 		subject="Account Has been Created"
 		message="Your Account Has been Created \nAccount Number:" + str(acc)
-	req.delete()
+	elif(request_type=="Delete"):
+		subject="Account Deletion"
+		user_to_del=req.user_data
+		message=""
+		try:
+			user_to_del.delete()
+			message="The user is deleted"
+		except User.DoesNotExist:
+			message="Error while Processing your delete request"
+		except Exception as e: 
+			message="Error while Processing your delete request"
+		 
+
+
 	sendEmail(message, req.e_mail, subject)
+	req.delete()
 	return redirect('vault:administrator', request_type)
 
 @login_required(login_url='/login')
-def requestDisapprove(request, request_pk):
+def requestDisapprove(request,request_type, request_pk):
 	group=login_success(request)
 	if not(request.user.groups.filter(name="Administrator").exists()):
 		return group
@@ -113,7 +146,7 @@ def requestDisapprove(request, request_pk):
 		req=get_object_or_404(registerRequests, pk=request_pk)
 		req.delete()
 		sendEmail(request.POST['decline_message'], req.e_mail, request.POST['subject'])
-		return redirect('vault:administrator')
+		return redirect('vault:administrator', 'Account')
 
 
 
@@ -198,20 +231,32 @@ def transferfunds(request, account_no_pk):
 	cust_user=user_account.objects.filter(pk=account_no_pk)[0]
 	if request.user!=cust_user.cust_user_id:
 		return login_success(request)
-	if request.method=='POST':
-		amount=request.POST['amount']
 
-		account_no=request.POST['acno']
-		account_from=user_account.objects.filter(pk=account_no_pk)[0]
-		account_to=user_account.objects.filter(pk=int(account_no))[0]
-		print(account_from, account_to)
-		t=cust_transaction(from_account=account_from, to_account=account_to, Amount=int(amount))
-		t.save()
-		return redirect('vault:accountInfo',account_no_pk)
 	context={
 		'account':user_account.objects.filter(pk=account_no_pk)[0],
 	}
-	return render(request, 'vault/transfer.html', context)
+	if request.method=='GET':
+		return render(request, 'vault/transfer.html', context)
+	if request.method=='POST':
+		amount=request.POST['amount']
+		account_no=int(request.POST['acno'])
+		account_no=account_no-10000000000
+		account_from=user_account.objects.filter(pk=account_no_pk)[0]
+		if(user_account.objects.filter(pk=int(account_no)).exists()):
+			account_to=user_account.objects.filter(pk=account_no)[0]
+		else:
+			return HttpResponse("Incorrect Account Number")
+		otp=int(request.POST['otp'])
+		if(amount>0 and OTPVerify(otp)):
+			t=cust_transaction(from_account=account_from, to_account=account_to, Amount=int(amount))
+			t.save()
+			return redirect('vault:accountInfo',account_no_pk)
+		else:
+			return HttpResponse("Invalid OTP or Amount")
+	else:
+		HttpResponse("Error")
+	
+		
 
 @login_required(login_url='/login')
 def vaultDebit(request, account_no_pk):
@@ -250,13 +295,15 @@ def vaultCredit(request, account_no_pk):
 	context={
 		'account':cust_user,
 	}
+		
 	if request.method=='POST':
 		amount=int(request.POST['amount'])
-		if amount>0:
+		otp=int(request.POST['otp'])
+		if amount>0 and OTPVerify(otp):
 			account_from=user_account.objects.filter(pk=account_no_pk)[0]
 			account_to=account_from
 			t=cust_transaction(from_account=account_from, to_account=account_to, Amount=int(amount))
-			t.save()			
+			t.save()		
 			return redirect('vault:accountInfo',account_no_pk)
 		else:
 			return HttpResponse("Invalid Amount")
@@ -266,11 +313,39 @@ def vaultCredit(request, account_no_pk):
 
 @login_required(login_url='/login')
 def vaultDebitOTP(request, account_no_pk):
+	cust_user=user_account.objects.filter(pk=account_no_pk)[0]
+	if request.user!=cust_user.cust_user_id:
+		return login_success(request)
 	totp=OTPSend()
 	if totp:
 		return redirect('vault:vaultDebit', account_no_pk)
 	else:
 		return HttpResponse("Error")
+
+@login_required(login_url='/login')
+def vaultCreditOTP(request, account_no_pk):
+	cust_user=user_account.objects.filter(pk=account_no_pk)[0]
+	if request.user!=cust_user.cust_user_id:
+		return login_success(request)
+	totp=OTPSend()
+	if totp:
+		return redirect('vault:vaultCredit', account_no_pk)
+	else:
+		return HttpResponse("Error")
+
+
+@login_required(login_url='/login')
+def vaultTransferOTP(request, account_no_pk):
+	cust_user=user_account.objects.filter(pk=account_no_pk)[0]
+	if request.user!=cust_user.cust_user_id:
+		return login_success(request)
+
+	totp=OTPSend()
+	if totp:
+		return redirect('vault:transferfunds', account_no_pk)
+	else:
+		return HttpResponse("Error")
+
 
 @login_required(login_url='/login')
 def vaultTransactionApprove(request, transaction_pk):
@@ -320,17 +395,16 @@ def vaultTransactionDisapprove(request, transaction_pk):
 
 	return redirect('vault:vaultInternal')
 
-
 def login_success(request):
 	if request.user.groups.filter(name="Regular").exists():	
-		return redirect('/internal')
+		return redirect('vault:vaultInternal')
 	elif request.user.groups.filter(name="Administrator").exists():
 		return redirect('vault:administrator', 'Register')
 	elif request.user.groups.filter(name="Manager").exists():
-		return redirect('/manager')
+		return redirect('vault:vaultManager')
 	elif request.user.groups.filter(name="Ind_user").exists():
-		return redirect('/')
+		return redirect('vault:vaultExternal')
 	elif request.user.groups.filter(name="Organization").exists():
-		return redirect('/')
+		return redirect('vault:vaultExternal')
 	else:
 		return redirect('/login')

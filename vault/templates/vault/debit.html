@@ -8,6 +8,7 @@
 	<input type="text" name="amount" placeholder="Amount" required="True">
 	<br>
 	<input type="text" name="otp" placeholder="OTP" required="True"><a id="send" href="{% url 'vault:vaultDebitOTP' account.pk %}">Send OTP</a>
+	<br>
 	<input type="submit" name="Submit" id="submit">
 
 </form>

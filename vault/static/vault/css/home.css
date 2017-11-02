@@ -1,0 +1,45 @@
+.button {
+  color: #4d4d4d;
+   background-color: white; 
+    border:2px solid #3E5151;
+    border-radius: 15px;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+.button:hover {
+    background-color: #3E5151; /* Green */
+    color: white;
+    text-decoration: none;
+}
+
+.feature-icon {
+  background-color: #3E5151;
+  border-radius: 50%;
+  color: white;
+}
+.rainbow {
+  color: #fcfcfc;
+  background-color: #3E5151;
+  padding: 5px;
+  border-radius: 30%;
+}
+.lrge {
+  font-size: 250px;
+  padding: 10px;
+}
+.logo {
+  color: white;
+  background-color: #1a1a1a;
+  padding: 10px;
+  border-radius: 50%;
+}
+.bold{
+  font-weight: bold;
+}

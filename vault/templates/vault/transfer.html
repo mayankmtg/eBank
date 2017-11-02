@@ -9,6 +9,8 @@
     <br>
     <input type="text" name="acno" placeholder="Account Number">
     <br>
+    <input type="text" name="otp" placeholder="OTP" required="True"><a id="send" href="{% url 'vault:vaultTransferOTP' account.pk %}">Send OTP</a>
+    <br>
     <input type="submit" name="Submit">
 </form>
 {% endblock %}

@@ -1,3 +1,95 @@
-<h1>Home Page</h1>
-<h2>Hello World</h2>
-<h3>It is working!!</h3>
+{% extends 'vault/base.html' %}
+{% load staticfiles %}
+{% block title %}Home{% endblock %}
+{% block body %}
+<link rel="stylesheet" type="text/css" href="{% static 'vault/css/home.css' %}">
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<br><br>
+<div class="container">
+	<div class="row">
+		<div class="col-sm-5 pull-left">
+		<div class="pull-right">
+			<span class="rainbow lrge">&nbsp;V&nbsp;</span>
+		</div>
+		</div>
+		<div class="col-sm-1">
+			&nbsp;
+		</div>
+		<div class="col-sm-6 pull-right">
+		<div class="pull-left">
+			<br>
+			<h1 style="font-size: 50px">The<br> </h1>
+			<h1 style="font-size: 50px">Pre-eminent<br></h1>
+			<h1>Banking Location...</h1>
+			<br>
+			<a class="button" href="{% url 'vault:vaultExternal' %}">Login</a>
+			<a class="button" href="{% url 'vault:vaultRegisterRequest' %}">SignUp</a>
+		</div>
+		</div>
+	</div>
+	<hr>
+	<br><br><br>
+	<center>
+	<div class="row">
+		<div class="col-md-12">
+			<h1> Features</h1>
+		</div>
+	</div>
+	<br><br><br>
+	<div class="row">
+		<div class="col-md-4">
+			<span class="fa-stack fa-4x">
+				<i class="fa fa-circle fa-stack-2x "></i>
+				<i class="fa fa-clock-o fa-stack-1x feature-icon"></i>
+			</span>
+			<h4 class="service-heading">Real-Time</h4>
+			<p class="text-muted">All transactions are handles by the system admin and changes are visible Real-Time</p>
+		</div>
+		<div class="col-md-4">
+			<span class="fa-stack fa-4x">
+				<i class="fa fa-circle fa-stack-2x "></i>
+				<i class="fa fa-laptop fa-stack-1x feature-icon"></i>
+			</span>
+			<h4 class="service-heading">Responsive Design</h4>
+			<p class="text-muted">Banking Application is Completely Responsive.</p>
+		</div>
+		<div class="col-md-4">
+			<span class="fa-stack fa-4x">
+				<i class="fa fa-circle fa-stack-2x "></i>
+				<i class="fa fa-lock fa-stack-1x feature-icon"></i>
+			</span>
+			<h4 class="service-heading">Web Security</h4>
+			<p class="text-muted">The rules for transactions does not involve encryption but since the communication with the database is secure, only the end users can see their Information.</p>
+		</div>
+	</div>
+	<br><br>
+	<div class="row">
+		<div class="col-md-4">
+			<span class="fa-stack fa-4x">
+				<i class="fa fa-circle fa-stack-2x "></i>
+				<i class="fa fa-user-plus fa-stack-1x feature-icon"></i>
+			</span>
+			<h4 class="service-heading">Multiple Accounts</h4>
+			<p class="text-muted">A user can have as many accounts as desired, after taking suitable permissions from the administrator.</p>
+		</div>
+		<div class="col-md-4">
+			<span class="fa-stack fa-4x">
+				<i class="fa fa-circle fa-stack-2x "></i>
+				<i class="fa fa-code fa-stack-1x feature-icon"></i>
+			</span>
+			<h4 class="service-heading">Proprietary</h4>
+			<p class="text-muted">The application is proprietary but is coded in the most naive sense and so is easy to understand. </p>
+		</div>
+		<div class="col-md-4">
+			<span class="fa-stack fa-4x">
+				<i class="fa fa-circle fa-stack-2x "></i>
+				<i class="fa fa-globe fa-stack-1x feature-icon"></i>
+			</span>
+			<h4 class="service-heading">Reliable</h4>
+			<p class="text-muted">You can rely on us, we are there for you.</p>
+		</div>
+	</div>
+	</center>
+</div>
+<br><br><br><br><br><br>
+{% endblock %}
