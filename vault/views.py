@@ -316,7 +316,7 @@ def vaultDebitOTP(request, account_no_pk):
 	cust_user=user_account.objects.filter(pk=account_no_pk)[0]
 	if request.user!=cust_user.cust_user_id:
 		return login_success(request)
-	totp=OTPSend()
+	totp=OTPSend(cust_user.cust_user_id.e_mail)
 	if totp:
 		return redirect('vault:vaultDebit', account_no_pk)
 	else:
@@ -327,7 +327,7 @@ def vaultCreditOTP(request, account_no_pk):
 	cust_user=user_account.objects.filter(pk=account_no_pk)[0]
 	if request.user!=cust_user.cust_user_id:
 		return login_success(request)
-	totp=OTPSend()
+	totp=OTPSend(cust_user.cust_user_id.email)
 	if totp:
 		return redirect('vault:vaultCredit', account_no_pk)
 	else:
@@ -340,7 +340,7 @@ def vaultTransferOTP(request, account_no_pk):
 	if request.user!=cust_user.cust_user_id:
 		return login_success(request)
 
-	totp=OTPSend()
+	totp=OTPSend(cust_user.cust_user_id.email)
 	if totp:
 		return redirect('vault:transferfunds', account_no_pk)
 	else:

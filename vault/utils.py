@@ -26,10 +26,10 @@ def sendEmail(message, toaddr, subject):
 	server.sendmail(fromaddr, toaddr, text)
 	server.quit()
 	return True
-def OTPSend():
+def OTPSend(toaddr):
 	# print("random")
 	fromaddr = "fcsgrp7@gmail.com"
-	toaddr = "mayank15056@iiitd.ac.in"
+	# toaddr = "mayank15056@iiitd.ac.in"
 	msg = MIMEMultipart()
 	msg['From'] = fromaddr
 	msg['To'] = toaddr
