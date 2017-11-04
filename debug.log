@@ -1,0 +1,114 @@
+(0.001) QUERY = "\n            SELECT name, type FROM sqlite_master\n            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'\n            ORDER BY name" - PARAMS = (); args=None
+(0.000) QUERY = u'SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"' - PARAMS = (); args=()
+Request from 127.0.0.1to Home
+(0.001) QUERY = "\n            SELECT name, type FROM sqlite_master\n            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'\n            ORDER BY name" - PARAMS = (); args=None
+(0.000) QUERY = u'SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"' - PARAMS = (); args=()
+2017-11-04 06:37:52Request from 127.0.0.1to Home
+(0.001) QUERY = "\n            SELECT name, type FROM sqlite_master\n            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'\n            ORDER BY name" - PARAMS = (); args=None
+(0.000) QUERY = u'SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"' - PARAMS = (); args=()
+(2017-11-04 06:42:41) request from 127.0.0.1: /
+(0.001) QUERY = "\n            SELECT name, type FROM sqlite_master\n            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'\n            ORDER BY name" - PARAMS = (); args=None
+(0.000) QUERY = u'SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"' - PARAMS = (); args=()
+(0.001) QUERY = "\n            SELECT name, type FROM sqlite_master\n            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'\n            ORDER BY name" - PARAMS = (); args=None
+(0.000) QUERY = u'SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"' - PARAMS = (); args=()
+(2017-11-04 06:45:55) request from 127.0.0.1: /
+(2017-11-04 06:45:59) request from 127.0.0.1: /
+(2017-11-04 06:46:12) request from 127.0.0.1: /register/
+(2017-11-04 06:46:17) request from 127.0.0.1: /
+(0.001) QUERY = u'SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."username" = %s' - PARAMS = (u'mayank',); args=(u'mayank',)
+(0.000) QUERY = u'BEGIN' - PARAMS = (); args=None
+(0.000) QUERY = u'UPDATE "auth_user" SET "password" = %s WHERE "auth_user"."id" = %s' - PARAMS = (u'pbkdf2_sha256$20000$KPigwTDGDXWr$cIAOpyFnNTGyYih3ANV4w/nsIwnJvIygXjuXv026IYg=', 1); args=(u'pbkdf2_sha256$20000$KPigwTDGDXWr$cIAOpyFnNTGyYih3ANV4w/nsIwnJvIygXjuXv026IYg=', 1)
+(0.000) QUERY = u'SELECT (1) AS "a" FROM "django_session" WHERE "django_session"."session_key" = %s LIMIT 1' - PARAMS = (u'msufsufen0rxllpcaish43ghky15zhll',); args=(u'msufsufen0rxllpcaish43ghky15zhll',)
+(0.000) QUERY = u'BEGIN' - PARAMS = (); args=None
+(0.000) QUERY = u'INSERT INTO "django_session" ("session_key", "session_data", "expire_date") SELECT %s AS "session_key", %s AS "session_data", %s AS "expire_date"' - PARAMS = (u'msufsufen0rxllpcaish43ghky15zhll', u'MmZlNjFiMTlkODBjMjk0YzNiMTgxNGM0NzBiZmMwNmI0MjQ2N2RlZjp7fQ==', u'2017-11-18 06:46:30.493255'); args=(u'msufsufen0rxllpcaish43ghky15zhll', u'MmZlNjFiMTlkODBjMjk0YzNiMTgxNGM0NzBiZmMwNmI0MjQ2N2RlZjp7fQ==', u'2017-11-18 06:46:30.493255')
+(0.000) QUERY = u'SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE "django_session"."session_key" = %s' - PARAMS = (u'msufsufen0rxllpcaish43ghky15zhll',); args=(u'msufsufen0rxllpcaish43ghky15zhll',)
+(0.000) QUERY = u'BEGIN' - PARAMS = (); args=None
+(0.000) QUERY = u'DELETE FROM "django_session" WHERE "django_session"."session_key" IN (%s)' - PARAMS = (u'msufsufen0rxllpcaish43ghky15zhll',); args=(u'msufsufen0rxllpcaish43ghky15zhll',)
+(0.000) QUERY = u'BEGIN' - PARAMS = (); args=None
+(0.000) QUERY = u'UPDATE "auth_user" SET "last_login" = %s WHERE "auth_user"."id" = %s' - PARAMS = (u'2017-11-04 06:46:30.666604', 1); args=(u'2017-11-04 06:46:30.666604', 1)
+(0.000) QUERY = u'BEGIN' - PARAMS = (); args=None
+(0.000) QUERY = u'UPDATE "django_session" SET "session_data" = %s, "expire_date" = %s WHERE "django_session"."session_key" = %s' - PARAMS = (u'YzY5YTY1YTI2ZWI2YTc0NjUxNzE0NjVmOGE4NzU1MTk4ZDI3NDc1Mjp7Il9hdXRoX3VzZXJfaGFzaCI6IjFlNjg5OTFiNGVkMTRkMGViZDk4OTdiZTRjMWZkYTM3MzNiMTcyZTkiLCJfYXV0aF91c2VyX2JhY2tlbmQiOiJkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZCIsIl9hdXRoX3VzZXJfaWQiOiIxIn0=', u'2017-11-18 06:46:30.744600', u'msufsufen0rxllpcaish43ghky15zhll'); args=(u'YzY5YTY1YTI2ZWI2YTc0NjUxNzE0NjVmOGE4NzU1MTk4ZDI3NDc1Mjp7Il9hdXRoX3VzZXJfaGFzaCI6IjFlNjg5OTFiNGVkMTRkMGViZDk4OTdiZTRjMWZkYTM3MzNiMTcyZTkiLCJfYXV0aF91c2VyX2JhY2tlbmQiOiJkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZCIsIl9hdXRoX3VzZXJfaWQiOiIxIn0=', u'2017-11-18 06:46:30.744600', u'msufsufen0rxllpcaish43ghky15zhll')
+(0.000) QUERY = u'INSERT INTO "django_session" ("session_key", "session_data", "expire_date") SELECT %s AS "session_key", %s AS "session_data", %s AS "expire_date"' - PARAMS = (u'msufsufen0rxllpcaish43ghky15zhll', u'YzY5YTY1YTI2ZWI2YTc0NjUxNzE0NjVmOGE4NzU1MTk4ZDI3NDc1Mjp7Il9hdXRoX3VzZXJfaGFzaCI6IjFlNjg5OTFiNGVkMTRkMGViZDk4OTdiZTRjMWZkYTM3MzNiMTcyZTkiLCJfYXV0aF91c2VyX2JhY2tlbmQiOiJkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZCIsIl9hdXRoX3VzZXJfaWQiOiIxIn0=', u'2017-11-18 06:46:30.744600'); args=(u'msufsufen0rxllpcaish43ghky15zhll', u'YzY5YTY1YTI2ZWI2YTc0NjUxNzE0NjVmOGE4NzU1MTk4ZDI3NDc1Mjp7Il9hdXRoX3VzZXJfaGFzaCI6IjFlNjg5OTFiNGVkMTRkMGViZDk4OTdiZTRjMWZkYTM3MzNiMTcyZTkiLCJfYXV0aF91c2VyX2JhY2tlbmQiOiJkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZCIsIl9hdXRoX3VzZXJfaWQiOiIxIn0=', u'2017-11-18 06:46:30.744600')
+(0.000) QUERY = u'SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."session_key" = %s AND "django_session"."expire_date" > %s)' - PARAMS = (u'msufsufen0rxllpcaish43ghky15zhll', u'2017-11-04 06:46:31.124843'); args=('msufsufen0rxllpcaish43ghky15zhll', u'2017-11-04 06:46:31.124843')
+(0.000) QUERY = u'SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = %s' - PARAMS = (1,); args=(1,)
+(2017-11-04 06:46:31) request from 127.0.0.1: /external/
+(0.000) QUERY = u'SELECT (1) AS "a" FROM "auth_group" INNER JOIN "auth_user_groups" ON ( "auth_group"."id" = "auth_user_groups"."group_id" ) WHERE ("auth_user_groups"."user_id" = %s AND "auth_group"."name" = %s) LIMIT 1' - PARAMS = (1, u'Regular'); args=(1, 'Regular')
+(0.000) QUERY = u'SELECT (1) AS "a" FROM "auth_group" INNER JOIN "auth_user_groups" ON ( "auth_group"."id" = "auth_user_groups"."group_id" ) WHERE ("auth_user_groups"."user_id" = %s AND "auth_group"."name" = %s) LIMIT 1' - PARAMS = (1, u'Administrator'); args=(1, 'Administrator')
+(0.000) QUERY = u'SELECT (1) AS "a" FROM "auth_group" INNER JOIN "auth_user_groups" ON ( "auth_group"."id" = "auth_user_groups"."group_id" ) WHERE ("auth_user_groups"."user_id" = %s AND "auth_group"."name" = %s) LIMIT 1' - PARAMS = (1, u'Manager'); args=(1, 'Manager')
+(0.000) QUERY = u'SELECT (1) AS "a" FROM "auth_group" INNER JOIN "auth_user_groups" ON ( "auth_group"."id" = "auth_user_groups"."group_id" ) WHERE ("auth_user_groups"."user_id" = %s AND "auth_group"."name" = %s) LIMIT 1' - PARAMS = (1, u'Ind_user'); args=(1, 'Ind_user')
+(0.000) QUERY = u'SELECT (1) AS "a" FROM "auth_group" INNER JOIN "auth_user_groups" ON ( "auth_group"."id" = "auth_user_groups"."group_id" ) WHERE ("auth_user_groups"."user_id" = %s AND "auth_group"."name" = %s) LIMIT 1' - PARAMS = (1, u'Organization'); args=(1, 'Organization')
+(0.000) QUERY = u'SELECT (1) AS "a" FROM "auth_group" INNER JOIN "auth_user_groups" ON ( "auth_group"."id" = "auth_user_groups"."group_id" ) WHERE ("auth_user_groups"."user_id" = %s AND "auth_group"."name" = %s) LIMIT 1' - PARAMS = (1, u'Ind_user'); args=(1, 'Ind_user')
+(0.000) QUERY = u'SELECT (1) AS "a" FROM "auth_group" INNER JOIN "auth_user_groups" ON ( "auth_group"."id" = "auth_user_groups"."group_id" ) WHERE ("auth_user_groups"."user_id" = %s AND "auth_group"."name" = %s) LIMIT 1' - PARAMS = (1, u'Organization'); args=(1, 'Organization')
+(2017-11-04 06:48:49) request from 127.0.0.1: /
+(0.001) QUERY = u'SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."session_key" = %s AND "django_session"."expire_date" > %s)' - PARAMS = (u'msufsufen0rxllpcaish43ghky15zhll', u'2017-11-04 06:48:51.169182'); args=('msufsufen0rxllpcaish43ghky15zhll', u'2017-11-04 06:48:51.169182')
+(0.000) QUERY = u'SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = %s' - PARAMS = (1,); args=(1,)
+(2017-11-04 06:48:51) request from 127.0.0.1: /external/
+(0.000) QUERY = u'SELECT (1) AS "a" FROM "auth_group" INNER JOIN "auth_user_groups" ON ( "auth_group"."id" = "auth_user_groups"."group_id" ) WHERE ("auth_user_groups"."user_id" = %s AND "auth_group"."name" = %s) LIMIT 1' - PARAMS = (1, u'Regular'); args=(1, 'Regular')
+(0.000) QUERY = u'SELECT (1) AS "a" FROM "auth_group" INNER JOIN "auth_user_groups" ON ( "auth_group"."id" = "auth_user_groups"."group_id" ) WHERE ("auth_user_groups"."user_id" = %s AND "auth_group"."name" = %s) LIMIT 1' - PARAMS = (1, u'Administrator'); args=(1, 'Administrator')
+(0.000) QUERY = u'SELECT (1) AS "a" FROM "auth_group" INNER JOIN "auth_user_groups" ON ( "auth_group"."id" = "auth_user_groups"."group_id" ) WHERE ("auth_user_groups"."user_id" = %s AND "auth_group"."name" = %s) LIMIT 1' - PARAMS = (1, u'Manager'); args=(1, 'Manager')
+(0.000) QUERY = u'SELECT (1) AS "a" FROM "auth_group" INNER JOIN "auth_user_groups" ON ( "auth_group"."id" = "auth_user_groups"."group_id" ) WHERE ("auth_user_groups"."user_id" = %s AND "auth_group"."name" = %s) LIMIT 1' - PARAMS = (1, u'Ind_user'); args=(1, 'Ind_user')
+(0.000) QUERY = u'SELECT (1) AS "a" FROM "auth_group" INNER JOIN "auth_user_groups" ON ( "auth_group"."id" = "auth_user_groups"."group_id" ) WHERE ("auth_user_groups"."user_id" = %s AND "auth_group"."name" = %s) LIMIT 1' - PARAMS = (1, u'Organization'); args=(1, 'Organization')
+(0.000) QUERY = u'SELECT (1) AS "a" FROM "auth_group" INNER JOIN "auth_user_groups" ON ( "auth_group"."id" = "auth_user_groups"."group_id" ) WHERE ("auth_user_groups"."user_id" = %s AND "auth_group"."name" = %s) LIMIT 1' - PARAMS = (1, u'Ind_user'); args=(1, 'Ind_user')
+(0.000) QUERY = u'SELECT (1) AS "a" FROM "auth_group" INNER JOIN "auth_user_groups" ON ( "auth_group"."id" = "auth_user_groups"."group_id" ) WHERE ("auth_user_groups"."user_id" = %s AND "auth_group"."name" = %s) LIMIT 1' - PARAMS = (1, u'Organization'); args=(1, 'Organization')
+(0.002) QUERY = u'SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."username" = %s' - PARAMS = (u'admi',); args=(u'admi',)
+(0.000) QUERY = u'BEGIN' - PARAMS = (); args=None
+(0.000) QUERY = u'UPDATE "auth_user" SET "password" = %s WHERE "auth_user"."id" = %s' - PARAMS = (u'pbkdf2_sha256$20000$2IfITSW0aevE$xl62/FyyfFy2EFqSyq2KFQS2bf94ZeJ3DN/5HD+YMYM=', 2); args=(u'pbkdf2_sha256$20000$2IfITSW0aevE$xl62/FyyfFy2EFqSyq2KFQS2bf94ZeJ3DN/5HD+YMYM=', 2)
+(0.000) QUERY = u'SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."session_key" = %s AND "django_session"."expire_date" > %s)' - PARAMS = (u'msufsufen0rxllpcaish43ghky15zhll', u'2017-11-04 06:48:54.259375'); args=('msufsufen0rxllpcaish43ghky15zhll', u'2017-11-04 06:48:54.259375')
+(0.000) QUERY = u'SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE "django_session"."session_key" = %s' - PARAMS = (u'msufsufen0rxllpcaish43ghky15zhll',); args=('msufsufen0rxllpcaish43ghky15zhll',)
+(0.000) QUERY = u'BEGIN' - PARAMS = (); args=None
+(0.000) QUERY = u'DELETE FROM "django_session" WHERE "django_session"."session_key" IN (%s)' - PARAMS = (u'msufsufen0rxllpcaish43ghky15zhll',); args=(u'msufsufen0rxllpcaish43ghky15zhll',)
+(0.000) QUERY = u'BEGIN' - PARAMS = (); args=None
+(0.000) QUERY = u'UPDATE "auth_user" SET "last_login" = %s WHERE "auth_user"."id" = %s' - PARAMS = (u'2017-11-04 06:48:54.370462', 2); args=(u'2017-11-04 06:48:54.370462', 2)
+(0.000) QUERY = u'SELECT (1) AS "a" FROM "django_session" WHERE "django_session"."session_key" = %s LIMIT 1' - PARAMS = (u'noosi31ob1xkhaehwe0gukqatrw81duv',); args=(u'noosi31ob1xkhaehwe0gukqatrw81duv',)
+(0.000) QUERY = u'BEGIN' - PARAMS = (); args=None
+(0.000) QUERY = u'INSERT INTO "django_session" ("session_key", "session_data", "expire_date") SELECT %s AS "session_key", %s AS "session_data", %s AS "expire_date"' - PARAMS = (u'noosi31ob1xkhaehwe0gukqatrw81duv', u'ZDIzOGNiNDBjYzg2MDhkNzYxOGI5ZDY1OTRkMGNiM2JjMjQ2YzVlNjp7Il9hdXRoX3VzZXJfaGFzaCI6Ijg0MWYxM2NiZmUzN2Y5YjAxMjFmYWEzOWU1MDc1NzMzOGQwNTgzNjQiLCJfYXV0aF91c2VyX2JhY2tlbmQiOiJkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZCIsIl9hdXRoX3VzZXJfaWQiOiIyIn0=', u'2017-11-18 06:48:54.460483'); args=(u'noosi31ob1xkhaehwe0gukqatrw81duv', u'ZDIzOGNiNDBjYzg2MDhkNzYxOGI5ZDY1OTRkMGNiM2JjMjQ2YzVlNjp7Il9hdXRoX3VzZXJfaGFzaCI6Ijg0MWYxM2NiZmUzN2Y5YjAxMjFmYWEzOWU1MDc1NzMzOGQwNTgzNjQiLCJfYXV0aF91c2VyX2JhY2tlbmQiOiJkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZCIsIl9hdXRoX3VzZXJfaWQiOiIyIn0=', u'2017-11-18 06:48:54.460483')
+(0.001) QUERY = u'SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."session_key" = %s AND "django_session"."expire_date" > %s)' - PARAMS = (u'noosi31ob1xkhaehwe0gukqatrw81duv', u'2017-11-04 06:48:54.551990'); args=('noosi31ob1xkhaehwe0gukqatrw81duv', u'2017-11-04 06:48:54.551990')
+(0.000) QUERY = u'SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = %s' - PARAMS = (2,); args=(2,)
+(0.000) QUERY = u'SELECT (1) AS "a" FROM "auth_group" INNER JOIN "auth_user_groups" ON ( "auth_group"."id" = "auth_user_groups"."group_id" ) WHERE ("auth_user_groups"."user_id" = %s AND "auth_group"."name" = %s) LIMIT 1' - PARAMS = (2, u'Regular'); args=(2, 'Regular')
+(0.000) QUERY = u'SELECT (1) AS "a" FROM "auth_group" INNER JOIN "auth_user_groups" ON ( "auth_group"."id" = "auth_user_groups"."group_id" ) WHERE ("auth_user_groups"."user_id" = %s AND "auth_group"."name" = %s) LIMIT 1' - PARAMS = (2, u'Administrator'); args=(2, 'Administrator')
+(0.000) QUERY = u'SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."session_key" = %s AND "django_session"."expire_date" > %s)' - PARAMS = (u'noosi31ob1xkhaehwe0gukqatrw81duv', u'2017-11-04 06:48:54.580456'); args=('noosi31ob1xkhaehwe0gukqatrw81duv', u'2017-11-04 06:48:54.580456')
+(0.000) QUERY = u'SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = %s' - PARAMS = (2,); args=(2,)
+(2017-11-04 06:48:54) request from 127.0.0.1: /administrator/Register/
+(0.000) QUERY = u'SELECT (1) AS "a" FROM "auth_group" INNER JOIN "auth_user_groups" ON ( "auth_group"."id" = "auth_user_groups"."group_id" ) WHERE ("auth_user_groups"."user_id" = %s AND "auth_group"."name" = %s) LIMIT 1' - PARAMS = (2, u'Regular'); args=(2, 'Regular')
+(0.000) QUERY = u'SELECT (1) AS "a" FROM "auth_group" INNER JOIN "auth_user_groups" ON ( "auth_group"."id" = "auth_user_groups"."group_id" ) WHERE ("auth_user_groups"."user_id" = %s AND "auth_group"."name" = %s) LIMIT 1' - PARAMS = (2, u'Administrator'); args=(2, 'Administrator')
+(0.000) QUERY = u'SELECT (1) AS "a" FROM "auth_group" INNER JOIN "auth_user_groups" ON ( "auth_group"."id" = "auth_user_groups"."group_id" ) WHERE ("auth_user_groups"."user_id" = %s AND "auth_group"."name" = %s) LIMIT 1' - PARAMS = (2, u'Administrator'); args=(2, 'Administrator')
+(0.000) QUERY = u'SELECT "vault_registerrequests"."id", "vault_registerrequests"."user_data_id", "vault_registerrequests"."first_name", "vault_registerrequests"."last_name", "vault_registerrequests"."e_mail", "vault_registerrequests"."group", "vault_registerrequests"."type_of_req" FROM "vault_registerrequests" WHERE "vault_registerrequests"."type_of_req" = %s' - PARAMS = (u'Register',); args=(u'Register',)
+(0.001) QUERY = "\n            SELECT name, type FROM sqlite_master\n            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'\n            ORDER BY name" - PARAMS = (); args=None
+(0.000) QUERY = u'SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"' - PARAMS = (); args=()
+Internal Server Error: /administrator/logFile
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/dist-packages/django/core/handlers/base.py", line 108, in get_response
+    response = middleware_method(request)
+  File "/usr/lib/python2.7/dist-packages/django/middleware/common.py", line 74, in process_request
+    if (not urlresolvers.is_valid_path(request.path_info, urlconf) and
+  File "/usr/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 646, in is_valid_path
+    resolve(path, urlconf)
+  File "/usr/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 521, in resolve
+    return get_resolver(urlconf).resolve(path)
+  File "/usr/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 365, in resolve
+    for pattern in self.url_patterns:
+  File "/usr/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 401, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/usr/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 395, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/home/mayank/Sem-5/FCS/Project/eBank/eBank/urls.py", line 20, in <module>
+    url(r'^', include('vault.urls', namespace="vault")),
+  File "/usr/lib/python2.7/dist-packages/django/conf/urls/__init__.py", line 33, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/home/mayank/Sem-5/FCS/Project/eBank/vault/urls.py", line 20
+    url(r'^external/$', views.vaultExternal, name='vaultExternal'),
+      ^
+SyntaxError: invalid syntax
+(0.001) QUERY = u'SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."session_key" = %s AND "django_session"."expire_date" > %s)' - PARAMS = (u'noosi31ob1xkhaehwe0gukqatrw81duv', u'2017-11-04 07:01:08.340737'); args=('noosi31ob1xkhaehwe0gukqatrw81duv', u'2017-11-04 07:01:08.340737')
+(0.000) QUERY = u'SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = %s' - PARAMS = (2,); args=(2,)
+(2017-11-04 07:01:08) request from 127.0.0.1: /administrator/logFile/
+(0.000) QUERY = u'SELECT (1) AS "a" FROM "auth_group" INNER JOIN "auth_user_groups" ON ( "auth_group"."id" = "auth_user_groups"."group_id" ) WHERE ("auth_user_groups"."user_id" = %s AND "auth_group"."name" = %s) LIMIT 1' - PARAMS = (2, u'Regular'); args=(2, 'Regular')
+(0.000) QUERY = u'SELECT (1) AS "a" FROM "auth_group" INNER JOIN "auth_user_groups" ON ( "auth_group"."id" = "auth_user_groups"."group_id" ) WHERE ("auth_user_groups"."user_id" = %s AND "auth_group"."name" = %s) LIMIT 1' - PARAMS = (2, u'Administrator'); args=(2, 'Administrator')
+(0.000) QUERY = u'SELECT (1) AS "a" FROM "auth_group" INNER JOIN "auth_user_groups" ON ( "auth_group"."id" = "auth_user_groups"."group_id" ) WHERE ("auth_user_groups"."user_id" = %s AND "auth_group"."name" = %s) LIMIT 1' - PARAMS = (2, u'Administrator'); args=(2, 'Administrator')
+Not Found: /administrator/logFile/
+(0.001) QUERY = "\n            SELECT name, type FROM sqlite_master\n            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'\n            ORDER BY name" - PARAMS = (); args=None
+(0.000) QUERY = u'SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"' - PARAMS = (); args=()

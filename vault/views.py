@@ -1,4 +1,5 @@
 from django.http import HttpResponse
+from django.db import IntegrityError, transaction
 from django.contrib.auth.models import Group, User
 from django.shortcuts import render, get_object_or_404
 from django.views import generic
@@ -12,11 +13,18 @@ from django.http import Http404
 from itertools import chain
 from django.db.models import Q
 from django.contrib.admin.views.decorators import staff_member_required
+import  logging
+from time import gmtime, strftime
+
+
+logger = logging.getLogger('django')
 def vaultHome(request):
+	genLog(request)
 	context={}
 	return render(request, 'vault/home.html', context)
 
 def vaultRegisterRequest(request):
+	genLog(request)
 	context={}
 	if request.method=='POST':
 		first_name=request.POST['first_name']
@@ -26,13 +34,14 @@ def vaultRegisterRequest(request):
 		type_of_req="Register"
 		r=registerRequests(user_data=None, first_name=first_name, last_name=last_name, e_mail=e_mail, group=group, type_of_req=type_of_req)
 		r.save()
-		return HttpResponse("Request Sent")
+		return HttpResponse("Register request sent: <br> You will receive the details through email")
 
 	return render(request, 'vault/registerRequest.html', context)
 
 
 @login_required(login_url='/login')
 def administrator(request, request_type):
+	genLog(request)
 	group=login_success(request)
 	if not(request.user.groups.filter(name="Administrator").exists()):
 		return group
@@ -54,6 +63,7 @@ def administrator(request, request_type):
 
 @login_required(login_url='/login')
 def generateAccountRequest(request):
+	genLog(request)
 	group=login_success(request)
 	if not (request.user.groups.filter(name="Ind_user").exists() or request.user.groups.filter(name="Organization").exists()):
 		# print(request.user.groups.filter(name="Ind_user").exists())
@@ -68,10 +78,11 @@ def generateAccountRequest(request):
 		group="Organization"
 	r=registerRequests(user_data=request.user, first_name=first_name, last_name=last_name, e_mail=e_mail, group=group, type_of_req=type_of_req)
 	r.save()
-	return redirect('vault:vaultExternal')
+	return  HttpResponse("Account request Sent <br> You will receive the details through email")
 
 @login_required(login_url='/login')
 def generateDeleteRequest(request):
+	genLog(request)
 	group=login_success(request)
 	if not (request.user.groups.filter(name="Ind_user").exists() or request.user.groups.filter(name="Organization").exists()):
 		# print(request.user.groups.filter(name="Ind_user").exists())
@@ -90,6 +101,7 @@ def generateDeleteRequest(request):
 
 @login_required(login_url='/login')
 def requestApprove(request, request_type, request_pk):
+	genLog(request)
 	group=login_success(request)
 	if not(request.user.groups.filter(name="Administrator").exists()):
 		return group
@@ -133,6 +145,7 @@ def requestApprove(request, request_type, request_pk):
 
 @login_required(login_url='/login')
 def requestDisapprove(request,request_type, request_pk):
+	genLog(request)
 	group=login_success(request)
 	if not(request.user.groups.filter(name="Administrator").exists()):
 		return group
@@ -152,6 +165,7 @@ def requestDisapprove(request,request_type, request_pk):
 
 @login_required(login_url='/login')
 def vaultExternal(request):
+	genLog(request)
 	group=login_success(request)
 	if not (request.user.groups.filter(name="Ind_user").exists() or request.user.groups.filter(name="Organization").exists()):
 		# print(request.user.groups.filter(name="Ind_user").exists())
@@ -164,6 +178,7 @@ def vaultExternal(request):
 
 @login_required(login_url='/login')
 def vaultInternal(request):
+	genLog(request)
 	group=login_success(request)
 	if request.user.groups.filter(name="Ind_user").exists() or request.user.groups.filter(name="Organization").exists() or request.user.groups.filter(name="Manager").exists():
 		return group
@@ -176,6 +191,7 @@ def vaultInternal(request):
 
 @login_required(login_url='/login')
 def vaultManager(request):
+	genLog(request)
 	group=login_success(request)
 	if request.user.groups.filter(name="Ind_user").exists() or request.user.groups.filter(name="Organization").exists() or request.user.groups.filter(name="Regular").exists():
 		return group
@@ -188,6 +204,7 @@ def vaultManager(request):
 
 @login_required(login_url='/login')
 def accountInfo(request, account_no_pk):
+	genLog(request)
 	cust_user=user_account.objects.filter(pk=account_no_pk)[0]
 	if request.user!=cust_user.cust_user_id:
 		return login_success(request)
@@ -198,6 +215,7 @@ def accountInfo(request, account_no_pk):
 
 @login_required(login_url='/login')
 def payments(request, account_no_pk):
+	genLog(request)
 	cust_user=user_account.objects.filter(pk=account_no_pk)[0]
 	if request.user!=cust_user.cust_user_id:
 		return login_success(request)
@@ -213,6 +231,7 @@ def payments(request, account_no_pk):
 
 @login_required(login_url='/login')
 def support(request, account_no_pk):
+	genLog(request)
 	cust_user=user_account.objects.filter(pk=account_no_pk)[0]
 	if request.user!=cust_user.cust_user_id:
 		return login_success(request)
@@ -228,6 +247,7 @@ def support(request, account_no_pk):
 
 @login_required(login_url='/login')
 def transferfunds(request, account_no_pk):
+	genLog(request)
 	cust_user=user_account.objects.filter(pk=account_no_pk)[0]
 	if request.user!=cust_user.cust_user_id:
 		return login_success(request)
@@ -260,6 +280,7 @@ def transferfunds(request, account_no_pk):
 
 @login_required(login_url='/login')
 def vaultDebit(request, account_no_pk):
+	genLog(request)
 	cust_user=user_account.objects.filter(pk=account_no_pk)[0]
 	if request.user!=cust_user.cust_user_id:
 		return login_success(request)
@@ -289,6 +310,7 @@ def vaultDebit(request, account_no_pk):
 
 @login_required(login_url='/login')
 def vaultCredit(request, account_no_pk):
+	genLog(request)
 	cust_user=user_account.objects.filter(pk=account_no_pk)[0]
 	if request.user!=cust_user.cust_user_id:
 		return login_success(request)
@@ -313,6 +335,7 @@ def vaultCredit(request, account_no_pk):
 
 @login_required(login_url='/login')
 def vaultDebitOTP(request, account_no_pk):
+	genLog(request)
 	cust_user=user_account.objects.filter(pk=account_no_pk)[0]
 	if request.user!=cust_user.cust_user_id:
 		return login_success(request)
@@ -324,6 +347,7 @@ def vaultDebitOTP(request, account_no_pk):
 
 @login_required(login_url='/login')
 def vaultCreditOTP(request, account_no_pk):
+	genLog(request)
 	cust_user=user_account.objects.filter(pk=account_no_pk)[0]
 	if request.user!=cust_user.cust_user_id:
 		return login_success(request)
@@ -336,6 +360,7 @@ def vaultCreditOTP(request, account_no_pk):
 
 @login_required(login_url='/login')
 def vaultTransferOTP(request, account_no_pk):
+	genLog(request)
 	cust_user=user_account.objects.filter(pk=account_no_pk)[0]
 	if request.user!=cust_user.cust_user_id:
 		return login_success(request)
@@ -349,49 +374,68 @@ def vaultTransferOTP(request, account_no_pk):
 
 @login_required(login_url='/login')
 def vaultTransactionApprove(request, transaction_pk):
+	genLog(request)
 	group=login_success(request)
 	if not (request.user.groups.filter(name="Regular").exists() or request.user.groups.filter(name="Manager").exists()):
 		# print(request.user.groups.filter(name="Ind_user").exists())
 		return group
 
-	transaction=get_object_or_404(cust_transaction, pk=transaction_pk)
-	if(request.user.groups.filter(name="Regular").exists() and abs(transaction.Amount)>10000) or (request.user.groups.filter(name="Manager").exists() and abs(transaction.Amount)<=100000):
+	tr=get_object_or_404(cust_transaction, pk=transaction_pk)
+
+	if(request.user.groups.filter(name="Regular").exists() and abs(tr.Amount)>100000) or (request.user.groups.filter(name="Manager").exists() and abs(tr.Amount)<=100000):
 		return group
-	if(transaction.pending==True):
-		from_account=transaction.from_account
-		to_account=transaction.to_account
-		amount=transaction.Amount
-		date=transaction.transaction_date
+	tr.lock()
+	if(tr.pending==True):
+		from_account=tr.from_account
+		to_account=tr.to_account
+		amount=tr.Amount
+		date=tr.transaction_date
 		if amount>0 and to_account!=from_account and from_account.cust_balance>=amount:
-			to_account.cust_balance=to_account.cust_balance+amount
-			from_account.cust_balance=from_account.cust_balance-amount
-			to_account.save()
-			from_account.save()
-			transaction.pending=False
-			transaction.save()
+			try:
+				with transaction.atomic():
+					to_account.cust_balance=to_account.cust_balance+amount
+					from_account.cust_balance=from_account.cust_balance-amount
+					to_account.save()
+					from_account.save()
+					tr.pending=False
+					tr.save()
+			except ConcurrentModificationError, IntegrityError:
+			        	print('Exception Encountered')
+			finally:
+				tr.unlock()
 			return redirect('vault:vaultInternal')
 		elif to_account==from_account and from_account.cust_balance+amount>=0:
-			from_account.cust_balance=from_account.cust_balance+amount
-			from_account.save()
-			transaction.pending=False
-			transaction.save()
+			try:
+				with transaction.atomic():
+					from_account.cust_balance=from_account.cust_balance+amount
+					from_account.save()
+					tr.pending=False
+					tr.save()
+			except ConcurrentModificationError, IntegrityError:
+			        	print('Exception Encountered')
+			finally:
+				tr.unlock()
+
 			return redirect('vault:vaultInternal')
 		else:
+			tr.unlock()
 			return HttpResponse("Amount Invalid")
 	else:
+		tr.unlock()
 		return HttpResponse("Transaction Tackled")
 
 @login_required(login_url='/login')
 def vaultTransactionDisapprove(request, transaction_pk):
+	genLog(request)
 	group=login_success(request)
 	if not (request.user.groups.filter(name="Regular").exists() or request.user.groups.filter(name="Manager").exists()):
 		# print(request.user.groups.filter(name="Ind_user").exists())
 		return group
-	transaction=get_object_or_404(cust_transaction, pk=transaction_pk)
-	if(request.user.groups.filter(name="Regular").exists() and abs(transaction.Amount)>10000) or (request.user.groups.filter(name="Manager").exists() and abs(transaction.Amount)<=100000):
+	tr=get_object_or_404(cust_transaction, pk=transaction_pk)
+	if(request.user.groups.filter(name="Regular").exists() and abs(tr.Amount)>100000) or (request.user.groups.filter(name="Manager").exists() and abs(tr.Amount)<=100000):
 		return group
-	if transaction.pending==True:
-		transaction.delete()
+	if tr.pending==True:
+		tr.delete()
 
 	return redirect('vault:vaultInternal')
 
@@ -408,3 +452,7 @@ def login_success(request):
 		return redirect('vault:vaultExternal')
 	else:
 		return redirect('/login')
+
+def genLog(request):
+	client_ip = request.META['REMOTE_ADDR']
+	logger.info("("+strftime("%Y-%m-%d %H:%M:%S", gmtime())+") "+"request from "+str(client_ip) + ": "+ request.get_full_path())

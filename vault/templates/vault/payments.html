@@ -20,7 +20,11 @@
                 <tr>
                   <td>{{trans.transaction_date}}</td>
                   <td>{{trans.to_account}}</td>
-                  <td>{{trans.pending}}</td>
+                  {% if trans.pending %}
+                    <td>Pending</td>
+                  {% else %}
+                    <td>Complete</td>
+                  {% endif %}
                   <td>{{trans.Amount}}</td>
                  </tr>
                 {% endfor %}

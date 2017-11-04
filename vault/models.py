@@ -1,6 +1,54 @@
 from django.db import models
 from django.contrib.auth.models import User
 import datetime
+import redis
+
+lock_table = redis.StrictRedis(host='localhost', port=6379)
+class ConcurrentModificationError(ValueError):
+    """Base error class for write concurrency errors"""
+    pass
+
+
+class StaleWriteError(ConcurrentModificationError):
+    """Tried to write a version of a model that is older than the current version in the database"""
+    pass
+
+
+class AlreadyLockedError(ConcurrentModificationError):
+    """Tried to aquire a lock on a row that is already locked"""
+    pass
+
+
+class WriteWithoutLockError(ConcurrentModificationError):
+    """Tried to save a lock-required model row without locking it first"""
+    pass
+
+
+class LockedModel:
+    """Add row-level locking backed by redis, set lock_required=True to require a lock on .save()"""
+
+    lock_required = False  # whether a lock is required to call .save() on this model
+
+    @property
+    def _lock_key(self):
+        model_name = self.__class__.__name__
+        return '{0}__locked:{1}'.format(model_name, self.id)
+
+    def is_locked(self):
+        return lock_table.get(self._lock_key) == b'1'
+
+    def lock(self):
+        if self.is_locked():
+            raise AlreadyLockedError('Tried to lock an already-locked row.')
+        lock_table.set(self._lock_key, b'1')
+
+    def unlock(self):
+        lock_table.set(self._lock_key, b'0')
+
+    def save(self, *args, **kwargs):
+        if self.lock_required and not self.is_locked():
+            raise WriteWithoutLockError('Tried to save a lock-required model row without locking it first')
+        super(LockedModel, self).save(*args, **kwargs)
 
 
 class registerRequests(models.Model):
@@ -45,7 +93,9 @@ class user_account(models.Model):
 		return str(10000000000+self.pk)
 
 
-class cust_transaction(models.Model):
+class cust_transaction(models.Model, LockedModel):
+	lock_required = True
+	
 	transaction_date = models.DateTimeField(auto_now_add=True, blank=True)
 	from_account = models.ForeignKey(user_account, related_name='from_account')
 	to_account = models.ForeignKey(user_account, related_name='to_account')

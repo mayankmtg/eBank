@@ -25,7 +25,7 @@ SECRET_KEY = '_o*%#02ebd&m&vf@ail7pin28s*r4ccnsgk0kcq+hsy8(ktw%)'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', '192.168.60.56']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', '192.168.2.143', ]
 
 
 # Application definition
@@ -88,6 +88,24 @@ DATABASES = {
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
 
 LANGUAGE_CODE = 'en-us'
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'file': {
+            'level': 'DEBUG',
+            'class': 'logging.FileHandler',
+            'filename': './debugfile.log',
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['file'],
+            'level': 'DEBUG',
+            'propagate': True,
+        },
+    },
+}
 
 TIME_ZONE = 'UTC'
 
