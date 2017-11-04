@@ -32,42 +32,4 @@
             </table>
 </div>
 <br><br><br>
-<hr>
-<br><br><br>
-<h3>Transaction Graph</h3>
-<br>
-<center>
-<div class="wrapper" style="max-width: 800px">
-      <canvas id="Chart" width="640" height="360" style="display: block;max-width: 800px;max-height: 340px"></canvas>
-</div>
-</center>
-<script type="text/javascript">
-      var dates=[]
-    {% for  trans in result_trans %}
-      console.log("hello");
-        dates = dates.concat([{{trans.transaction_date}}]);
-    {% endfor %}
-    // For drawing the lines
-    // y-axis
-        var transactions = [];
-    {% for trans in result_trans %}
-        transactions=transactions.concat([{{trans.Amount}}]);
-    {% endfor %}
-    var ctx = document.getElementById("Chart");
-    var myChart = new Chart(ctx, {
-      type: 'line',
-      data: {
-                    labels: dates,
-                    datasets: [
-                                  {
-                                  data: transactions,
-                                  label: "Transactions",
-                                  borderColor: "#3e95cd",
-                                  fill: false
-                                  },
-                    ]
-              }
-    });
-</script>
-<br><br><br>
 {% endblock %}
