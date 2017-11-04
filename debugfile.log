@@ -591,3 +591,935 @@ ConnectionError: Error 111 connecting to localhost:6379. Connection refused.
 (2017-11-04 07:48:42) request from 127.0.0.1: /accounts/2/
 (0.000) QUERY = u'SELECT "vault_user_account"."id", "vault_user_account"."cust_user_id_id", "vault_user_account"."cust_account_type", "vault_user_account"."cust_balance" FROM "vault_user_account" WHERE "vault_user_account"."id" = %s LIMIT 1' - PARAMS = (2,); args=(2,)
 (0.000) QUERY = u'SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = %s' - PARAMS = (4,); args=(4,)
+(0.017) 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name; args=None
+(0.000) SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"; args=()
+(2017-11-04 09:53:14) request from 127.0.0.1: /
+"GET / HTTP/1.1" 200 5228
+"GET /static/vault/css/base.css HTTP/1.1" 200 3859
+"GET /static/vault/css/home.css HTTP/1.1" 200 822
+(2017-11-04 09:53:17) request from 127.0.0.1: /register/
+"GET /register/ HTTP/1.1" 200 3422
+"GET /static/vault/js/registerCheck.js HTTP/1.1" 200 807
+Exception while resolving variable 'name' in template 'unknown'.
+Traceback (most recent call last):
+  File "/home/gurpal/.local/lib/python2.7/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [name] in u'<RegexURLResolver <RegexURLPattern list> (admin:admin) ^admin/>'
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 7196
+(2017-11-04 09:53:54) request from 127.0.0.1: /register/
+(0.000) BEGIN; args=None
+(0.001) INSERT INTO "vault_registerrequests" ("user_data_id", "first_name", "last_name", "e_mail", "group", "type_of_req") VALUES (NULL, 'Gurpal1', 'Singh', '1gurpal2singh@gmail.com', 'Ind_user', 'Register'); args=[None, u'Gurpal1', u'Singh', u'1gurpal2singh@gmail.com', u'Ind_user', 'Register']
+"POST /register/ HTTP/1.1" 200 70
+(2017-11-04 09:59:19) request from 127.0.0.1: /register/
+"GET /register/ HTTP/1.1" 200 3397
+(2017-11-04 09:59:24) request from 127.0.0.1: /register/
+"GET /register/ HTTP/1.1" 200 3397
+"GET /static/vault/js/registerCheck.js HTTP/1.1" 200 969
+(2017-11-04 09:59:55) request from 127.0.0.1: /register/
+"GET /register/ HTTP/1.1" 200 3395
+"GET /static/vault/js/registerCheck.js HTTP/1.1" 304 0
+(2017-11-04 10:07:04) request from 127.0.0.1: /register/
+"GET /register/ HTTP/1.1" 200 3395
+"GET /static/vault/css/base.css HTTP/1.1" 304 0
+"GET /static/vault/js/registerCheck.js HTTP/1.1" 200 949
+(2017-11-04 10:10:30) request from 127.0.0.1: /register/
+"GET /register/ HTTP/1.1" 200 3395
+"GET /static/vault/js/registerCheck.js HTTP/1.1" 200 967
+(2017-11-04 10:10:30) request from 127.0.0.1: /register/
+"GET /register/ HTTP/1.1" 200 3395
+"GET /static/vault/js/registerCheck.js HTTP/1.1" 304 0
+(2017-11-04 10:11:22) request from 127.0.0.1: /register/
+"GET /register/ HTTP/1.1" 200 3395
+"GET /static/vault/js/registerCheck.js HTTP/1.1" 200 967
+(2017-11-04 10:11:31) request from 127.0.0.1: /register/
+(0.000) BEGIN; args=None
+(0.000) INSERT INTO "vault_registerrequests" ("user_data_id", "first_name", "last_name", "e_mail", "group", "type_of_req") VALUES (NULL, 'Gurpal', 'Singh', '1gurpal2singh@gmail.com', 'Ind_user', 'Register'); args=[None, u'Gurpal', u'Singh', u'1gurpal2singh@gmail.com', u'Ind_user', 'Register']
+"POST /register/ HTTP/1.1" 200 70
+(2017-11-04 10:11:46) request from 127.0.0.1: /register/
+"GET /register/ HTTP/1.1" 200 3395
+(2017-11-04 10:11:48) request from 127.0.0.1: /register/
+"GET /register/ HTTP/1.1" 200 3395
+"GET /static/vault/js/registerCheck.js HTTP/1.1" 200 970
+(2017-11-04 10:12:17) request from 127.0.0.1: /register/
+(0.000) BEGIN; args=None
+(0.000) INSERT INTO "vault_registerrequests" ("user_data_id", "first_name", "last_name", "e_mail", "group", "type_of_req") VALUES (NULL, 'Gurpal1', 'Singh', '1gurpal2singh@gmail.com', 'Ind_user', 'Register'); args=[None, u'Gurpal1', u'Singh', u'1gurpal2singh@gmail.com', u'Ind_user', 'Register']
+"POST /register/ HTTP/1.1" 200 70
+(2017-11-04 10:13:51) request from 127.0.0.1: /register/
+"GET /register/ HTTP/1.1" 200 3395
+"GET /static/vault/js/registerCheck.js HTTP/1.1" 304 0
+(2017-11-04 10:14:18) request from 127.0.0.1: /register/
+(0.000) BEGIN; args=None
+(0.001) INSERT INTO "vault_registerrequests" ("user_data_id", "first_name", "last_name", "e_mail", "group", "type_of_req") VALUES (NULL, '<b>mayank</b>', 'SIngh', '1gurpal2singh@gmail.com', 'Ind_user', 'Register'); args=[None, u'<b>mayank</b>', u'SIngh', u'1gurpal2singh@gmail.com', u'Ind_user', 'Register']
+"POST /register/ HTTP/1.1" 200 70
+(2017-11-04 10:14:39) request from 127.0.0.1: /register/
+"GET /register/ HTTP/1.1" 200 3395
+"GET /admin HTTP/1.1" 301 0
+"GET /admin/ HTTP/1.1" 302 0
+"GET /admin/login/?next=/admin/ HTTP/1.1" 200 3156
+"GET /static/vault/css/login.css HTTP/1.1" 404 1670
+(0.001) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."username" = 'mayank'; args=(u'mayank',)
+(0.000) BEGIN; args=None
+(0.000) UPDATE "auth_user" SET "password" = 'pbkdf2_sha256$36000$6FjasUQBQYKe$BScXz3cvpV1tQRfRXzWAbPvN1aZ/231BxOT09w24TyA=' WHERE "auth_user"."id" = 1; args=(u'pbkdf2_sha256$36000$6FjasUQBQYKe$BScXz3cvpV1tQRfRXzWAbPvN1aZ/231BxOT09w24TyA=', 1)
+(0.000) SELECT (1) AS "a" FROM "django_session" WHERE "django_session"."session_key" = 'forgzoo2qurn3k9niimqb9y9cj42qblv' LIMIT 1; args=(u'forgzoo2qurn3k9niimqb9y9cj42qblv',)
+(0.000) BEGIN; args=None
+(0.000) INSERT INTO "django_session" ("session_key", "session_data", "expire_date") SELECT 'forgzoo2qurn3k9niimqb9y9cj42qblv', 'MmZlNjFiMTlkODBjMjk0YzNiMTgxNGM0NzBiZmMwNmI0MjQ2N2RlZjp7fQ==', '2017-11-18 10:14:55.639664'; args=(u'forgzoo2qurn3k9niimqb9y9cj42qblv', u'MmZlNjFiMTlkODBjMjk0YzNiMTgxNGM0NzBiZmMwNmI0MjQ2N2RlZjp7fQ==', u'2017-11-18 10:14:55.639664')
+(0.000) BEGIN; args=None
+(0.000) UPDATE "auth_user" SET "last_login" = '2017-11-04 10:14:55.725419' WHERE "auth_user"."id" = 1; args=(u'2017-11-04 10:14:55.725419', 1)
+(0.000) BEGIN; args=None
+(0.000) UPDATE "django_session" SET "session_data" = 'MTc2NDY3MjgxNzZmMmI3MWVlOGVjNjIwNjRjMjI5OTk4MDkzZDk3Zjp7Il9hdXRoX3VzZXJfaGFzaCI6IjA1ZWZlZjM5ZTM1YzYxMDM1ZGZmYWFjNDdjZmY1NzMxYWM2ZjExZWYiLCJfYXV0aF91c2VyX2JhY2tlbmQiOiJkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZCIsIl9hdXRoX3VzZXJfaWQiOiIxIn0=', "expire_date" = '2017-11-18 10:14:55.782691' WHERE "django_session"."session_key" = 'forgzoo2qurn3k9niimqb9y9cj42qblv'; args=(u'MTc2NDY3MjgxNzZmMmI3MWVlOGVjNjIwNjRjMjI5OTk4MDkzZDk3Zjp7Il9hdXRoX3VzZXJfaGFzaCI6IjA1ZWZlZjM5ZTM1YzYxMDM1ZGZmYWFjNDdjZmY1NzMxYWM2ZjExZWYiLCJfYXV0aF91c2VyX2JhY2tlbmQiOiJkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZCIsIl9hdXRoX3VzZXJfaWQiOiIxIn0=', u'2017-11-18 10:14:55.782691', u'forgzoo2qurn3k9niimqb9y9cj42qblv')
+"POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+(0.001) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."session_key" = 'forgzoo2qurn3k9niimqb9y9cj42qblv' AND "django_session"."expire_date" > '2017-11-04 10:14:55.856746'); args=('forgzoo2qurn3k9niimqb9y9cj42qblv', u'2017-11-04 10:14:55.856746')
+(0.000) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1; args=(1,)
+Exception while resolving variable 'is_popup' in template 'admin/index.html'.
+Traceback (most recent call last):
+  File "/home/gurpal/.local/lib/python2.7/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [is_popup] in u"[{'False': False, 'None': None, 'True': True}, {u'csrf_token': <SimpleLazyObject: <function _get_val at 0x7f12a003fd70>>, 'user': <SimpleLazyObject: <User: mayank>>, 'perms': <django.contrib.auth.context_processors.PermWrapper object at 0x7f129ada84d0>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'WARNING': 30, 'SUCCESS': 25, 'ERROR': 40}, 'messages': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x7f12a0013bd0>, u'request': <WSGIRequest: GET '/admin/'>}, {}, {'site_header': u'Django administration', 'available_apps': [{'app_url': u'/admin/auth/', 'models': [{'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/auth/group/', 'object_name': 'Group', 'name': u'Groups', 'add_url': u'/admin/auth/group/add/'}, {'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/auth/user/', 'object_name': 'User', 'name': u'Users', 'add_url': u'/admin/auth/user/add/'}], 'has_module_perms': True, 'name': u'Authentication and Authorization', 'app_label': 'auth'}, {'app_url': u'/admin/vault/', 'models': [{'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/vault/cust_transaction/', 'object_name': 'cust_transaction', 'name': u'Cust_transactions', 'add_url': u'/admin/vault/cust_transaction/add/'}, {'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/vault/registerrequests/', 'object_name': 'registerRequests', 'name': u'Register requestss', 'add_url': u'/admin/vault/registerrequests/add/'}, {'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/vault/user_account/', 'object_name': 'user_account', 'name': u'User_accounts', 'add_url': u'/admin/vault/user_account/add/'}, {'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/vault/user_info/', 'object_name': 'user_info', 'name': u'User_infos', 'add_url': u'/admin/vault/user_info/add/'}, {'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/vault/user_type/', 'object_name': 'user_type', 'name': u'User_types', 'add_url': u'/admin/vault/user_type/add/'}], 'has_module_perms': True, 'name': 'Vault', 'app_label': 'vault'}], 'site_title': u'Django site admin', 'title': u'Site administration', 'has_permission': True, 'app_list': [{'app_url': u'/admin/auth/', 'models': [{'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/auth/group/', 'object_name': 'Group', 'name': u'Groups', 'add_url': u'/admin/auth/group/add/'}, {'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/auth/user/', 'object_name': 'User', 'name': u'Users', 'add_url': u'/admin/auth/user/add/'}], 'has_module_perms': True, 'name': u'Authentication and Authorization', 'app_label': 'auth'}, {'app_url': u'/admin/vault/', 'models': [{'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/vault/cust_transaction/', 'object_name': 'cust_transaction', 'name': u'Cust_transactions', 'add_url': u'/admin/vault/cust_transaction/add/'}, {'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/vault/registerrequests/', 'object_name': 'registerRequests', 'name': u'Register requestss', 'add_url': u'/admin/vault/registerrequests/add/'}, {'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/vault/user_account/', 'object_name': 'user_account', 'name': u'User_accounts', 'add_url': u'/admin/vault/user_account/add/'}, {'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/vault/user_info/', 'object_name': 'user_info', 'name': u'User_infos', 'add_url': u'/admin/vault/user_info/add/'}, {'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/vault/user_type/', 'object_name': 'user_type', 'name': u'User_types', 'add_url': u'/admin/vault/user_type/add/'}], 'has_module_perms': True, 'name': 'Vault', 'app_label': 'vault'}], u'LANGUAGE_CODE': 'en-us', u'LANGUAGE_BIDI': False, 'site_url': '/'}]"
+Exception while resolving variable 'is_popup' in template 'admin/index.html'.
+Traceback (most recent call last):
+  File "/home/gurpal/.local/lib/python2.7/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [is_popup] in u"[{'False': False, 'None': None, 'True': True}, {u'csrf_token': <SimpleLazyObject: <function _get_val at 0x7f12a003fd70>>, 'user': <SimpleLazyObject: <User: mayank>>, 'perms': <django.contrib.auth.context_processors.PermWrapper object at 0x7f129ada84d0>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'WARNING': 30, 'SUCCESS': 25, 'ERROR': 40}, 'messages': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x7f12a0013bd0>, u'request': <WSGIRequest: GET '/admin/'>}, {}, {'site_header': u'Django administration', 'available_apps': [{'app_url': u'/admin/auth/', 'models': [{'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/auth/group/', 'object_name': 'Group', 'name': u'Groups', 'add_url': u'/admin/auth/group/add/'}, {'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/auth/user/', 'object_name': 'User', 'name': u'Users', 'add_url': u'/admin/auth/user/add/'}], 'has_module_perms': True, 'name': u'Authentication and Authorization', 'app_label': 'auth'}, {'app_url': u'/admin/vault/', 'models': [{'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/vault/cust_transaction/', 'object_name': 'cust_transaction', 'name': u'Cust_transactions', 'add_url': u'/admin/vault/cust_transaction/add/'}, {'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/vault/registerrequests/', 'object_name': 'registerRequests', 'name': u'Register requestss', 'add_url': u'/admin/vault/registerrequests/add/'}, {'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/vault/user_account/', 'object_name': 'user_account', 'name': u'User_accounts', 'add_url': u'/admin/vault/user_account/add/'}, {'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/vault/user_info/', 'object_name': 'user_info', 'name': u'User_infos', 'add_url': u'/admin/vault/user_info/add/'}, {'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/vault/user_type/', 'object_name': 'user_type', 'name': u'User_types', 'add_url': u'/admin/vault/user_type/add/'}], 'has_module_perms': True, 'name': 'Vault', 'app_label': 'vault'}], 'site_title': u'Django site admin', 'title': u'Site administration', 'has_permission': True, 'app_list': [{'app_url': u'/admin/auth/', 'models': [{'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/auth/group/', 'object_name': 'Group', 'name': u'Groups', 'add_url': u'/admin/auth/group/add/'}, {'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/auth/user/', 'object_name': 'User', 'name': u'Users', 'add_url': u'/admin/auth/user/add/'}], 'has_module_perms': True, 'name': u'Authentication and Authorization', 'app_label': 'auth'}, {'app_url': u'/admin/vault/', 'models': [{'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/vault/cust_transaction/', 'object_name': 'cust_transaction', 'name': u'Cust_transactions', 'add_url': u'/admin/vault/cust_transaction/add/'}, {'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/vault/registerrequests/', 'object_name': 'registerRequests', 'name': u'Register requestss', 'add_url': u'/admin/vault/registerrequests/add/'}, {'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/vault/user_account/', 'object_name': 'user_account', 'name': u'User_accounts', 'add_url': u'/admin/vault/user_account/add/'}, {'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/vault/user_info/', 'object_name': 'user_info', 'name': u'User_infos', 'add_url': u'/admin/vault/user_info/add/'}, {'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/vault/user_type/', 'object_name': 'user_type', 'name': u'User_types', 'add_url': u'/admin/vault/user_type/add/'}], 'has_module_perms': True, 'name': 'Vault', 'app_label': 'vault'}], u'LANGUAGE_CODE': 'en-us', u'LANGUAGE_BIDI': False, 'site_url': '/'}]"
+(0.000) SELECT "django_admin_log"."id", "django_admin_log"."action_time", "django_admin_log"."user_id", "django_admin_log"."content_type_id", "django_admin_log"."object_id", "django_admin_log"."object_repr", "django_admin_log"."action_flag", "django_admin_log"."change_message", "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined", "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_admin_log" INNER JOIN "auth_user" ON ("django_admin_log"."user_id" = "auth_user"."id") LEFT OUTER JOIN "django_content_type" ON ("django_admin_log"."content_type_id" = "django_content_type"."id") WHERE "django_admin_log"."user_id" = 1 ORDER BY "django_admin_log"."action_time" DESC LIMIT 10; args=(1,)
+"GET /admin/ HTTP/1.1" 200 7182
+"GET /static/admin/css/dashboard.css HTTP/1.1" 200 412
+"GET /static/admin/css/base.css HTTP/1.1" 200 16066
+"GET /static/admin/css/fonts.css HTTP/1.1" 200 423
+"GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+"GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+"GET /static/admin/fonts/Roboto-Regular-webfont.woff HTTP/1.1" 200 80304
+"GET /static/admin/fonts/Roboto-Light-webfont.woff HTTP/1.1" 200 81348
+"GET /static/admin/fonts/Roboto-Bold-webfont.woff HTTP/1.1" 200 82564
+(0.001) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."session_key" = 'forgzoo2qurn3k9niimqb9y9cj42qblv' AND "django_session"."expire_date" > '2017-11-04 10:15:01.288125'); args=('forgzoo2qurn3k9niimqb9y9cj42qblv', u'2017-11-04 10:15:01.288125')
+(0.000) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1; args=(1,)
+(0.000) SELECT COUNT(*) AS "__count" FROM "vault_registerrequests"; args=()
+(0.000) SELECT COUNT(*) AS "__count" FROM "vault_registerrequests"; args=()
+(0.000) SELECT "vault_registerrequests"."id", "vault_registerrequests"."user_data_id", "vault_registerrequests"."first_name", "vault_registerrequests"."last_name", "vault_registerrequests"."e_mail", "vault_registerrequests"."group", "vault_registerrequests"."type_of_req" FROM "vault_registerrequests" ORDER BY "vault_registerrequests"."id" DESC; args=()
+Exception while resolving variable 'errors' in template 'admin/change_list.html'.
+Traceback (most recent call last):
+  File "/home/gurpal/.local/lib/python2.7/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [errors] in u'None'
+Exception while resolving variable 'show' in template 'admin/change_list.html'.
+Traceback (most recent call last):
+  File "/home/gurpal/.local/lib/python2.7/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [show] in u"[{'False': False, 'None': None, 'True': True, 'csrf_token': <SimpleLazyObject: <function _get_val at 0x7f129adbde60>>}]"
+Exception while resolving variable 'is_multipart' in template 'admin/change_list.html'.
+Traceback (most recent call last):
+  File "/home/gurpal/.local/lib/python2.7/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [is_multipart] in u'None'
+Exception while resolving variable 'non_field_errors' in template 'admin/change_list.html'.
+Traceback (most recent call last):
+  File "/home/gurpal/.local/lib/python2.7/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [non_field_errors] in u'None'
+Exception while resolving variable 'non_field_errors' in template 'admin/change_list.html'.
+Traceback (most recent call last):
+  File "/home/gurpal/.local/lib/python2.7/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [non_field_errors] in u'None'
+Exception while resolving variable 'non_field_errors' in template 'admin/change_list.html'.
+Traceback (most recent call last):
+  File "/home/gurpal/.local/lib/python2.7/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [non_field_errors] in u'None'
+Exception while resolving variable 'non_field_errors' in template 'admin/change_list.html'.
+Traceback (most recent call last):
+  File "/home/gurpal/.local/lib/python2.7/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [non_field_errors] in u'None'
+Exception while resolving variable 'non_field_errors' in template 'admin/change_list.html'.
+Traceback (most recent call last):
+  File "/home/gurpal/.local/lib/python2.7/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [non_field_errors] in u'None'
+Exception while resolving variable 'non_field_errors' in template 'admin/change_list.html'.
+Traceback (most recent call last):
+  File "/home/gurpal/.local/lib/python2.7/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [non_field_errors] in u'None'
+Exception while resolving variable 'non_field_errors' in template 'admin/change_list.html'.
+Traceback (most recent call last):
+  File "/home/gurpal/.local/lib/python2.7/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [non_field_errors] in u'None'
+Exception while resolving variable 'non_field_errors' in template 'admin/change_list.html'.
+Traceback (most recent call last):
+  File "/home/gurpal/.local/lib/python2.7/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [non_field_errors] in u'None'
+Exception while resolving variable 'non_field_errors' in template 'admin/change_list.html'.
+Traceback (most recent call last):
+  File "/home/gurpal/.local/lib/python2.7/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [non_field_errors] in u'None'
+Exception while resolving variable 'non_field_errors' in template 'admin/change_list.html'.
+Traceback (most recent call last):
+  File "/home/gurpal/.local/lib/python2.7/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [non_field_errors] in u'None'
+Exception while resolving variable 'non_field_errors' in template 'admin/change_list.html'.
+Traceback (most recent call last):
+  File "/home/gurpal/.local/lib/python2.7/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [non_field_errors] in u'None'
+"GET /admin/vault/registerrequests/ HTTP/1.1" 200 6658
+(0.001) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."session_key" = 'forgzoo2qurn3k9niimqb9y9cj42qblv' AND "django_session"."expire_date" > '2017-11-04 10:15:01.361772'); args=('forgzoo2qurn3k9niimqb9y9cj42qblv', u'2017-11-04 10:15:01.361772')
+(0.000) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1; args=(1,)
+"GET /static/admin/js/core.js HTTP/1.1" 200 7976
+"GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 6591
+"GET /static/admin/js/jquery.init.js HTTP/1.1" 200 363
+"GET /static/admin/css/changelists.css HTTP/1.1" 200 6170
+"GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 258648
+"GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 128820
+"GET /static/admin/js/urlify.js HTTP/1.1" 200 8186
+"GET /static/admin/js/actions.js HTTP/1.1" 200 6501
+"GET /admin/jsi18n/ HTTP/1.1" 200 3217
+"GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1538
+"GET /static/admin/img/tooltag-add.svg HTTP/1.1" 200 331
+(0.001) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."session_key" = 'forgzoo2qurn3k9niimqb9y9cj42qblv' AND "django_session"."expire_date" > '2017-11-04 10:15:04.212617'); args=('forgzoo2qurn3k9niimqb9y9cj42qblv', u'2017-11-04 10:15:04.212617')
+(0.000) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1; args=(1,)
+(0.000) BEGIN; args=None
+(0.000) SELECT "vault_registerrequests"."id", "vault_registerrequests"."user_data_id", "vault_registerrequests"."first_name", "vault_registerrequests"."last_name", "vault_registerrequests"."e_mail", "vault_registerrequests"."group", "vault_registerrequests"."type_of_req" FROM "vault_registerrequests" WHERE "vault_registerrequests"."id" = 26; args=(26,)
+(0.000) SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE ("django_content_type"."model" = 'registerrequests' AND "django_content_type"."app_label" = 'vault'); args=('registerrequests', 'vault')
+(0.000) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" ORDER BY "auth_user"."username" ASC; args=()
+Exception while resolving variable 'can_delete_related' in template 'admin/widgets/related_widget_wrapper.html'.
+Traceback (most recent call last):
+  File "/home/gurpal/.local/lib/python2.7/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [can_delete_related] in u'[{\'False\': False, \'None\': None, \'True\': True}, {u\'url_params\': u\'_to_field=id&_popup=1\', \'add_related_url\': u\'/admin/auth/user/add/\', u\'name\': \'user_data\', \'can_change_related\': True, \'can_add_related\': True, u\'model\': u\'user\', \'change_related_template_url\': u\'/admin/auth/user/__fk__/change/\', u\'rendered_widget\': u\'<select name="user_data" required id="id_user_data">\\n  <option value="" selected>---------</option>\\n\\n  <option value="6">AK10</option>\\n\\n  <option value="3">aa1</option>\\n\\n  <option value="2">admi</option>\\n\\n  <option value="9">eM18</option>\\n\\n  <option value="5">ee9</option>\\n\\n  <option value="10">hh22</option>\\n\\n  <option value="4">jj3</option>\\n\\n  <option value="1">mayank</option>\\n\\n  <option value="8">tt16</option>\\n\\n</select>\'}, {\'block\': <Block Node: links. Contents: [<TextNode: u\'\\n        \'>, <django.template.defaulttags.SpacelessNode object at 0x7f129a4ab410>, <TextNode: u\'\\n    \'>]>}]'
+"GET /admin/vault/registerrequests/26/change/ HTTP/1.1" 200 7667
+(0.000) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."session_key" = 'forgzoo2qurn3k9niimqb9y9cj42qblv' AND "django_session"."expire_date" > '2017-11-04 10:15:04.311504'); args=('forgzoo2qurn3k9niimqb9y9cj42qblv', u'2017-11-04 10:15:04.311504')
+(0.000) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1; args=(1,)
+"GET /admin/jsi18n/ HTTP/1.1" 200 3217
+"GET /static/admin/css/forms.css HTTP/1.1" 200 8173
+"GET /static/admin/js/change_form.js HTTP/1.1" 200 712
+"GET /static/admin/js/prepopulate_init.js HTTP/1.1" 200 495
+"GET /static/admin/css/widgets.css HTTP/1.1" 200 10340
+(0.000) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."session_key" = 'forgzoo2qurn3k9niimqb9y9cj42qblv' AND "django_session"."expire_date" > '2017-11-04 10:15:11.147103'); args=('forgzoo2qurn3k9niimqb9y9cj42qblv', u'2017-11-04 10:15:11.147103')
+(0.000) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1; args=(1,)
+Exception while resolving variable 'is_popup' in template 'admin/index.html'.
+Traceback (most recent call last):
+  File "/home/gurpal/.local/lib/python2.7/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [is_popup] in u"[{'False': False, 'None': None, 'True': True}, {u'csrf_token': <SimpleLazyObject: <function _get_val at 0x7f129adbded8>>, 'user': <SimpleLazyObject: <User: mayank>>, 'perms': <django.contrib.auth.context_processors.PermWrapper object at 0x7f129ad10b10>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'WARNING': 30, 'SUCCESS': 25, 'ERROR': 40}, 'messages': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x7f129ada86d0>, u'request': <WSGIRequest: GET '/admin/'>}, {}, {'site_header': u'Django administration', 'available_apps': [{'app_url': u'/admin/auth/', 'models': [{'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/auth/group/', 'object_name': 'Group', 'name': u'Groups', 'add_url': u'/admin/auth/group/add/'}, {'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/auth/user/', 'object_name': 'User', 'name': u'Users', 'add_url': u'/admin/auth/user/add/'}], 'has_module_perms': True, 'name': u'Authentication and Authorization', 'app_label': 'auth'}, {'app_url': u'/admin/vault/', 'models': [{'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/vault/cust_transaction/', 'object_name': 'cust_transaction', 'name': u'Cust_transactions', 'add_url': u'/admin/vault/cust_transaction/add/'}, {'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/vault/registerrequests/', 'object_name': 'registerRequests', 'name': u'Register requestss', 'add_url': u'/admin/vault/registerrequests/add/'}, {'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/vault/user_account/', 'object_name': 'user_account', 'name': u'User_accounts', 'add_url': u'/admin/vault/user_account/add/'}, {'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/vault/user_info/', 'object_name': 'user_info', 'name': u'User_infos', 'add_url': u'/admin/vault/user_info/add/'}, {'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/vault/user_type/', 'object_name': 'user_type', 'name': u'User_types', 'add_url': u'/admin/vault/user_type/add/'}], 'has_module_perms': True, 'name': 'Vault', 'app_label': 'vault'}], 'site_title': u'Django site admin', 'title': u'Site administration', 'has_permission': True, 'app_list': [{'app_url': u'/admin/auth/', 'models': [{'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/auth/group/', 'object_name': 'Group', 'name': u'Groups', 'add_url': u'/admin/auth/group/add/'}, {'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/auth/user/', 'object_name': 'User', 'name': u'Users', 'add_url': u'/admin/auth/user/add/'}], 'has_module_perms': True, 'name': u'Authentication and Authorization', 'app_label': 'auth'}, {'app_url': u'/admin/vault/', 'models': [{'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/vault/cust_transaction/', 'object_name': 'cust_transaction', 'name': u'Cust_transactions', 'add_url': u'/admin/vault/cust_transaction/add/'}, {'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/vault/registerrequests/', 'object_name': 'registerRequests', 'name': u'Register requestss', 'add_url': u'/admin/vault/registerrequests/add/'}, {'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/vault/user_account/', 'object_name': 'user_account', 'name': u'User_accounts', 'add_url': u'/admin/vault/user_account/add/'}, {'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/vault/user_info/', 'object_name': 'user_info', 'name': u'User_infos', 'add_url': u'/admin/vault/user_info/add/'}, {'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/vault/user_type/', 'object_name': 'user_type', 'name': u'User_types', 'add_url': u'/admin/vault/user_type/add/'}], 'has_module_perms': True, 'name': 'Vault', 'app_label': 'vault'}], u'LANGUAGE_CODE': 'en-us', u'LANGUAGE_BIDI': False, 'site_url': '/'}]"
+Exception while resolving variable 'is_popup' in template 'admin/index.html'.
+Traceback (most recent call last):
+  File "/home/gurpal/.local/lib/python2.7/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [is_popup] in u"[{'False': False, 'None': None, 'True': True}, {u'csrf_token': <SimpleLazyObject: <function _get_val at 0x7f129adbded8>>, 'user': <SimpleLazyObject: <User: mayank>>, 'perms': <django.contrib.auth.context_processors.PermWrapper object at 0x7f129ad10b10>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'WARNING': 30, 'SUCCESS': 25, 'ERROR': 40}, 'messages': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x7f129ada86d0>, u'request': <WSGIRequest: GET '/admin/'>}, {}, {'site_header': u'Django administration', 'available_apps': [{'app_url': u'/admin/auth/', 'models': [{'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/auth/group/', 'object_name': 'Group', 'name': u'Groups', 'add_url': u'/admin/auth/group/add/'}, {'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/auth/user/', 'object_name': 'User', 'name': u'Users', 'add_url': u'/admin/auth/user/add/'}], 'has_module_perms': True, 'name': u'Authentication and Authorization', 'app_label': 'auth'}, {'app_url': u'/admin/vault/', 'models': [{'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/vault/cust_transaction/', 'object_name': 'cust_transaction', 'name': u'Cust_transactions', 'add_url': u'/admin/vault/cust_transaction/add/'}, {'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/vault/registerrequests/', 'object_name': 'registerRequests', 'name': u'Register requestss', 'add_url': u'/admin/vault/registerrequests/add/'}, {'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/vault/user_account/', 'object_name': 'user_account', 'name': u'User_accounts', 'add_url': u'/admin/vault/user_account/add/'}, {'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/vault/user_info/', 'object_name': 'user_info', 'name': u'User_infos', 'add_url': u'/admin/vault/user_info/add/'}, {'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/vault/user_type/', 'object_name': 'user_type', 'name': u'User_types', 'add_url': u'/admin/vault/user_type/add/'}], 'has_module_perms': True, 'name': 'Vault', 'app_label': 'vault'}], 'site_title': u'Django site admin', 'title': u'Site administration', 'has_permission': True, 'app_list': [{'app_url': u'/admin/auth/', 'models': [{'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/auth/group/', 'object_name': 'Group', 'name': u'Groups', 'add_url': u'/admin/auth/group/add/'}, {'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/auth/user/', 'object_name': 'User', 'name': u'Users', 'add_url': u'/admin/auth/user/add/'}], 'has_module_perms': True, 'name': u'Authentication and Authorization', 'app_label': 'auth'}, {'app_url': u'/admin/vault/', 'models': [{'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/vault/cust_transaction/', 'object_name': 'cust_transaction', 'name': u'Cust_transactions', 'add_url': u'/admin/vault/cust_transaction/add/'}, {'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/vault/registerrequests/', 'object_name': 'registerRequests', 'name': u'Register requestss', 'add_url': u'/admin/vault/registerrequests/add/'}, {'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/vault/user_account/', 'object_name': 'user_account', 'name': u'User_accounts', 'add_url': u'/admin/vault/user_account/add/'}, {'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/vault/user_info/', 'object_name': 'user_info', 'name': u'User_infos', 'add_url': u'/admin/vault/user_info/add/'}, {'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/vault/user_type/', 'object_name': 'user_type', 'name': u'User_types', 'add_url': u'/admin/vault/user_type/add/'}], 'has_module_perms': True, 'name': 'Vault', 'app_label': 'vault'}], u'LANGUAGE_CODE': 'en-us', u'LANGUAGE_BIDI': False, 'site_url': '/'}]"
+(0.000) SELECT "django_admin_log"."id", "django_admin_log"."action_time", "django_admin_log"."user_id", "django_admin_log"."content_type_id", "django_admin_log"."object_id", "django_admin_log"."object_repr", "django_admin_log"."action_flag", "django_admin_log"."change_message", "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined", "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_admin_log" INNER JOIN "auth_user" ON ("django_admin_log"."user_id" = "auth_user"."id") LEFT OUTER JOIN "django_content_type" ON ("django_admin_log"."content_type_id" = "django_content_type"."id") WHERE "django_admin_log"."user_id" = 1 ORDER BY "django_admin_log"."action_time" DESC LIMIT 10; args=(1,)
+"GET /admin/ HTTP/1.1" 200 7182
+(0.000) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."session_key" = 'forgzoo2qurn3k9niimqb9y9cj42qblv' AND "django_session"."expire_date" > '2017-11-04 10:16:18.415364'); args=('forgzoo2qurn3k9niimqb9y9cj42qblv', u'2017-11-04 10:16:18.415364')
+(0.000) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1; args=(1,)
+(0.000) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE "django_session"."session_key" = 'forgzoo2qurn3k9niimqb9y9cj42qblv'; args=('forgzoo2qurn3k9niimqb9y9cj42qblv',)
+(0.000) BEGIN; args=None
+(0.000) DELETE FROM "django_session" WHERE "django_session"."session_key" IN ('forgzoo2qurn3k9niimqb9y9cj42qblv'); args=(u'forgzoo2qurn3k9niimqb9y9cj42qblv',)
+Exception while resolving variable 'is_popup' in template 'registration/logged_out.html'.
+Traceback (most recent call last):
+  File "/home/gurpal/.local/lib/python2.7/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [is_popup] in u"[{'False': False, 'None': None, 'True': True}, {u'csrf_token': <SimpleLazyObject: <function _get_val at 0x7f12a00589b0>>, 'user': <django.contrib.auth.models.AnonymousUser object at 0x7f129ad2fc50>, 'perms': <django.contrib.auth.context_processors.PermWrapper object at 0x7f129a4af450>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'WARNING': 30, 'SUCCESS': 25, 'ERROR': 40}, 'messages': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x7f129ad2f650>, u'request': <WSGIRequest: GET '/admin/logout/'>}, {}, {'available_apps': [{'app_url': u'/admin/auth/', 'models': [{'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/auth/group/', 'object_name': 'Group', 'name': u'Groups', 'add_url': u'/admin/auth/group/add/'}, {'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/auth/user/', 'object_name': 'User', 'name': u'Users', 'add_url': u'/admin/auth/user/add/'}], 'has_module_perms': True, 'name': u'Authentication and Authorization', 'app_label': 'auth'}, {'app_url': u'/admin/vault/', 'models': [{'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/vault/cust_transaction/', 'object_name': 'cust_transaction', 'name': u'Cust_transactions', 'add_url': u'/admin/vault/cust_transaction/add/'}, {'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/vault/registerrequests/', 'object_name': 'registerRequests', 'name': u'Register requestss', 'add_url': u'/admin/vault/registerrequests/add/'}, {'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/vault/user_account/', 'object_name': 'user_account', 'name': u'User_accounts', 'add_url': u'/admin/vault/user_account/add/'}, {'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/vault/user_info/', 'object_name': 'user_info', 'name': u'User_infos', 'add_url': u'/admin/vault/user_info/add/'}, {'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/vault/user_type/', 'object_name': 'user_type', 'name': u'User_types', 'add_url': u'/admin/vault/user_type/add/'}], 'has_module_perms': True, 'name': 'Vault', 'app_label': 'vault'}], 'site_name': '127.0.0.1:8000', 'title': u'Logged out', 'site_header': u'Django administration', 'site': <django.contrib.sites.requests.RequestSite object at 0x7f129ad2f710>, 'site_url': '/', 'site_title': u'Django site admin', u'LANGUAGE_CODE': 'en-us', 'has_permission': False, u'LANGUAGE_BIDI': False, u'view': <django.contrib.auth.views.LogoutView object at 0x7f129ad2fe50>}]"
+Exception while resolving variable 'is_popup' in template 'registration/logged_out.html'.
+Traceback (most recent call last):
+  File "/home/gurpal/.local/lib/python2.7/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [is_popup] in u"[{'False': False, 'None': None, 'True': True}, {u'csrf_token': <SimpleLazyObject: <function _get_val at 0x7f12a00589b0>>, 'user': <django.contrib.auth.models.AnonymousUser object at 0x7f129ad2fc50>, 'perms': <django.contrib.auth.context_processors.PermWrapper object at 0x7f129a4af450>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'WARNING': 30, 'SUCCESS': 25, 'ERROR': 40}, 'messages': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x7f129ad2f650>, u'request': <WSGIRequest: GET '/admin/logout/'>}, {}, {'available_apps': [{'app_url': u'/admin/auth/', 'models': [{'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/auth/group/', 'object_name': 'Group', 'name': u'Groups', 'add_url': u'/admin/auth/group/add/'}, {'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/auth/user/', 'object_name': 'User', 'name': u'Users', 'add_url': u'/admin/auth/user/add/'}], 'has_module_perms': True, 'name': u'Authentication and Authorization', 'app_label': 'auth'}, {'app_url': u'/admin/vault/', 'models': [{'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/vault/cust_transaction/', 'object_name': 'cust_transaction', 'name': u'Cust_transactions', 'add_url': u'/admin/vault/cust_transaction/add/'}, {'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/vault/registerrequests/', 'object_name': 'registerRequests', 'name': u'Register requestss', 'add_url': u'/admin/vault/registerrequests/add/'}, {'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/vault/user_account/', 'object_name': 'user_account', 'name': u'User_accounts', 'add_url': u'/admin/vault/user_account/add/'}, {'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/vault/user_info/', 'object_name': 'user_info', 'name': u'User_infos', 'add_url': u'/admin/vault/user_info/add/'}, {'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/vault/user_type/', 'object_name': 'user_type', 'name': u'User_types', 'add_url': u'/admin/vault/user_type/add/'}], 'has_module_perms': True, 'name': 'Vault', 'app_label': 'vault'}], 'site_name': '127.0.0.1:8000', 'title': u'Logged out', 'site_header': u'Django administration', 'site': <django.contrib.sites.requests.RequestSite object at 0x7f129ad2f710>, 'site_url': '/', 'site_title': u'Django site admin', u'LANGUAGE_CODE': 'en-us', 'has_permission': False, u'LANGUAGE_BIDI': False, u'view': <django.contrib.auth.views.LogoutView object at 0x7f129ad2fe50>}]"
+"GET /admin/logout/ HTTP/1.1" 200 1010
+(2017-11-04 10:16:23) request from 127.0.0.1: /register/
+"GET /register/ HTTP/1.1" 200 3395
+"GET /static/vault/js/registerCheck.js HTTP/1.1" 200 1480
+(2017-11-04 10:16:45) request from 127.0.0.1: /register/
+(0.000) BEGIN; args=None
+(0.001) INSERT INTO "vault_registerrequests" ("user_data_id", "first_name", "last_name", "e_mail", "group", "type_of_req") VALUES (NULL, '<b>mayank</b>', 'Singh', '1gurpal2singh@gmail.com', 'Ind_user', 'Register'); args=[None, u'<b>mayank</b>', u'Singh', u'1gurpal2singh@gmail.com', u'Ind_user', 'Register']
+"POST /register/ HTTP/1.1" 200 70
+"GET /admin/ HTTP/1.1" 302 0
+"GET /admin/login/?next=/admin/ HTTP/1.1" 200 3156
+"GET /static/vault/css/login.css HTTP/1.1" 404 1670
+(0.000) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."username" = 'mayank'; args=(u'mayank',)
+(0.000) SELECT (1) AS "a" FROM "django_session" WHERE "django_session"."session_key" = 'a6ydt15svi07n7msy90syvk6v6j21bos' LIMIT 1; args=(u'a6ydt15svi07n7msy90syvk6v6j21bos',)
+(0.000) BEGIN; args=None
+(0.000) INSERT INTO "django_session" ("session_key", "session_data", "expire_date") SELECT 'a6ydt15svi07n7msy90syvk6v6j21bos', 'MmZlNjFiMTlkODBjMjk0YzNiMTgxNGM0NzBiZmMwNmI0MjQ2N2RlZjp7fQ==', '2017-11-18 10:16:57.572206'; args=(u'a6ydt15svi07n7msy90syvk6v6j21bos', u'MmZlNjFiMTlkODBjMjk0YzNiMTgxNGM0NzBiZmMwNmI0MjQ2N2RlZjp7fQ==', u'2017-11-18 10:16:57.572206')
+(0.000) BEGIN; args=None
+(0.000) UPDATE "auth_user" SET "last_login" = '2017-11-04 10:16:57.865621' WHERE "auth_user"."id" = 1; args=(u'2017-11-04 10:16:57.865621', 1)
+(0.000) BEGIN; args=None
+(0.001) UPDATE "django_session" SET "session_data" = 'MTc2NDY3MjgxNzZmMmI3MWVlOGVjNjIwNjRjMjI5OTk4MDkzZDk3Zjp7Il9hdXRoX3VzZXJfaGFzaCI6IjA1ZWZlZjM5ZTM1YzYxMDM1ZGZmYWFjNDdjZmY1NzMxYWM2ZjExZWYiLCJfYXV0aF91c2VyX2JhY2tlbmQiOiJkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZCIsIl9hdXRoX3VzZXJfaWQiOiIxIn0=', "expire_date" = '2017-11-18 10:16:57.933176' WHERE "django_session"."session_key" = 'a6ydt15svi07n7msy90syvk6v6j21bos'; args=(u'MTc2NDY3MjgxNzZmMmI3MWVlOGVjNjIwNjRjMjI5OTk4MDkzZDk3Zjp7Il9hdXRoX3VzZXJfaGFzaCI6IjA1ZWZlZjM5ZTM1YzYxMDM1ZGZmYWFjNDdjZmY1NzMxYWM2ZjExZWYiLCJfYXV0aF91c2VyX2JhY2tlbmQiOiJkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZCIsIl9hdXRoX3VzZXJfaWQiOiIxIn0=', u'2017-11-18 10:16:57.933176', u'a6ydt15svi07n7msy90syvk6v6j21bos')
+"POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+(0.001) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."session_key" = 'a6ydt15svi07n7msy90syvk6v6j21bos' AND "django_session"."expire_date" > '2017-11-04 10:16:58.004987'); args=('a6ydt15svi07n7msy90syvk6v6j21bos', u'2017-11-04 10:16:58.004987')
+(0.000) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1; args=(1,)
+Exception while resolving variable 'is_popup' in template 'admin/index.html'.
+Traceback (most recent call last):
+  File "/home/gurpal/.local/lib/python2.7/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [is_popup] in u"[{'False': False, 'None': None, 'True': True}, {u'csrf_token': <SimpleLazyObject: <function _get_val at 0x7f12a0bbf6e0>>, 'user': <SimpleLazyObject: <User: mayank>>, 'perms': <django.contrib.auth.context_processors.PermWrapper object at 0x7f12a0042650>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'WARNING': 30, 'SUCCESS': 25, 'ERROR': 40}, 'messages': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x7f129ad4da10>, u'request': <WSGIRequest: GET '/admin/'>}, {}, {'site_header': u'Django administration', 'available_apps': [{'app_url': u'/admin/auth/', 'models': [{'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/auth/group/', 'object_name': 'Group', 'name': u'Groups', 'add_url': u'/admin/auth/group/add/'}, {'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/auth/user/', 'object_name': 'User', 'name': u'Users', 'add_url': u'/admin/auth/user/add/'}], 'has_module_perms': True, 'name': u'Authentication and Authorization', 'app_label': 'auth'}, {'app_url': u'/admin/vault/', 'models': [{'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/vault/cust_transaction/', 'object_name': 'cust_transaction', 'name': u'Cust_transactions', 'add_url': u'/admin/vault/cust_transaction/add/'}, {'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/vault/registerrequests/', 'object_name': 'registerRequests', 'name': u'Register requestss', 'add_url': u'/admin/vault/registerrequests/add/'}, {'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/vault/user_account/', 'object_name': 'user_account', 'name': u'User_accounts', 'add_url': u'/admin/vault/user_account/add/'}, {'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/vault/user_info/', 'object_name': 'user_info', 'name': u'User_infos', 'add_url': u'/admin/vault/user_info/add/'}, {'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/vault/user_type/', 'object_name': 'user_type', 'name': u'User_types', 'add_url': u'/admin/vault/user_type/add/'}], 'has_module_perms': True, 'name': 'Vault', 'app_label': 'vault'}], 'site_title': u'Django site admin', 'title': u'Site administration', 'has_permission': True, 'app_list': [{'app_url': u'/admin/auth/', 'models': [{'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/auth/group/', 'object_name': 'Group', 'name': u'Groups', 'add_url': u'/admin/auth/group/add/'}, {'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/auth/user/', 'object_name': 'User', 'name': u'Users', 'add_url': u'/admin/auth/user/add/'}], 'has_module_perms': True, 'name': u'Authentication and Authorization', 'app_label': 'auth'}, {'app_url': u'/admin/vault/', 'models': [{'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/vault/cust_transaction/', 'object_name': 'cust_transaction', 'name': u'Cust_transactions', 'add_url': u'/admin/vault/cust_transaction/add/'}, {'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/vault/registerrequests/', 'object_name': 'registerRequests', 'name': u'Register requestss', 'add_url': u'/admin/vault/registerrequests/add/'}, {'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/vault/user_account/', 'object_name': 'user_account', 'name': u'User_accounts', 'add_url': u'/admin/vault/user_account/add/'}, {'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/vault/user_info/', 'object_name': 'user_info', 'name': u'User_infos', 'add_url': u'/admin/vault/user_info/add/'}, {'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/vault/user_type/', 'object_name': 'user_type', 'name': u'User_types', 'add_url': u'/admin/vault/user_type/add/'}], 'has_module_perms': True, 'name': 'Vault', 'app_label': 'vault'}], u'LANGUAGE_CODE': 'en-us', u'LANGUAGE_BIDI': False, 'site_url': '/'}]"
+Exception while resolving variable 'is_popup' in template 'admin/index.html'.
+Traceback (most recent call last):
+  File "/home/gurpal/.local/lib/python2.7/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [is_popup] in u"[{'False': False, 'None': None, 'True': True}, {u'csrf_token': <SimpleLazyObject: <function _get_val at 0x7f12a0bbf6e0>>, 'user': <SimpleLazyObject: <User: mayank>>, 'perms': <django.contrib.auth.context_processors.PermWrapper object at 0x7f12a0042650>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'WARNING': 30, 'SUCCESS': 25, 'ERROR': 40}, 'messages': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x7f129ad4da10>, u'request': <WSGIRequest: GET '/admin/'>}, {}, {'site_header': u'Django administration', 'available_apps': [{'app_url': u'/admin/auth/', 'models': [{'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/auth/group/', 'object_name': 'Group', 'name': u'Groups', 'add_url': u'/admin/auth/group/add/'}, {'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/auth/user/', 'object_name': 'User', 'name': u'Users', 'add_url': u'/admin/auth/user/add/'}], 'has_module_perms': True, 'name': u'Authentication and Authorization', 'app_label': 'auth'}, {'app_url': u'/admin/vault/', 'models': [{'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/vault/cust_transaction/', 'object_name': 'cust_transaction', 'name': u'Cust_transactions', 'add_url': u'/admin/vault/cust_transaction/add/'}, {'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/vault/registerrequests/', 'object_name': 'registerRequests', 'name': u'Register requestss', 'add_url': u'/admin/vault/registerrequests/add/'}, {'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/vault/user_account/', 'object_name': 'user_account', 'name': u'User_accounts', 'add_url': u'/admin/vault/user_account/add/'}, {'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/vault/user_info/', 'object_name': 'user_info', 'name': u'User_infos', 'add_url': u'/admin/vault/user_info/add/'}, {'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/vault/user_type/', 'object_name': 'user_type', 'name': u'User_types', 'add_url': u'/admin/vault/user_type/add/'}], 'has_module_perms': True, 'name': 'Vault', 'app_label': 'vault'}], 'site_title': u'Django site admin', 'title': u'Site administration', 'has_permission': True, 'app_list': [{'app_url': u'/admin/auth/', 'models': [{'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/auth/group/', 'object_name': 'Group', 'name': u'Groups', 'add_url': u'/admin/auth/group/add/'}, {'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/auth/user/', 'object_name': 'User', 'name': u'Users', 'add_url': u'/admin/auth/user/add/'}], 'has_module_perms': True, 'name': u'Authentication and Authorization', 'app_label': 'auth'}, {'app_url': u'/admin/vault/', 'models': [{'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/vault/cust_transaction/', 'object_name': 'cust_transaction', 'name': u'Cust_transactions', 'add_url': u'/admin/vault/cust_transaction/add/'}, {'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/vault/registerrequests/', 'object_name': 'registerRequests', 'name': u'Register requestss', 'add_url': u'/admin/vault/registerrequests/add/'}, {'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/vault/user_account/', 'object_name': 'user_account', 'name': u'User_accounts', 'add_url': u'/admin/vault/user_account/add/'}, {'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/vault/user_info/', 'object_name': 'user_info', 'name': u'User_infos', 'add_url': u'/admin/vault/user_info/add/'}, {'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/vault/user_type/', 'object_name': 'user_type', 'name': u'User_types', 'add_url': u'/admin/vault/user_type/add/'}], 'has_module_perms': True, 'name': 'Vault', 'app_label': 'vault'}], u'LANGUAGE_CODE': 'en-us', u'LANGUAGE_BIDI': False, 'site_url': '/'}]"
+(0.000) SELECT "django_admin_log"."id", "django_admin_log"."action_time", "django_admin_log"."user_id", "django_admin_log"."content_type_id", "django_admin_log"."object_id", "django_admin_log"."object_repr", "django_admin_log"."action_flag", "django_admin_log"."change_message", "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined", "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_admin_log" INNER JOIN "auth_user" ON ("django_admin_log"."user_id" = "auth_user"."id") LEFT OUTER JOIN "django_content_type" ON ("django_admin_log"."content_type_id" = "django_content_type"."id") WHERE "django_admin_log"."user_id" = 1 ORDER BY "django_admin_log"."action_time" DESC LIMIT 10; args=(1,)
+"GET /admin/ HTTP/1.1" 200 7182
+(0.001) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."session_key" = 'a6ydt15svi07n7msy90syvk6v6j21bos' AND "django_session"."expire_date" > '2017-11-04 10:17:01.120230'); args=('a6ydt15svi07n7msy90syvk6v6j21bos', u'2017-11-04 10:17:01.120230')
+(0.000) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1; args=(1,)
+(0.000) SELECT COUNT(*) AS "__count" FROM "vault_registerrequests"; args=()
+(0.000) SELECT COUNT(*) AS "__count" FROM "vault_registerrequests"; args=()
+(0.000) SELECT "vault_registerrequests"."id", "vault_registerrequests"."user_data_id", "vault_registerrequests"."first_name", "vault_registerrequests"."last_name", "vault_registerrequests"."e_mail", "vault_registerrequests"."group", "vault_registerrequests"."type_of_req" FROM "vault_registerrequests" ORDER BY "vault_registerrequests"."id" DESC; args=()
+Exception while resolving variable 'errors' in template 'admin/change_list.html'.
+Traceback (most recent call last):
+  File "/home/gurpal/.local/lib/python2.7/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [errors] in u'None'
+Exception while resolving variable 'show' in template 'admin/change_list.html'.
+Traceback (most recent call last):
+  File "/home/gurpal/.local/lib/python2.7/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [show] in u"[{'False': False, 'None': None, 'True': True, 'csrf_token': <SimpleLazyObject: <function _get_val at 0x7f12a0bbf2a8>>}]"
+Exception while resolving variable 'is_multipart' in template 'admin/change_list.html'.
+Traceback (most recent call last):
+  File "/home/gurpal/.local/lib/python2.7/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [is_multipart] in u'None'
+Exception while resolving variable 'non_field_errors' in template 'admin/change_list.html'.
+Traceback (most recent call last):
+  File "/home/gurpal/.local/lib/python2.7/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [non_field_errors] in u'None'
+Exception while resolving variable 'non_field_errors' in template 'admin/change_list.html'.
+Traceback (most recent call last):
+  File "/home/gurpal/.local/lib/python2.7/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [non_field_errors] in u'None'
+Exception while resolving variable 'non_field_errors' in template 'admin/change_list.html'.
+Traceback (most recent call last):
+  File "/home/gurpal/.local/lib/python2.7/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [non_field_errors] in u'None'
+Exception while resolving variable 'non_field_errors' in template 'admin/change_list.html'.
+Traceback (most recent call last):
+  File "/home/gurpal/.local/lib/python2.7/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [non_field_errors] in u'None'
+Exception while resolving variable 'non_field_errors' in template 'admin/change_list.html'.
+Traceback (most recent call last):
+  File "/home/gurpal/.local/lib/python2.7/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [non_field_errors] in u'None'
+Exception while resolving variable 'non_field_errors' in template 'admin/change_list.html'.
+Traceback (most recent call last):
+  File "/home/gurpal/.local/lib/python2.7/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [non_field_errors] in u'None'
+Exception while resolving variable 'non_field_errors' in template 'admin/change_list.html'.
+Traceback (most recent call last):
+  File "/home/gurpal/.local/lib/python2.7/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [non_field_errors] in u'None'
+Exception while resolving variable 'non_field_errors' in template 'admin/change_list.html'.
+Traceback (most recent call last):
+  File "/home/gurpal/.local/lib/python2.7/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [non_field_errors] in u'None'
+Exception while resolving variable 'non_field_errors' in template 'admin/change_list.html'.
+Traceback (most recent call last):
+  File "/home/gurpal/.local/lib/python2.7/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [non_field_errors] in u'None'
+Exception while resolving variable 'non_field_errors' in template 'admin/change_list.html'.
+Traceback (most recent call last):
+  File "/home/gurpal/.local/lib/python2.7/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [non_field_errors] in u'None'
+Exception while resolving variable 'non_field_errors' in template 'admin/change_list.html'.
+Traceback (most recent call last):
+  File "/home/gurpal/.local/lib/python2.7/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [non_field_errors] in u'None'
+Exception while resolving variable 'non_field_errors' in template 'admin/change_list.html'.
+Traceback (most recent call last):
+  File "/home/gurpal/.local/lib/python2.7/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [non_field_errors] in u'None'
+"GET /admin/vault/registerrequests/ HTTP/1.1" 200 6915
+(0.001) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."session_key" = 'a6ydt15svi07n7msy90syvk6v6j21bos' AND "django_session"."expire_date" > '2017-11-04 10:17:01.200436'); args=('a6ydt15svi07n7msy90syvk6v6j21bos', u'2017-11-04 10:17:01.200436')
+(0.000) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1; args=(1,)
+"GET /admin/jsi18n/ HTTP/1.1" 200 3217
+(0.000) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."session_key" = 'a6ydt15svi07n7msy90syvk6v6j21bos' AND "django_session"."expire_date" > '2017-11-04 10:17:28.689927'); args=('a6ydt15svi07n7msy90syvk6v6j21bos', u'2017-11-04 10:17:28.689927')
+(0.000) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1; args=(1,)
+(0.000) BEGIN; args=None
+(0.000) SELECT "vault_registerrequests"."id", "vault_registerrequests"."user_data_id", "vault_registerrequests"."first_name", "vault_registerrequests"."last_name", "vault_registerrequests"."e_mail", "vault_registerrequests"."group", "vault_registerrequests"."type_of_req" FROM "vault_registerrequests" WHERE "vault_registerrequests"."id" = 27; args=(27,)
+(0.000) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" ORDER BY "auth_user"."username" ASC; args=()
+Exception while resolving variable 'can_delete_related' in template 'admin/widgets/related_widget_wrapper.html'.
+Traceback (most recent call last):
+  File "/home/gurpal/.local/lib/python2.7/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [can_delete_related] in u'[{\'False\': False, \'None\': None, \'True\': True}, {u\'url_params\': u\'_to_field=id&_popup=1\', \'add_related_url\': u\'/admin/auth/user/add/\', u\'name\': \'user_data\', \'can_change_related\': True, \'can_add_related\': True, u\'model\': u\'user\', \'change_related_template_url\': u\'/admin/auth/user/__fk__/change/\', u\'rendered_widget\': u\'<select name="user_data" required id="id_user_data">\\n  <option value="" selected>---------</option>\\n\\n  <option value="6">AK10</option>\\n\\n  <option value="3">aa1</option>\\n\\n  <option value="2">admi</option>\\n\\n  <option value="9">eM18</option>\\n\\n  <option value="5">ee9</option>\\n\\n  <option value="10">hh22</option>\\n\\n  <option value="4">jj3</option>\\n\\n  <option value="1">mayank</option>\\n\\n  <option value="8">tt16</option>\\n\\n</select>\'}, {\'block\': <Block Node: links. Contents: [<TextNode: u\'\\n        \'>, <django.template.defaulttags.SpacelessNode object at 0x7f129a4adb50>, <TextNode: u\'\\n    \'>]>}]'
+"GET /admin/vault/registerrequests/27/change/ HTTP/1.1" 200 7667
+(0.001) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."session_key" = 'a6ydt15svi07n7msy90syvk6v6j21bos' AND "django_session"."expire_date" > '2017-11-04 10:17:28.751038'); args=('a6ydt15svi07n7msy90syvk6v6j21bos', u'2017-11-04 10:17:28.751038')
+(0.000) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1; args=(1,)
+"GET /admin/jsi18n/ HTTP/1.1" 200 3217
+(0.001) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."session_key" = 'a6ydt15svi07n7msy90syvk6v6j21bos' AND "django_session"."expire_date" > '2017-11-04 10:17:36.492190'); args=('a6ydt15svi07n7msy90syvk6v6j21bos', u'2017-11-04 10:17:36.492190')
+(0.000) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1; args=(1,)
+(0.000) SELECT COUNT(*) AS "__count" FROM "vault_registerrequests"; args=()
+(0.000) SELECT COUNT(*) AS "__count" FROM "vault_registerrequests"; args=()
+(0.000) SELECT "vault_registerrequests"."id", "vault_registerrequests"."user_data_id", "vault_registerrequests"."first_name", "vault_registerrequests"."last_name", "vault_registerrequests"."e_mail", "vault_registerrequests"."group", "vault_registerrequests"."type_of_req" FROM "vault_registerrequests" ORDER BY "vault_registerrequests"."id" DESC; args=()
+Exception while resolving variable 'errors' in template 'admin/change_list.html'.
+Traceback (most recent call last):
+  File "/home/gurpal/.local/lib/python2.7/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [errors] in u'None'
+Exception while resolving variable 'show' in template 'admin/change_list.html'.
+Traceback (most recent call last):
+  File "/home/gurpal/.local/lib/python2.7/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [show] in u"[{'False': False, 'None': None, 'True': True, 'csrf_token': <SimpleLazyObject: <function _get_val at 0x7f12a01080c8>>}]"
+Exception while resolving variable 'is_multipart' in template 'admin/change_list.html'.
+Traceback (most recent call last):
+  File "/home/gurpal/.local/lib/python2.7/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [is_multipart] in u'None'
+Exception while resolving variable 'non_field_errors' in template 'admin/change_list.html'.
+Traceback (most recent call last):
+  File "/home/gurpal/.local/lib/python2.7/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [non_field_errors] in u'None'
+Exception while resolving variable 'non_field_errors' in template 'admin/change_list.html'.
+Traceback (most recent call last):
+  File "/home/gurpal/.local/lib/python2.7/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [non_field_errors] in u'None'
+Exception while resolving variable 'non_field_errors' in template 'admin/change_list.html'.
+Traceback (most recent call last):
+  File "/home/gurpal/.local/lib/python2.7/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [non_field_errors] in u'None'
+Exception while resolving variable 'non_field_errors' in template 'admin/change_list.html'.
+Traceback (most recent call last):
+  File "/home/gurpal/.local/lib/python2.7/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [non_field_errors] in u'None'
+Exception while resolving variable 'non_field_errors' in template 'admin/change_list.html'.
+Traceback (most recent call last):
+  File "/home/gurpal/.local/lib/python2.7/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [non_field_errors] in u'None'
+Exception while resolving variable 'non_field_errors' in template 'admin/change_list.html'.
+Traceback (most recent call last):
+  File "/home/gurpal/.local/lib/python2.7/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [non_field_errors] in u'None'
+Exception while resolving variable 'non_field_errors' in template 'admin/change_list.html'.
+Traceback (most recent call last):
+  File "/home/gurpal/.local/lib/python2.7/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [non_field_errors] in u'None'
+Exception while resolving variable 'non_field_errors' in template 'admin/change_list.html'.
+Traceback (most recent call last):
+  File "/home/gurpal/.local/lib/python2.7/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [non_field_errors] in u'None'
+Exception while resolving variable 'non_field_errors' in template 'admin/change_list.html'.
+Traceback (most recent call last):
+  File "/home/gurpal/.local/lib/python2.7/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [non_field_errors] in u'None'
+Exception while resolving variable 'non_field_errors' in template 'admin/change_list.html'.
+Traceback (most recent call last):
+  File "/home/gurpal/.local/lib/python2.7/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [non_field_errors] in u'None'
+Exception while resolving variable 'non_field_errors' in template 'admin/change_list.html'.
+Traceback (most recent call last):
+  File "/home/gurpal/.local/lib/python2.7/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [non_field_errors] in u'None'
+Exception while resolving variable 'non_field_errors' in template 'admin/change_list.html'.
+Traceback (most recent call last):
+  File "/home/gurpal/.local/lib/python2.7/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [non_field_errors] in u'None'
+"GET /admin/vault/registerrequests/ HTTP/1.1" 200 6915
+(0.001) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."session_key" = 'a6ydt15svi07n7msy90syvk6v6j21bos' AND "django_session"."expire_date" > '2017-11-04 10:17:36.566875'); args=('a6ydt15svi07n7msy90syvk6v6j21bos', u'2017-11-04 10:17:36.566875')
+(0.000) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1; args=(1,)
+"GET /admin/jsi18n/ HTTP/1.1" 200 3217
+(0.000) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."session_key" = 'a6ydt15svi07n7msy90syvk6v6j21bos' AND "django_session"."expire_date" > '2017-11-04 10:17:38.239524'); args=('a6ydt15svi07n7msy90syvk6v6j21bos', u'2017-11-04 10:17:38.239524')
+(0.000) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1; args=(1,)
+(0.000) BEGIN; args=None
+(0.000) SELECT "vault_registerrequests"."id", "vault_registerrequests"."user_data_id", "vault_registerrequests"."first_name", "vault_registerrequests"."last_name", "vault_registerrequests"."e_mail", "vault_registerrequests"."group", "vault_registerrequests"."type_of_req" FROM "vault_registerrequests" WHERE "vault_registerrequests"."id" = 26; args=(26,)
+(0.000) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" ORDER BY "auth_user"."username" ASC; args=()
+Exception while resolving variable 'can_delete_related' in template 'admin/widgets/related_widget_wrapper.html'.
+Traceback (most recent call last):
+  File "/home/gurpal/.local/lib/python2.7/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [can_delete_related] in u'[{\'False\': False, \'None\': None, \'True\': True}, {u\'url_params\': u\'_to_field=id&_popup=1\', \'add_related_url\': u\'/admin/auth/user/add/\', u\'name\': \'user_data\', \'can_change_related\': True, \'can_add_related\': True, u\'model\': u\'user\', \'change_related_template_url\': u\'/admin/auth/user/__fk__/change/\', u\'rendered_widget\': u\'<select name="user_data" required id="id_user_data">\\n  <option value="" selected>---------</option>\\n\\n  <option value="6">AK10</option>\\n\\n  <option value="3">aa1</option>\\n\\n  <option value="2">admi</option>\\n\\n  <option value="9">eM18</option>\\n\\n  <option value="5">ee9</option>\\n\\n  <option value="10">hh22</option>\\n\\n  <option value="4">jj3</option>\\n\\n  <option value="1">mayank</option>\\n\\n  <option value="8">tt16</option>\\n\\n</select>\'}, {\'block\': <Block Node: links. Contents: [<TextNode: u\'\\n        \'>, <django.template.defaulttags.SpacelessNode object at 0x7f129ad23990>, <TextNode: u\'\\n    \'>]>}]'
+"GET /admin/vault/registerrequests/26/change/ HTTP/1.1" 200 7667
+(0.001) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."session_key" = 'a6ydt15svi07n7msy90syvk6v6j21bos' AND "django_session"."expire_date" > '2017-11-04 10:17:38.294828'); args=('a6ydt15svi07n7msy90syvk6v6j21bos', u'2017-11-04 10:17:38.294828')
+(0.001) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1; args=(1,)
+"GET /admin/jsi18n/ HTTP/1.1" 200 3217
+(0.001) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."session_key" = 'a6ydt15svi07n7msy90syvk6v6j21bos' AND "django_session"."expire_date" > '2017-11-04 10:17:41.013268'); args=('a6ydt15svi07n7msy90syvk6v6j21bos', u'2017-11-04 10:17:41.013268')
+(0.000) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1; args=(1,)
+(0.000) SELECT COUNT(*) AS "__count" FROM "vault_registerrequests"; args=()
+(0.000) SELECT COUNT(*) AS "__count" FROM "vault_registerrequests"; args=()
+(0.000) SELECT "vault_registerrequests"."id", "vault_registerrequests"."user_data_id", "vault_registerrequests"."first_name", "vault_registerrequests"."last_name", "vault_registerrequests"."e_mail", "vault_registerrequests"."group", "vault_registerrequests"."type_of_req" FROM "vault_registerrequests" ORDER BY "vault_registerrequests"."id" DESC; args=()
+Exception while resolving variable 'errors' in template 'admin/change_list.html'.
+Traceback (most recent call last):
+  File "/home/gurpal/.local/lib/python2.7/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [errors] in u'None'
+Exception while resolving variable 'show' in template 'admin/change_list.html'.
+Traceback (most recent call last):
+  File "/home/gurpal/.local/lib/python2.7/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [show] in u"[{'False': False, 'None': None, 'True': True, 'csrf_token': <SimpleLazyObject: <function _get_val at 0x7f12a0058aa0>>}]"
+Exception while resolving variable 'is_multipart' in template 'admin/change_list.html'.
+Traceback (most recent call last):
+  File "/home/gurpal/.local/lib/python2.7/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [is_multipart] in u'None'
+Exception while resolving variable 'non_field_errors' in template 'admin/change_list.html'.
+Traceback (most recent call last):
+  File "/home/gurpal/.local/lib/python2.7/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [non_field_errors] in u'None'
+Exception while resolving variable 'non_field_errors' in template 'admin/change_list.html'.
+Traceback (most recent call last):
+  File "/home/gurpal/.local/lib/python2.7/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [non_field_errors] in u'None'
+Exception while resolving variable 'non_field_errors' in template 'admin/change_list.html'.
+Traceback (most recent call last):
+  File "/home/gurpal/.local/lib/python2.7/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [non_field_errors] in u'None'
+Exception while resolving variable 'non_field_errors' in template 'admin/change_list.html'.
+Traceback (most recent call last):
+  File "/home/gurpal/.local/lib/python2.7/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [non_field_errors] in u'None'
+Exception while resolving variable 'non_field_errors' in template 'admin/change_list.html'.
+Traceback (most recent call last):
+  File "/home/gurpal/.local/lib/python2.7/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [non_field_errors] in u'None'
+Exception while resolving variable 'non_field_errors' in template 'admin/change_list.html'.
+Traceback (most recent call last):
+  File "/home/gurpal/.local/lib/python2.7/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [non_field_errors] in u'None'
+Exception while resolving variable 'non_field_errors' in template 'admin/change_list.html'.
+Traceback (most recent call last):
+  File "/home/gurpal/.local/lib/python2.7/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [non_field_errors] in u'None'
+Exception while resolving variable 'non_field_errors' in template 'admin/change_list.html'.
+Traceback (most recent call last):
+  File "/home/gurpal/.local/lib/python2.7/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [non_field_errors] in u'None'
+Exception while resolving variable 'non_field_errors' in template 'admin/change_list.html'.
+Traceback (most recent call last):
+  File "/home/gurpal/.local/lib/python2.7/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [non_field_errors] in u'None'
+Exception while resolving variable 'non_field_errors' in template 'admin/change_list.html'.
+Traceback (most recent call last):
+  File "/home/gurpal/.local/lib/python2.7/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [non_field_errors] in u'None'
+Exception while resolving variable 'non_field_errors' in template 'admin/change_list.html'.
+Traceback (most recent call last):
+  File "/home/gurpal/.local/lib/python2.7/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [non_field_errors] in u'None'
+Exception while resolving variable 'non_field_errors' in template 'admin/change_list.html'.
+Traceback (most recent call last):
+  File "/home/gurpal/.local/lib/python2.7/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [non_field_errors] in u'None'
+"GET /admin/vault/registerrequests/ HTTP/1.1" 200 6915
+(0.001) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."session_key" = 'a6ydt15svi07n7msy90syvk6v6j21bos' AND "django_session"."expire_date" > '2017-11-04 10:17:41.081453'); args=('a6ydt15svi07n7msy90syvk6v6j21bos', u'2017-11-04 10:17:41.081453')
+(0.000) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1; args=(1,)
+"GET /admin/jsi18n/ HTTP/1.1" 200 3217
+(0.000) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."session_key" = 'a6ydt15svi07n7msy90syvk6v6j21bos' AND "django_session"."expire_date" > '2017-11-04 10:20:43.254468'); args=('a6ydt15svi07n7msy90syvk6v6j21bos', u'2017-11-04 10:20:43.254468')
+(0.000) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1; args=(1,)
+(0.000) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE "django_session"."session_key" = 'a6ydt15svi07n7msy90syvk6v6j21bos'; args=('a6ydt15svi07n7msy90syvk6v6j21bos',)
+(0.000) BEGIN; args=None
+(0.000) DELETE FROM "django_session" WHERE "django_session"."session_key" IN ('a6ydt15svi07n7msy90syvk6v6j21bos'); args=(u'a6ydt15svi07n7msy90syvk6v6j21bos',)
+Exception while resolving variable 'is_popup' in template 'registration/logged_out.html'.
+Traceback (most recent call last):
+  File "/home/gurpal/.local/lib/python2.7/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [is_popup] in u"[{'False': False, 'None': None, 'True': True}, {u'csrf_token': <SimpleLazyObject: <function _get_val at 0x7f12a003f9b0>>, 'user': <django.contrib.auth.models.AnonymousUser object at 0x7f129acb8f10>, 'perms': <django.contrib.auth.context_processors.PermWrapper object at 0x7f129ad26cd0>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'WARNING': 30, 'SUCCESS': 25, 'ERROR': 40}, 'messages': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x7f129acb88d0>, u'request': <WSGIRequest: GET '/admin/logout/'>}, {}, {'available_apps': [{'app_url': u'/admin/auth/', 'models': [{'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/auth/group/', 'object_name': 'Group', 'name': u'Groups', 'add_url': u'/admin/auth/group/add/'}, {'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/auth/user/', 'object_name': 'User', 'name': u'Users', 'add_url': u'/admin/auth/user/add/'}], 'has_module_perms': True, 'name': u'Authentication and Authorization', 'app_label': 'auth'}, {'app_url': u'/admin/vault/', 'models': [{'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/vault/cust_transaction/', 'object_name': 'cust_transaction', 'name': u'Cust_transactions', 'add_url': u'/admin/vault/cust_transaction/add/'}, {'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/vault/registerrequests/', 'object_name': 'registerRequests', 'name': u'Register requestss', 'add_url': u'/admin/vault/registerrequests/add/'}, {'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/vault/user_account/', 'object_name': 'user_account', 'name': u'User_accounts', 'add_url': u'/admin/vault/user_account/add/'}, {'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/vault/user_info/', 'object_name': 'user_info', 'name': u'User_infos', 'add_url': u'/admin/vault/user_info/add/'}, {'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/vault/user_type/', 'object_name': 'user_type', 'name': u'User_types', 'add_url': u'/admin/vault/user_type/add/'}], 'has_module_perms': True, 'name': 'Vault', 'app_label': 'vault'}], 'site_name': '127.0.0.1:8000', 'title': u'Logged out', 'site_header': u'Django administration', 'site': <django.contrib.sites.requests.RequestSite object at 0x7f129acb8150>, 'site_url': '/', 'site_title': u'Django site admin', u'LANGUAGE_CODE': 'en-us', 'has_permission': False, u'LANGUAGE_BIDI': False, u'view': <django.contrib.auth.views.LogoutView object at 0x7f129acb8cd0>}]"
+Exception while resolving variable 'is_popup' in template 'registration/logged_out.html'.
+Traceback (most recent call last):
+  File "/home/gurpal/.local/lib/python2.7/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [is_popup] in u"[{'False': False, 'None': None, 'True': True}, {u'csrf_token': <SimpleLazyObject: <function _get_val at 0x7f12a003f9b0>>, 'user': <django.contrib.auth.models.AnonymousUser object at 0x7f129acb8f10>, 'perms': <django.contrib.auth.context_processors.PermWrapper object at 0x7f129ad26cd0>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'WARNING': 30, 'SUCCESS': 25, 'ERROR': 40}, 'messages': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x7f129acb88d0>, u'request': <WSGIRequest: GET '/admin/logout/'>}, {}, {'available_apps': [{'app_url': u'/admin/auth/', 'models': [{'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/auth/group/', 'object_name': 'Group', 'name': u'Groups', 'add_url': u'/admin/auth/group/add/'}, {'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/auth/user/', 'object_name': 'User', 'name': u'Users', 'add_url': u'/admin/auth/user/add/'}], 'has_module_perms': True, 'name': u'Authentication and Authorization', 'app_label': 'auth'}, {'app_url': u'/admin/vault/', 'models': [{'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/vault/cust_transaction/', 'object_name': 'cust_transaction', 'name': u'Cust_transactions', 'add_url': u'/admin/vault/cust_transaction/add/'}, {'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/vault/registerrequests/', 'object_name': 'registerRequests', 'name': u'Register requestss', 'add_url': u'/admin/vault/registerrequests/add/'}, {'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/vault/user_account/', 'object_name': 'user_account', 'name': u'User_accounts', 'add_url': u'/admin/vault/user_account/add/'}, {'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/vault/user_info/', 'object_name': 'user_info', 'name': u'User_infos', 'add_url': u'/admin/vault/user_info/add/'}, {'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/vault/user_type/', 'object_name': 'user_type', 'name': u'User_types', 'add_url': u'/admin/vault/user_type/add/'}], 'has_module_perms': True, 'name': 'Vault', 'app_label': 'vault'}], 'site_name': '127.0.0.1:8000', 'title': u'Logged out', 'site_header': u'Django administration', 'site': <django.contrib.sites.requests.RequestSite object at 0x7f129acb8150>, 'site_url': '/', 'site_title': u'Django site admin', u'LANGUAGE_CODE': 'en-us', 'has_permission': False, u'LANGUAGE_BIDI': False, u'view': <django.contrib.auth.views.LogoutView object at 0x7f129acb8cd0>}]"
+"GET /admin/logout/ HTTP/1.1" 200 1010
+(2017-11-04 10:20:46) request from 127.0.0.1: /register/
+"GET /register/ HTTP/1.1" 200 3395
+(2017-11-04 10:20:50) request from 127.0.0.1: /register/
+"GET /register/ HTTP/1.1" 200 3395
+"GET /static/vault/css/base.css HTTP/1.1" 304 0
+"GET /static/vault/js/registerCheck.js HTTP/1.1" 200 1528
+(2017-11-04 10:21:00) request from 127.0.0.1: /register/
+(0.000) BEGIN; args=None
+(0.001) INSERT INTO "vault_registerrequests" ("user_data_id", "first_name", "last_name", "e_mail", "group", "type_of_req") VALUES (NULL, '<b>mayank</b>', 'Singh', '1gurpal2singh@gmail.com', 'Ind_user', 'Register'); args=[None, u'<b>mayank</b>', u'Singh', u'1gurpal2singh@gmail.com', u'Ind_user', 'Register']
+"POST /register/ HTTP/1.1" 200 70
+"GET /admin/logout/ HTTP/1.1" 302 0
+"GET /admin/ HTTP/1.1" 302 0
+"GET /admin/login/?next=/admin/ HTTP/1.1" 200 3156
+"GET /static/vault/css/login.css HTTP/1.1" 404 1670
+(0.000) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."username" = 'mayank'; args=(u'mayank',)
+(0.000) SELECT (1) AS "a" FROM "django_session" WHERE "django_session"."session_key" = 'ka5qrb3r5tihitezy2b62xv7n1occlb3' LIMIT 1; args=(u'ka5qrb3r5tihitezy2b62xv7n1occlb3',)
+(0.000) BEGIN; args=None
+(0.000) INSERT INTO "django_session" ("session_key", "session_data", "expire_date") SELECT 'ka5qrb3r5tihitezy2b62xv7n1occlb3', 'MmZlNjFiMTlkODBjMjk0YzNiMTgxNGM0NzBiZmMwNmI0MjQ2N2RlZjp7fQ==', '2017-11-18 10:21:09.198845'; args=(u'ka5qrb3r5tihitezy2b62xv7n1occlb3', u'MmZlNjFiMTlkODBjMjk0YzNiMTgxNGM0NzBiZmMwNmI0MjQ2N2RlZjp7fQ==', u'2017-11-18 10:21:09.198845')
+(0.000) BEGIN; args=None
+(0.000) UPDATE "auth_user" SET "last_login" = '2017-11-04 10:21:09.347134' WHERE "auth_user"."id" = 1; args=(u'2017-11-04 10:21:09.347134', 1)
+(0.000) BEGIN; args=None
+(0.000) UPDATE "django_session" SET "session_data" = 'MTc2NDY3MjgxNzZmMmI3MWVlOGVjNjIwNjRjMjI5OTk4MDkzZDk3Zjp7Il9hdXRoX3VzZXJfaGFzaCI6IjA1ZWZlZjM5ZTM1YzYxMDM1ZGZmYWFjNDdjZmY1NzMxYWM2ZjExZWYiLCJfYXV0aF91c2VyX2JhY2tlbmQiOiJkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZCIsIl9hdXRoX3VzZXJfaWQiOiIxIn0=', "expire_date" = '2017-11-18 10:21:09.414927' WHERE "django_session"."session_key" = 'ka5qrb3r5tihitezy2b62xv7n1occlb3'; args=(u'MTc2NDY3MjgxNzZmMmI3MWVlOGVjNjIwNjRjMjI5OTk4MDkzZDk3Zjp7Il9hdXRoX3VzZXJfaGFzaCI6IjA1ZWZlZjM5ZTM1YzYxMDM1ZGZmYWFjNDdjZmY1NzMxYWM2ZjExZWYiLCJfYXV0aF91c2VyX2JhY2tlbmQiOiJkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZCIsIl9hdXRoX3VzZXJfaWQiOiIxIn0=', u'2017-11-18 10:21:09.414927', u'ka5qrb3r5tihitezy2b62xv7n1occlb3')
+"POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+(0.001) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."session_key" = 'ka5qrb3r5tihitezy2b62xv7n1occlb3' AND "django_session"."expire_date" > '2017-11-04 10:21:09.489907'); args=('ka5qrb3r5tihitezy2b62xv7n1occlb3', u'2017-11-04 10:21:09.489907')
+(0.000) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1; args=(1,)
+Exception while resolving variable 'is_popup' in template 'admin/index.html'.
+Traceback (most recent call last):
+  File "/home/gurpal/.local/lib/python2.7/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [is_popup] in u"[{'False': False, 'None': None, 'True': True}, {u'csrf_token': <SimpleLazyObject: <function _get_val at 0x7f12a0058a28>>, 'user': <SimpleLazyObject: <User: mayank>>, 'perms': <django.contrib.auth.context_processors.PermWrapper object at 0x7f129a4cf3d0>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'WARNING': 30, 'SUCCESS': 25, 'ERROR': 40}, 'messages': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x7f129a4af950>, u'request': <WSGIRequest: GET '/admin/'>}, {}, {'site_header': u'Django administration', 'available_apps': [{'app_url': u'/admin/auth/', 'models': [{'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/auth/group/', 'object_name': 'Group', 'name': u'Groups', 'add_url': u'/admin/auth/group/add/'}, {'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/auth/user/', 'object_name': 'User', 'name': u'Users', 'add_url': u'/admin/auth/user/add/'}], 'has_module_perms': True, 'name': u'Authentication and Authorization', 'app_label': 'auth'}, {'app_url': u'/admin/vault/', 'models': [{'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/vault/cust_transaction/', 'object_name': 'cust_transaction', 'name': u'Cust_transactions', 'add_url': u'/admin/vault/cust_transaction/add/'}, {'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/vault/registerrequests/', 'object_name': 'registerRequests', 'name': u'Register requestss', 'add_url': u'/admin/vault/registerrequests/add/'}, {'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/vault/user_account/', 'object_name': 'user_account', 'name': u'User_accounts', 'add_url': u'/admin/vault/user_account/add/'}, {'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/vault/user_info/', 'object_name': 'user_info', 'name': u'User_infos', 'add_url': u'/admin/vault/user_info/add/'}, {'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/vault/user_type/', 'object_name': 'user_type', 'name': u'User_types', 'add_url': u'/admin/vault/user_type/add/'}], 'has_module_perms': True, 'name': 'Vault', 'app_label': 'vault'}], 'site_title': u'Django site admin', 'title': u'Site administration', 'has_permission': True, 'app_list': [{'app_url': u'/admin/auth/', 'models': [{'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/auth/group/', 'object_name': 'Group', 'name': u'Groups', 'add_url': u'/admin/auth/group/add/'}, {'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/auth/user/', 'object_name': 'User', 'name': u'Users', 'add_url': u'/admin/auth/user/add/'}], 'has_module_perms': True, 'name': u'Authentication and Authorization', 'app_label': 'auth'}, {'app_url': u'/admin/vault/', 'models': [{'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/vault/cust_transaction/', 'object_name': 'cust_transaction', 'name': u'Cust_transactions', 'add_url': u'/admin/vault/cust_transaction/add/'}, {'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/vault/registerrequests/', 'object_name': 'registerRequests', 'name': u'Register requestss', 'add_url': u'/admin/vault/registerrequests/add/'}, {'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/vault/user_account/', 'object_name': 'user_account', 'name': u'User_accounts', 'add_url': u'/admin/vault/user_account/add/'}, {'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/vault/user_info/', 'object_name': 'user_info', 'name': u'User_infos', 'add_url': u'/admin/vault/user_info/add/'}, {'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/vault/user_type/', 'object_name': 'user_type', 'name': u'User_types', 'add_url': u'/admin/vault/user_type/add/'}], 'has_module_perms': True, 'name': 'Vault', 'app_label': 'vault'}], u'LANGUAGE_CODE': 'en-us', u'LANGUAGE_BIDI': False, 'site_url': '/'}]"
+Exception while resolving variable 'is_popup' in template 'admin/index.html'.
+Traceback (most recent call last):
+  File "/home/gurpal/.local/lib/python2.7/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [is_popup] in u"[{'False': False, 'None': None, 'True': True}, {u'csrf_token': <SimpleLazyObject: <function _get_val at 0x7f12a0058a28>>, 'user': <SimpleLazyObject: <User: mayank>>, 'perms': <django.contrib.auth.context_processors.PermWrapper object at 0x7f129a4cf3d0>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'WARNING': 30, 'SUCCESS': 25, 'ERROR': 40}, 'messages': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x7f129a4af950>, u'request': <WSGIRequest: GET '/admin/'>}, {}, {'site_header': u'Django administration', 'available_apps': [{'app_url': u'/admin/auth/', 'models': [{'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/auth/group/', 'object_name': 'Group', 'name': u'Groups', 'add_url': u'/admin/auth/group/add/'}, {'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/auth/user/', 'object_name': 'User', 'name': u'Users', 'add_url': u'/admin/auth/user/add/'}], 'has_module_perms': True, 'name': u'Authentication and Authorization', 'app_label': 'auth'}, {'app_url': u'/admin/vault/', 'models': [{'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/vault/cust_transaction/', 'object_name': 'cust_transaction', 'name': u'Cust_transactions', 'add_url': u'/admin/vault/cust_transaction/add/'}, {'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/vault/registerrequests/', 'object_name': 'registerRequests', 'name': u'Register requestss', 'add_url': u'/admin/vault/registerrequests/add/'}, {'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/vault/user_account/', 'object_name': 'user_account', 'name': u'User_accounts', 'add_url': u'/admin/vault/user_account/add/'}, {'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/vault/user_info/', 'object_name': 'user_info', 'name': u'User_infos', 'add_url': u'/admin/vault/user_info/add/'}, {'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/vault/user_type/', 'object_name': 'user_type', 'name': u'User_types', 'add_url': u'/admin/vault/user_type/add/'}], 'has_module_perms': True, 'name': 'Vault', 'app_label': 'vault'}], 'site_title': u'Django site admin', 'title': u'Site administration', 'has_permission': True, 'app_list': [{'app_url': u'/admin/auth/', 'models': [{'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/auth/group/', 'object_name': 'Group', 'name': u'Groups', 'add_url': u'/admin/auth/group/add/'}, {'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/auth/user/', 'object_name': 'User', 'name': u'Users', 'add_url': u'/admin/auth/user/add/'}], 'has_module_perms': True, 'name': u'Authentication and Authorization', 'app_label': 'auth'}, {'app_url': u'/admin/vault/', 'models': [{'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/vault/cust_transaction/', 'object_name': 'cust_transaction', 'name': u'Cust_transactions', 'add_url': u'/admin/vault/cust_transaction/add/'}, {'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/vault/registerrequests/', 'object_name': 'registerRequests', 'name': u'Register requestss', 'add_url': u'/admin/vault/registerrequests/add/'}, {'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/vault/user_account/', 'object_name': 'user_account', 'name': u'User_accounts', 'add_url': u'/admin/vault/user_account/add/'}, {'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/vault/user_info/', 'object_name': 'user_info', 'name': u'User_infos', 'add_url': u'/admin/vault/user_info/add/'}, {'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/vault/user_type/', 'object_name': 'user_type', 'name': u'User_types', 'add_url': u'/admin/vault/user_type/add/'}], 'has_module_perms': True, 'name': 'Vault', 'app_label': 'vault'}], u'LANGUAGE_CODE': 'en-us', u'LANGUAGE_BIDI': False, 'site_url': '/'}]"
+(0.000) SELECT "django_admin_log"."id", "django_admin_log"."action_time", "django_admin_log"."user_id", "django_admin_log"."content_type_id", "django_admin_log"."object_id", "django_admin_log"."object_repr", "django_admin_log"."action_flag", "django_admin_log"."change_message", "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined", "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_admin_log" INNER JOIN "auth_user" ON ("django_admin_log"."user_id" = "auth_user"."id") LEFT OUTER JOIN "django_content_type" ON ("django_admin_log"."content_type_id" = "django_content_type"."id") WHERE "django_admin_log"."user_id" = 1 ORDER BY "django_admin_log"."action_time" DESC LIMIT 10; args=(1,)
+"GET /admin/ HTTP/1.1" 200 7182
+(0.001) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."session_key" = 'ka5qrb3r5tihitezy2b62xv7n1occlb3' AND "django_session"."expire_date" > '2017-11-04 10:21:12.240519'); args=('ka5qrb3r5tihitezy2b62xv7n1occlb3', u'2017-11-04 10:21:12.240519')
+(0.000) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1; args=(1,)
+(0.000) SELECT COUNT(*) AS "__count" FROM "vault_registerrequests"; args=()
+(0.000) SELECT COUNT(*) AS "__count" FROM "vault_registerrequests"; args=()
+(0.000) SELECT "vault_registerrequests"."id", "vault_registerrequests"."user_data_id", "vault_registerrequests"."first_name", "vault_registerrequests"."last_name", "vault_registerrequests"."e_mail", "vault_registerrequests"."group", "vault_registerrequests"."type_of_req" FROM "vault_registerrequests" ORDER BY "vault_registerrequests"."id" DESC; args=()
+Exception while resolving variable 'errors' in template 'admin/change_list.html'.
+Traceback (most recent call last):
+  File "/home/gurpal/.local/lib/python2.7/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [errors] in u'None'
+Exception while resolving variable 'show' in template 'admin/change_list.html'.
+Traceback (most recent call last):
+  File "/home/gurpal/.local/lib/python2.7/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [show] in u"[{'False': False, 'None': None, 'True': True, 'csrf_token': <SimpleLazyObject: <function _get_val at 0x7f12a003fcf8>>}]"
+Exception while resolving variable 'is_multipart' in template 'admin/change_list.html'.
+Traceback (most recent call last):
+  File "/home/gurpal/.local/lib/python2.7/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [is_multipart] in u'None'
+Exception while resolving variable 'non_field_errors' in template 'admin/change_list.html'.
+Traceback (most recent call last):
+  File "/home/gurpal/.local/lib/python2.7/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [non_field_errors] in u'None'
+Exception while resolving variable 'non_field_errors' in template 'admin/change_list.html'.
+Traceback (most recent call last):
+  File "/home/gurpal/.local/lib/python2.7/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [non_field_errors] in u'None'
+Exception while resolving variable 'non_field_errors' in template 'admin/change_list.html'.
+Traceback (most recent call last):
+  File "/home/gurpal/.local/lib/python2.7/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [non_field_errors] in u'None'
+Exception while resolving variable 'non_field_errors' in template 'admin/change_list.html'.
+Traceback (most recent call last):
+  File "/home/gurpal/.local/lib/python2.7/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [non_field_errors] in u'None'
+Exception while resolving variable 'non_field_errors' in template 'admin/change_list.html'.
+Traceback (most recent call last):
+  File "/home/gurpal/.local/lib/python2.7/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [non_field_errors] in u'None'
+Exception while resolving variable 'non_field_errors' in template 'admin/change_list.html'.
+Traceback (most recent call last):
+  File "/home/gurpal/.local/lib/python2.7/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [non_field_errors] in u'None'
+Exception while resolving variable 'non_field_errors' in template 'admin/change_list.html'.
+Traceback (most recent call last):
+  File "/home/gurpal/.local/lib/python2.7/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [non_field_errors] in u'None'
+Exception while resolving variable 'non_field_errors' in template 'admin/change_list.html'.
+Traceback (most recent call last):
+  File "/home/gurpal/.local/lib/python2.7/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [non_field_errors] in u'None'
+Exception while resolving variable 'non_field_errors' in template 'admin/change_list.html'.
+Traceback (most recent call last):
+  File "/home/gurpal/.local/lib/python2.7/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [non_field_errors] in u'None'
+Exception while resolving variable 'non_field_errors' in template 'admin/change_list.html'.
+Traceback (most recent call last):
+  File "/home/gurpal/.local/lib/python2.7/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [non_field_errors] in u'None'
+Exception while resolving variable 'non_field_errors' in template 'admin/change_list.html'.
+Traceback (most recent call last):
+  File "/home/gurpal/.local/lib/python2.7/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [non_field_errors] in u'None'
+Exception while resolving variable 'non_field_errors' in template 'admin/change_list.html'.
+Traceback (most recent call last):
+  File "/home/gurpal/.local/lib/python2.7/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [non_field_errors] in u'None'
+Exception while resolving variable 'non_field_errors' in template 'admin/change_list.html'.
+Traceback (most recent call last):
+  File "/home/gurpal/.local/lib/python2.7/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [non_field_errors] in u'None'
+"GET /admin/vault/registerrequests/ HTTP/1.1" 200 7172
+(0.001) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."session_key" = 'ka5qrb3r5tihitezy2b62xv7n1occlb3' AND "django_session"."expire_date" > '2017-11-04 10:21:12.306041'); args=('ka5qrb3r5tihitezy2b62xv7n1occlb3', u'2017-11-04 10:21:12.306041')
+(0.000) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1; args=(1,)
+"GET /admin/jsi18n/ HTTP/1.1" 200 3217
+(0.000) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."session_key" = 'ka5qrb3r5tihitezy2b62xv7n1occlb3' AND "django_session"."expire_date" > '2017-11-04 10:21:16.888698'); args=('ka5qrb3r5tihitezy2b62xv7n1occlb3', u'2017-11-04 10:21:16.888698')
+(0.000) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1; args=(1,)
+(0.000) BEGIN; args=None
+(0.000) SELECT "vault_registerrequests"."id", "vault_registerrequests"."user_data_id", "vault_registerrequests"."first_name", "vault_registerrequests"."last_name", "vault_registerrequests"."e_mail", "vault_registerrequests"."group", "vault_registerrequests"."type_of_req" FROM "vault_registerrequests" WHERE "vault_registerrequests"."id" = 28; args=(28,)
+(0.000) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" ORDER BY "auth_user"."username" ASC; args=()
+Exception while resolving variable 'can_delete_related' in template 'admin/widgets/related_widget_wrapper.html'.
+Traceback (most recent call last):
+  File "/home/gurpal/.local/lib/python2.7/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [can_delete_related] in u'[{\'False\': False, \'None\': None, \'True\': True}, {u\'url_params\': u\'_to_field=id&_popup=1\', \'add_related_url\': u\'/admin/auth/user/add/\', u\'name\': \'user_data\', \'can_change_related\': True, \'can_add_related\': True, u\'model\': u\'user\', \'change_related_template_url\': u\'/admin/auth/user/__fk__/change/\', u\'rendered_widget\': u\'<select name="user_data" required id="id_user_data">\\n  <option value="" selected>---------</option>\\n\\n  <option value="6">AK10</option>\\n\\n  <option value="3">aa1</option>\\n\\n  <option value="2">admi</option>\\n\\n  <option value="9">eM18</option>\\n\\n  <option value="5">ee9</option>\\n\\n  <option value="10">hh22</option>\\n\\n  <option value="4">jj3</option>\\n\\n  <option value="1">mayank</option>\\n\\n  <option value="8">tt16</option>\\n\\n</select>\'}, {\'block\': <Block Node: links. Contents: [<TextNode: u\'\\n        \'>, <django.template.defaulttags.SpacelessNode object at 0x7f129ac7cb10>, <TextNode: u\'\\n    \'>]>}]'
+"GET /admin/vault/registerrequests/28/change/ HTTP/1.1" 200 7667
+(0.001) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."session_key" = 'ka5qrb3r5tihitezy2b62xv7n1occlb3' AND "django_session"."expire_date" > '2017-11-04 10:21:16.942254'); args=('ka5qrb3r5tihitezy2b62xv7n1occlb3', u'2017-11-04 10:21:16.942254')
+(0.000) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1; args=(1,)
+"GET /admin/jsi18n/ HTTP/1.1" 200 3217
+(0.001) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."session_key" = 'ka5qrb3r5tihitezy2b62xv7n1occlb3' AND "django_session"."expire_date" > '2017-11-04 10:21:19.532251'); args=('ka5qrb3r5tihitezy2b62xv7n1occlb3', u'2017-11-04 10:21:19.532251')
+(0.000) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1; args=(1,)
+(0.000) SELECT COUNT(*) AS "__count" FROM "vault_registerrequests"; args=()
+(0.000) SELECT COUNT(*) AS "__count" FROM "vault_registerrequests"; args=()
+(0.000) SELECT "vault_registerrequests"."id", "vault_registerrequests"."user_data_id", "vault_registerrequests"."first_name", "vault_registerrequests"."last_name", "vault_registerrequests"."e_mail", "vault_registerrequests"."group", "vault_registerrequests"."type_of_req" FROM "vault_registerrequests" ORDER BY "vault_registerrequests"."id" DESC; args=()
+Exception while resolving variable 'errors' in template 'admin/change_list.html'.
+Traceback (most recent call last):
+  File "/home/gurpal/.local/lib/python2.7/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [errors] in u'None'
+Exception while resolving variable 'show' in template 'admin/change_list.html'.
+Traceback (most recent call last):
+  File "/home/gurpal/.local/lib/python2.7/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [show] in u"[{'False': False, 'None': None, 'True': True, 'csrf_token': <SimpleLazyObject: <function _get_val at 0x7f12a01080c8>>}]"
+Exception while resolving variable 'is_multipart' in template 'admin/change_list.html'.
+Traceback (most recent call last):
+  File "/home/gurpal/.local/lib/python2.7/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [is_multipart] in u'None'
+Exception while resolving variable 'non_field_errors' in template 'admin/change_list.html'.
+Traceback (most recent call last):
+  File "/home/gurpal/.local/lib/python2.7/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [non_field_errors] in u'None'
+Exception while resolving variable 'non_field_errors' in template 'admin/change_list.html'.
+Traceback (most recent call last):
+  File "/home/gurpal/.local/lib/python2.7/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [non_field_errors] in u'None'
+Exception while resolving variable 'non_field_errors' in template 'admin/change_list.html'.
+Traceback (most recent call last):
+  File "/home/gurpal/.local/lib/python2.7/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [non_field_errors] in u'None'
+Exception while resolving variable 'non_field_errors' in template 'admin/change_list.html'.
+Traceback (most recent call last):
+  File "/home/gurpal/.local/lib/python2.7/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [non_field_errors] in u'None'
+Exception while resolving variable 'non_field_errors' in template 'admin/change_list.html'.
+Traceback (most recent call last):
+  File "/home/gurpal/.local/lib/python2.7/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [non_field_errors] in u'None'
+Exception while resolving variable 'non_field_errors' in template 'admin/change_list.html'.
+Traceback (most recent call last):
+  File "/home/gurpal/.local/lib/python2.7/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [non_field_errors] in u'None'
+Exception while resolving variable 'non_field_errors' in template 'admin/change_list.html'.
+Traceback (most recent call last):
+  File "/home/gurpal/.local/lib/python2.7/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [non_field_errors] in u'None'
+Exception while resolving variable 'non_field_errors' in template 'admin/change_list.html'.
+Traceback (most recent call last):
+  File "/home/gurpal/.local/lib/python2.7/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [non_field_errors] in u'None'
+Exception while resolving variable 'non_field_errors' in template 'admin/change_list.html'.
+Traceback (most recent call last):
+  File "/home/gurpal/.local/lib/python2.7/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [non_field_errors] in u'None'
+Exception while resolving variable 'non_field_errors' in template 'admin/change_list.html'.
+Traceback (most recent call last):
+  File "/home/gurpal/.local/lib/python2.7/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [non_field_errors] in u'None'
+Exception while resolving variable 'non_field_errors' in template 'admin/change_list.html'.
+Traceback (most recent call last):
+  File "/home/gurpal/.local/lib/python2.7/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [non_field_errors] in u'None'
+Exception while resolving variable 'non_field_errors' in template 'admin/change_list.html'.
+Traceback (most recent call last):
+  File "/home/gurpal/.local/lib/python2.7/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [non_field_errors] in u'None'
+Exception while resolving variable 'non_field_errors' in template 'admin/change_list.html'.
+Traceback (most recent call last):
+  File "/home/gurpal/.local/lib/python2.7/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [non_field_errors] in u'None'
+"GET /admin/vault/registerrequests/ HTTP/1.1" 200 7172
+(0.000) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."session_key" = 'ka5qrb3r5tihitezy2b62xv7n1occlb3' AND "django_session"."expire_date" > '2017-11-04 10:21:19.709317'); args=('ka5qrb3r5tihitezy2b62xv7n1occlb3', u'2017-11-04 10:21:19.709317')
+(0.000) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1; args=(1,)
+Exception while resolving variable 'is_popup' in template 'admin/index.html'.
+Traceback (most recent call last):
+  File "/home/gurpal/.local/lib/python2.7/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [is_popup] in u"[{'False': False, 'None': None, 'True': True}, {u'csrf_token': <SimpleLazyObject: <function _get_val at 0x7f12a0058aa0>>, 'user': <SimpleLazyObject: <User: mayank>>, 'perms': <django.contrib.auth.context_processors.PermWrapper object at 0x7f129ace8950>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'WARNING': 30, 'SUCCESS': 25, 'ERROR': 40}, 'messages': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x7f12a0042d10>, u'request': <WSGIRequest: GET '/admin/'>}, {}, {'site_header': u'Django administration', 'available_apps': [{'app_url': u'/admin/auth/', 'models': [{'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/auth/group/', 'object_name': 'Group', 'name': u'Groups', 'add_url': u'/admin/auth/group/add/'}, {'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/auth/user/', 'object_name': 'User', 'name': u'Users', 'add_url': u'/admin/auth/user/add/'}], 'has_module_perms': True, 'name': u'Authentication and Authorization', 'app_label': 'auth'}, {'app_url': u'/admin/vault/', 'models': [{'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/vault/cust_transaction/', 'object_name': 'cust_transaction', 'name': u'Cust_transactions', 'add_url': u'/admin/vault/cust_transaction/add/'}, {'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/vault/registerrequests/', 'object_name': 'registerRequests', 'name': u'Register requestss', 'add_url': u'/admin/vault/registerrequests/add/'}, {'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/vault/user_account/', 'object_name': 'user_account', 'name': u'User_accounts', 'add_url': u'/admin/vault/user_account/add/'}, {'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/vault/user_info/', 'object_name': 'user_info', 'name': u'User_infos', 'add_url': u'/admin/vault/user_info/add/'}, {'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/vault/user_type/', 'object_name': 'user_type', 'name': u'User_types', 'add_url': u'/admin/vault/user_type/add/'}], 'has_module_perms': True, 'name': 'Vault', 'app_label': 'vault'}], 'site_title': u'Django site admin', 'title': u'Site administration', 'has_permission': True, 'app_list': [{'app_url': u'/admin/auth/', 'models': [{'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/auth/group/', 'object_name': 'Group', 'name': u'Groups', 'add_url': u'/admin/auth/group/add/'}, {'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/auth/user/', 'object_name': 'User', 'name': u'Users', 'add_url': u'/admin/auth/user/add/'}], 'has_module_perms': True, 'name': u'Authentication and Authorization', 'app_label': 'auth'}, {'app_url': u'/admin/vault/', 'models': [{'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/vault/cust_transaction/', 'object_name': 'cust_transaction', 'name': u'Cust_transactions', 'add_url': u'/admin/vault/cust_transaction/add/'}, {'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/vault/registerrequests/', 'object_name': 'registerRequests', 'name': u'Register requestss', 'add_url': u'/admin/vault/registerrequests/add/'}, {'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/vault/user_account/', 'object_name': 'user_account', 'name': u'User_accounts', 'add_url': u'/admin/vault/user_account/add/'}, {'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/vault/user_info/', 'object_name': 'user_info', 'name': u'User_infos', 'add_url': u'/admin/vault/user_info/add/'}, {'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/vault/user_type/', 'object_name': 'user_type', 'name': u'User_types', 'add_url': u'/admin/vault/user_type/add/'}], 'has_module_perms': True, 'name': 'Vault', 'app_label': 'vault'}], u'LANGUAGE_CODE': 'en-us', u'LANGUAGE_BIDI': False, 'site_url': '/'}]"
+Exception while resolving variable 'is_popup' in template 'admin/index.html'.
+Traceback (most recent call last):
+  File "/home/gurpal/.local/lib/python2.7/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [is_popup] in u"[{'False': False, 'None': None, 'True': True}, {u'csrf_token': <SimpleLazyObject: <function _get_val at 0x7f12a0058aa0>>, 'user': <SimpleLazyObject: <User: mayank>>, 'perms': <django.contrib.auth.context_processors.PermWrapper object at 0x7f129ace8950>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'WARNING': 30, 'SUCCESS': 25, 'ERROR': 40}, 'messages': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x7f12a0042d10>, u'request': <WSGIRequest: GET '/admin/'>}, {}, {'site_header': u'Django administration', 'available_apps': [{'app_url': u'/admin/auth/', 'models': [{'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/auth/group/', 'object_name': 'Group', 'name': u'Groups', 'add_url': u'/admin/auth/group/add/'}, {'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/auth/user/', 'object_name': 'User', 'name': u'Users', 'add_url': u'/admin/auth/user/add/'}], 'has_module_perms': True, 'name': u'Authentication and Authorization', 'app_label': 'auth'}, {'app_url': u'/admin/vault/', 'models': [{'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/vault/cust_transaction/', 'object_name': 'cust_transaction', 'name': u'Cust_transactions', 'add_url': u'/admin/vault/cust_transaction/add/'}, {'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/vault/registerrequests/', 'object_name': 'registerRequests', 'name': u'Register requestss', 'add_url': u'/admin/vault/registerrequests/add/'}, {'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/vault/user_account/', 'object_name': 'user_account', 'name': u'User_accounts', 'add_url': u'/admin/vault/user_account/add/'}, {'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/vault/user_info/', 'object_name': 'user_info', 'name': u'User_infos', 'add_url': u'/admin/vault/user_info/add/'}, {'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/vault/user_type/', 'object_name': 'user_type', 'name': u'User_types', 'add_url': u'/admin/vault/user_type/add/'}], 'has_module_perms': True, 'name': 'Vault', 'app_label': 'vault'}], 'site_title': u'Django site admin', 'title': u'Site administration', 'has_permission': True, 'app_list': [{'app_url': u'/admin/auth/', 'models': [{'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/auth/group/', 'object_name': 'Group', 'name': u'Groups', 'add_url': u'/admin/auth/group/add/'}, {'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/auth/user/', 'object_name': 'User', 'name': u'Users', 'add_url': u'/admin/auth/user/add/'}], 'has_module_perms': True, 'name': u'Authentication and Authorization', 'app_label': 'auth'}, {'app_url': u'/admin/vault/', 'models': [{'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/vault/cust_transaction/', 'object_name': 'cust_transaction', 'name': u'Cust_transactions', 'add_url': u'/admin/vault/cust_transaction/add/'}, {'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/vault/registerrequests/', 'object_name': 'registerRequests', 'name': u'Register requestss', 'add_url': u'/admin/vault/registerrequests/add/'}, {'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/vault/user_account/', 'object_name': 'user_account', 'name': u'User_accounts', 'add_url': u'/admin/vault/user_account/add/'}, {'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/vault/user_info/', 'object_name': 'user_info', 'name': u'User_infos', 'add_url': u'/admin/vault/user_info/add/'}, {'perms': {u'add': True, u'change': True, u'delete': True}, 'admin_url': u'/admin/vault/user_type/', 'object_name': 'user_type', 'name': u'User_types', 'add_url': u'/admin/vault/user_type/add/'}], 'has_module_perms': True, 'name': 'Vault', 'app_label': 'vault'}], u'LANGUAGE_CODE': 'en-us', u'LANGUAGE_BIDI': False, 'site_url': '/'}]"
+(0.000) SELECT "django_admin_log"."id", "django_admin_log"."action_time", "django_admin_log"."user_id", "django_admin_log"."content_type_id", "django_admin_log"."object_id", "django_admin_log"."object_repr", "django_admin_log"."action_flag", "django_admin_log"."change_message", "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined", "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_admin_log" INNER JOIN "auth_user" ON ("django_admin_log"."user_id" = "auth_user"."id") LEFT OUTER JOIN "django_content_type" ON ("django_admin_log"."content_type_id" = "django_content_type"."id") WHERE "django_admin_log"."user_id" = 1 ORDER BY "django_admin_log"."action_time" DESC LIMIT 10; args=(1,)
+"GET /admin/ HTTP/1.1" 200 7182
+"GET /admin/login/?next=/admin/ HTTP/1.1" 200 3156
+(0.000) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."username" = 'admi'; args=(u'admi',)
+(0.000) BEGIN; args=None
+(0.000) UPDATE "auth_user" SET "password" = 'pbkdf2_sha256$36000$4Alt1HjmDsad$3Ouy1tEm2XDbch1UWYvIZ62VC+cC9mXWaaPS6f4o5jI=' WHERE "auth_user"."id" = 2; args=(u'pbkdf2_sha256$36000$4Alt1HjmDsad$3Ouy1tEm2XDbch1UWYvIZ62VC+cC9mXWaaPS6f4o5jI=', 2)
+(0.000) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."session_key" = 'ka5qrb3r5tihitezy2b62xv7n1occlb3' AND "django_session"."expire_date" > '2017-11-04 10:21:28.978257'); args=('ka5qrb3r5tihitezy2b62xv7n1occlb3', u'2017-11-04 10:21:28.978257')
+(0.000) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE "django_session"."session_key" = 'ka5qrb3r5tihitezy2b62xv7n1occlb3'; args=('ka5qrb3r5tihitezy2b62xv7n1occlb3',)
+(0.000) BEGIN; args=None
+(0.000) DELETE FROM "django_session" WHERE "django_session"."session_key" IN ('ka5qrb3r5tihitezy2b62xv7n1occlb3'); args=(u'ka5qrb3r5tihitezy2b62xv7n1occlb3',)
+(0.000) BEGIN; args=None
+(0.000) UPDATE "auth_user" SET "last_login" = '2017-11-04 10:21:29.045133' WHERE "auth_user"."id" = 2; args=(u'2017-11-04 10:21:29.045133', 2)
+(0.000) SELECT (1) AS "a" FROM "django_session" WHERE "django_session"."session_key" = 'f8vsxhgy7in9wbig7xhnj08d3cdvpgzj' LIMIT 1; args=(u'f8vsxhgy7in9wbig7xhnj08d3cdvpgzj',)
+(0.000) BEGIN; args=None
+(0.000) INSERT INTO "django_session" ("session_key", "session_data", "expire_date") SELECT 'f8vsxhgy7in9wbig7xhnj08d3cdvpgzj', 'Y2EwYjU5NmU5MWE0OWE5MzMxMmU3YzQyM2I5NGM3YWFhMzgyZjEyMDp7Il9hdXRoX3VzZXJfaGFzaCI6IjhiZDNlNDhiNjQyM2U5MjNmOTU0YmZhNGY0OThkMmU5MjQ1YTI5OWMiLCJfYXV0aF91c2VyX2JhY2tlbmQiOiJkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZCIsIl9hdXRoX3VzZXJfaWQiOiIyIn0=', '2017-11-18 10:21:29.114701'; args=(u'f8vsxhgy7in9wbig7xhnj08d3cdvpgzj', u'Y2EwYjU5NmU5MWE0OWE5MzMxMmU3YzQyM2I5NGM3YWFhMzgyZjEyMDp7Il9hdXRoX3VzZXJfaGFzaCI6IjhiZDNlNDhiNjQyM2U5MjNmOTU0YmZhNGY0OThkMmU5MjQ1YTI5OWMiLCJfYXV0aF91c2VyX2JhY2tlbmQiOiJkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZCIsIl9hdXRoX3VzZXJfaWQiOiIyIn0=', u'2017-11-18 10:21:29.114701')
+"POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+(0.001) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."session_key" = 'f8vsxhgy7in9wbig7xhnj08d3cdvpgzj' AND "django_session"."expire_date" > '2017-11-04 10:21:29.186408'); args=('f8vsxhgy7in9wbig7xhnj08d3cdvpgzj', u'2017-11-04 10:21:29.186408')
+(0.000) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 2; args=(2,)
+(0.000) SELECT "django_content_type"."app_label", "auth_permission"."codename" FROM "auth_permission" INNER JOIN "auth_user_user_permissions" ON ("auth_permission"."id" = "auth_user_user_permissions"."permission_id") INNER JOIN "django_content_type" ON ("auth_permission"."content_type_id" = "django_content_type"."id") WHERE "auth_user_user_permissions"."user_id" = 2; args=(2,)
+(0.000) SELECT "django_content_type"."app_label", "auth_permission"."codename" FROM "auth_permission" INNER JOIN "auth_group_permissions" ON ("auth_permission"."id" = "auth_group_permissions"."permission_id") INNER JOIN "auth_group" ON ("auth_group_permissions"."group_id" = "auth_group"."id") INNER JOIN "auth_user_groups" ON ("auth_group"."id" = "auth_user_groups"."group_id") INNER JOIN "django_content_type" ON ("auth_permission"."content_type_id" = "django_content_type"."id") WHERE "auth_user_groups"."user_id" = 2; args=(2,)
+Exception while resolving variable 'is_popup' in template 'admin/index.html'.
+Traceback (most recent call last):
+  File "/home/gurpal/.local/lib/python2.7/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [is_popup] in u"[{'False': False, 'None': None, 'True': True}, {u'csrf_token': <SimpleLazyObject: <function _get_val at 0x7f12a0058a28>>, 'user': <SimpleLazyObject: <User: admi>>, 'perms': <django.contrib.auth.context_processors.PermWrapper object at 0x7f129ad37d10>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'WARNING': 30, 'SUCCESS': 25, 'ERROR': 40}, 'messages': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x7f129ad46b50>, u'request': <WSGIRequest: GET '/admin/'>}, {}, {'site_header': u'Django administration', 'available_apps': [], 'site_title': u'Django site admin', 'title': u'Site administration', 'has_permission': True, 'app_list': [], u'LANGUAGE_CODE': 'en-us', u'LANGUAGE_BIDI': False, 'site_url': '/'}]"
+Exception while resolving variable 'is_popup' in template 'admin/index.html'.
+Traceback (most recent call last):
+  File "/home/gurpal/.local/lib/python2.7/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [is_popup] in u"[{'False': False, 'None': None, 'True': True}, {u'csrf_token': <SimpleLazyObject: <function _get_val at 0x7f12a0058a28>>, 'user': <SimpleLazyObject: <User: admi>>, 'perms': <django.contrib.auth.context_processors.PermWrapper object at 0x7f129ad37d10>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'WARNING': 30, 'SUCCESS': 25, 'ERROR': 40}, 'messages': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x7f129ad46b50>, u'request': <WSGIRequest: GET '/admin/'>}, {}, {'site_header': u'Django administration', 'available_apps': [], 'site_title': u'Django site admin', 'title': u'Site administration', 'has_permission': True, 'app_list': [], u'LANGUAGE_CODE': 'en-us', u'LANGUAGE_BIDI': False, 'site_url': '/'}]"
+(0.000) SELECT "django_admin_log"."id", "django_admin_log"."action_time", "django_admin_log"."user_id", "django_admin_log"."content_type_id", "django_admin_log"."object_id", "django_admin_log"."object_repr", "django_admin_log"."action_flag", "django_admin_log"."change_message", "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined", "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_admin_log" INNER JOIN "auth_user" ON ("django_admin_log"."user_id" = "auth_user"."id") LEFT OUTER JOIN "django_content_type" ON ("django_admin_log"."content_type_id" = "django_content_type"."id") WHERE "django_admin_log"."user_id" = 2 ORDER BY "django_admin_log"."action_time" DESC LIMIT 10; args=(2,)
+"GET /admin/ HTTP/1.1" 200 1767
+(0.000) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."session_key" = 'f8vsxhgy7in9wbig7xhnj08d3cdvpgzj' AND "django_session"."expire_date" > '2017-11-04 10:21:34.916144'); args=('f8vsxhgy7in9wbig7xhnj08d3cdvpgzj', u'2017-11-04 10:21:34.916144')
+(0.000) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 2; args=(2,)
+(0.000) SELECT "django_content_type"."app_label", "auth_permission"."codename" FROM "auth_permission" INNER JOIN "auth_user_user_permissions" ON ("auth_permission"."id" = "auth_user_user_permissions"."permission_id") INNER JOIN "django_content_type" ON ("auth_permission"."content_type_id" = "django_content_type"."id") WHERE "auth_user_user_permissions"."user_id" = 2; args=(2,)
+(0.000) SELECT "django_content_type"."app_label", "auth_permission"."codename" FROM "auth_permission" INNER JOIN "auth_group_permissions" ON ("auth_permission"."id" = "auth_group_permissions"."permission_id") INNER JOIN "auth_group" ON ("auth_group_permissions"."group_id" = "auth_group"."id") INNER JOIN "auth_user_groups" ON ("auth_group"."id" = "auth_user_groups"."group_id") INNER JOIN "django_content_type" ON ("auth_permission"."content_type_id" = "django_content_type"."id") WHERE "auth_user_groups"."user_id" = 2; args=(2,)
+(0.000) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE "django_session"."session_key" = 'f8vsxhgy7in9wbig7xhnj08d3cdvpgzj'; args=('f8vsxhgy7in9wbig7xhnj08d3cdvpgzj',)
+(0.000) BEGIN; args=None
+(0.000) DELETE FROM "django_session" WHERE "django_session"."session_key" IN ('f8vsxhgy7in9wbig7xhnj08d3cdvpgzj'); args=(u'f8vsxhgy7in9wbig7xhnj08d3cdvpgzj',)
+Exception while resolving variable 'is_popup' in template 'registration/logged_out.html'.
+Traceback (most recent call last):
+  File "/home/gurpal/.local/lib/python2.7/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [is_popup] in u"[{'False': False, 'None': None, 'True': True}, {u'csrf_token': <SimpleLazyObject: <function _get_val at 0x7f129adbdde8>>, 'user': <django.contrib.auth.models.AnonymousUser object at 0x7f12a0042b90>, 'perms': <django.contrib.auth.context_processors.PermWrapper object at 0x7f129ad3f110>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'WARNING': 30, 'SUCCESS': 25, 'ERROR': 40}, 'messages': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x7f129ad2fcd0>, u'request': <WSGIRequest: GET '/admin/logout/'>}, {}, {'available_apps': [], 'site_name': '127.0.0.1:8000', 'title': u'Logged out', 'site_header': u'Django administration', 'site': <django.contrib.sites.requests.RequestSite object at 0x7f129ad2f850>, 'site_url': '/', 'site_title': u'Django site admin', u'LANGUAGE_CODE': 'en-us', 'has_permission': False, u'LANGUAGE_BIDI': False, u'view': <django.contrib.auth.views.LogoutView object at 0x7f12a0bc1610>}]"
+Exception while resolving variable 'is_popup' in template 'registration/logged_out.html'.
+Traceback (most recent call last):
+  File "/home/gurpal/.local/lib/python2.7/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [is_popup] in u"[{'False': False, 'None': None, 'True': True}, {u'csrf_token': <SimpleLazyObject: <function _get_val at 0x7f129adbdde8>>, 'user': <django.contrib.auth.models.AnonymousUser object at 0x7f12a0042b90>, 'perms': <django.contrib.auth.context_processors.PermWrapper object at 0x7f129ad3f110>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'WARNING': 30, 'SUCCESS': 25, 'ERROR': 40}, 'messages': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x7f129ad2fcd0>, u'request': <WSGIRequest: GET '/admin/logout/'>}, {}, {'available_apps': [], 'site_name': '127.0.0.1:8000', 'title': u'Logged out', 'site_header': u'Django administration', 'site': <django.contrib.sites.requests.RequestSite object at 0x7f129ad2f850>, 'site_url': '/', 'site_title': u'Django site admin', u'LANGUAGE_CODE': 'en-us', 'has_permission': False, u'LANGUAGE_BIDI': False, u'view': <django.contrib.auth.views.LogoutView object at 0x7f12a0bc1610>}]"
+"GET /admin/logout/ HTTP/1.1" 200 1010
+"GET /admin/ HTTP/1.1" 302 0
+"GET /admin/login/?next=/admin/ HTTP/1.1" 200 3156
+"GET /static/vault/css/login.css HTTP/1.1" 404 1670
+(0.001) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."username" = 'admi'; args=(u'admi',)
+(0.000) SELECT (1) AS "a" FROM "django_session" WHERE "django_session"."session_key" = '0rhjm46g97anur4y5yjqem2mzpvmrc8d' LIMIT 1; args=(u'0rhjm46g97anur4y5yjqem2mzpvmrc8d',)
+(0.000) BEGIN; args=None
+(0.000) INSERT INTO "django_session" ("session_key", "session_data", "expire_date") SELECT '0rhjm46g97anur4y5yjqem2mzpvmrc8d', 'MmZlNjFiMTlkODBjMjk0YzNiMTgxNGM0NzBiZmMwNmI0MjQ2N2RlZjp7fQ==', '2017-11-18 10:21:44.823607'; args=(u'0rhjm46g97anur4y5yjqem2mzpvmrc8d', u'MmZlNjFiMTlkODBjMjk0YzNiMTgxNGM0NzBiZmMwNmI0MjQ2N2RlZjp7fQ==', u'2017-11-18 10:21:44.823607')
+(0.000) BEGIN; args=None
+(0.000) UPDATE "auth_user" SET "last_login" = '2017-11-04 10:21:44.903687' WHERE "auth_user"."id" = 2; args=(u'2017-11-04 10:21:44.903687', 2)
+(0.000) BEGIN; args=None
+(0.000) UPDATE "django_session" SET "session_data" = 'Y2EwYjU5NmU5MWE0OWE5MzMxMmU3YzQyM2I5NGM3YWFhMzgyZjEyMDp7Il9hdXRoX3VzZXJfaGFzaCI6IjhiZDNlNDhiNjQyM2U5MjNmOTU0YmZhNGY0OThkMmU5MjQ1YTI5OWMiLCJfYXV0aF91c2VyX2JhY2tlbmQiOiJkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZCIsIl9hdXRoX3VzZXJfaWQiOiIyIn0=', "expire_date" = '2017-11-18 10:21:44.971458' WHERE "django_session"."session_key" = '0rhjm46g97anur4y5yjqem2mzpvmrc8d'; args=(u'Y2EwYjU5NmU5MWE0OWE5MzMxMmU3YzQyM2I5NGM3YWFhMzgyZjEyMDp7Il9hdXRoX3VzZXJfaGFzaCI6IjhiZDNlNDhiNjQyM2U5MjNmOTU0YmZhNGY0OThkMmU5MjQ1YTI5OWMiLCJfYXV0aF91c2VyX2JhY2tlbmQiOiJkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZCIsIl9hdXRoX3VzZXJfaWQiOiIyIn0=', u'2017-11-18 10:21:44.971458', u'0rhjm46g97anur4y5yjqem2mzpvmrc8d')
+"POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+(0.001) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."session_key" = '0rhjm46g97anur4y5yjqem2mzpvmrc8d' AND "django_session"."expire_date" > '2017-11-04 10:21:45.043203'); args=('0rhjm46g97anur4y5yjqem2mzpvmrc8d', u'2017-11-04 10:21:45.043203')
+(0.000) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 2; args=(2,)
+(0.000) SELECT "django_content_type"."app_label", "auth_permission"."codename" FROM "auth_permission" INNER JOIN "auth_user_user_permissions" ON ("auth_permission"."id" = "auth_user_user_permissions"."permission_id") INNER JOIN "django_content_type" ON ("auth_permission"."content_type_id" = "django_content_type"."id") WHERE "auth_user_user_permissions"."user_id" = 2; args=(2,)
+(0.000) SELECT "django_content_type"."app_label", "auth_permission"."codename" FROM "auth_permission" INNER JOIN "auth_group_permissions" ON ("auth_permission"."id" = "auth_group_permissions"."permission_id") INNER JOIN "auth_group" ON ("auth_group_permissions"."group_id" = "auth_group"."id") INNER JOIN "auth_user_groups" ON ("auth_group"."id" = "auth_user_groups"."group_id") INNER JOIN "django_content_type" ON ("auth_permission"."content_type_id" = "django_content_type"."id") WHERE "auth_user_groups"."user_id" = 2; args=(2,)
+Exception while resolving variable 'is_popup' in template 'admin/index.html'.
+Traceback (most recent call last):
+  File "/home/gurpal/.local/lib/python2.7/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [is_popup] in u"[{'False': False, 'None': None, 'True': True}, {u'csrf_token': <SimpleLazyObject: <function _get_val at 0x7f12a0058a28>>, 'user': <SimpleLazyObject: <User: admi>>, 'perms': <django.contrib.auth.context_processors.PermWrapper object at 0x7f129ad0e9d0>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'WARNING': 30, 'SUCCESS': 25, 'ERROR': 40}, 'messages': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x7f129acc52d0>, u'request': <WSGIRequest: GET '/admin/'>}, {}, {'site_header': u'Django administration', 'available_apps': [], 'site_title': u'Django site admin', 'title': u'Site administration', 'has_permission': True, 'app_list': [], u'LANGUAGE_CODE': 'en-us', u'LANGUAGE_BIDI': False, 'site_url': '/'}]"
+Exception while resolving variable 'is_popup' in template 'admin/index.html'.
+Traceback (most recent call last):
+  File "/home/gurpal/.local/lib/python2.7/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [is_popup] in u"[{'False': False, 'None': None, 'True': True}, {u'csrf_token': <SimpleLazyObject: <function _get_val at 0x7f12a0058a28>>, 'user': <SimpleLazyObject: <User: admi>>, 'perms': <django.contrib.auth.context_processors.PermWrapper object at 0x7f129ad0e9d0>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'WARNING': 30, 'SUCCESS': 25, 'ERROR': 40}, 'messages': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x7f129acc52d0>, u'request': <WSGIRequest: GET '/admin/'>}, {}, {'site_header': u'Django administration', 'available_apps': [], 'site_title': u'Django site admin', 'title': u'Site administration', 'has_permission': True, 'app_list': [], u'LANGUAGE_CODE': 'en-us', u'LANGUAGE_BIDI': False, 'site_url': '/'}]"
+(0.000) SELECT "django_admin_log"."id", "django_admin_log"."action_time", "django_admin_log"."user_id", "django_admin_log"."content_type_id", "django_admin_log"."object_id", "django_admin_log"."object_repr", "django_admin_log"."action_flag", "django_admin_log"."change_message", "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined", "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_admin_log" INNER JOIN "auth_user" ON ("django_admin_log"."user_id" = "auth_user"."id") LEFT OUTER JOIN "django_content_type" ON ("django_admin_log"."content_type_id" = "django_content_type"."id") WHERE "django_admin_log"."user_id" = 2 ORDER BY "django_admin_log"."action_time" DESC LIMIT 10; args=(2,)
+"GET /admin/ HTTP/1.1" 200 1767
+(2017-11-04 10:21:52) request from 127.0.0.1: /
+"GET / HTTP/1.1" 200 5228
+"GET /static/vault/css/home.css HTTP/1.1" 304 0
+(0.001) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."session_key" = '0rhjm46g97anur4y5yjqem2mzpvmrc8d' AND "django_session"."expire_date" > '2017-11-04 10:21:54.050163'); args=('0rhjm46g97anur4y5yjqem2mzpvmrc8d', u'2017-11-04 10:21:54.050163')
+(0.000) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 2; args=(2,)
+(2017-11-04 10:21:54) request from 127.0.0.1: /external/
+(0.000) SELECT (1) AS "a" FROM "auth_group" INNER JOIN "auth_user_groups" ON ("auth_group"."id" = "auth_user_groups"."group_id") WHERE ("auth_user_groups"."user_id" = 2 AND "auth_group"."name" = 'Regular') LIMIT 1; args=(2, 'Regular')
+(0.000) SELECT (1) AS "a" FROM "auth_group" INNER JOIN "auth_user_groups" ON ("auth_group"."id" = "auth_user_groups"."group_id") WHERE ("auth_user_groups"."user_id" = 2 AND "auth_group"."name" = 'Administrator') LIMIT 1; args=(2, 'Administrator')
+(0.000) SELECT (1) AS "a" FROM "auth_group" INNER JOIN "auth_user_groups" ON ("auth_group"."id" = "auth_user_groups"."group_id") WHERE ("auth_user_groups"."user_id" = 2 AND "auth_group"."name" = 'Ind_user') LIMIT 1; args=(2, 'Ind_user')
+(0.000) SELECT (1) AS "a" FROM "auth_group" INNER JOIN "auth_user_groups" ON ("auth_group"."id" = "auth_user_groups"."group_id") WHERE ("auth_user_groups"."user_id" = 2 AND "auth_group"."name" = 'Organization') LIMIT 1; args=(2, 'Organization')
+"GET /external/ HTTP/1.1" 302 0
+(0.001) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."session_key" = '0rhjm46g97anur4y5yjqem2mzpvmrc8d' AND "django_session"."expire_date" > '2017-11-04 10:21:54.066166'); args=('0rhjm46g97anur4y5yjqem2mzpvmrc8d', u'2017-11-04 10:21:54.066166')
+(0.000) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 2; args=(2,)
+(2017-11-04 10:21:54) request from 127.0.0.1: /administrator/Register/
+(0.000) SELECT (1) AS "a" FROM "auth_group" INNER JOIN "auth_user_groups" ON ("auth_group"."id" = "auth_user_groups"."group_id") WHERE ("auth_user_groups"."user_id" = 2 AND "auth_group"."name" = 'Regular') LIMIT 1; args=(2, 'Regular')
+(0.000) SELECT (1) AS "a" FROM "auth_group" INNER JOIN "auth_user_groups" ON ("auth_group"."id" = "auth_user_groups"."group_id") WHERE ("auth_user_groups"."user_id" = 2 AND "auth_group"."name" = 'Administrator') LIMIT 1; args=(2, 'Administrator')
+(0.000) SELECT (1) AS "a" FROM "auth_group" INNER JOIN "auth_user_groups" ON ("auth_group"."id" = "auth_user_groups"."group_id") WHERE ("auth_user_groups"."user_id" = 2 AND "auth_group"."name" = 'Administrator') LIMIT 1; args=(2, 'Administrator')
+(0.000) SELECT "vault_registerrequests"."id", "vault_registerrequests"."user_data_id", "vault_registerrequests"."first_name", "vault_registerrequests"."last_name", "vault_registerrequests"."e_mail", "vault_registerrequests"."group", "vault_registerrequests"."type_of_req" FROM "vault_registerrequests" WHERE "vault_registerrequests"."type_of_req" = 'Register'; args=(u'Register',)
+"GET /administrator/Register/ HTTP/1.1" 200 5439
+(0.000) 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name; args=None
+(0.000) SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"; args=()
+(2017-11-04 10:26:30) request from 127.0.0.1: /register/
+"GET /register/ HTTP/1.1" 200 3314
+(2017-11-04 10:26:38) request from 127.0.0.1: /register/
+(0.000) BEGIN; args=None
+(0.001) INSERT INTO "vault_registerrequests" ("user_data_id", "first_name", "last_name", "e_mail", "group", "type_of_req") VALUES (NULL, 'Gurpal', 'Singh', 'gurpal15034@iiitd.ac.in', 'Ind_user', 'Register'); args=[None, u'Gurpal', u'Singh', u'gurpal15034@iiitd.ac.in', u'Ind_user', 'Register']
+"POST /register/ HTTP/1.1" 200 70
+(2017-11-04 10:26:40) request from 127.0.0.1: /register/
+"GET /register/ HTTP/1.1" 200 3314
+(2017-11-04 10:26:48) request from 127.0.0.1: /register/
+(0.000) BEGIN; args=None
+(0.000) INSERT INTO "vault_registerrequests" ("user_data_id", "first_name", "last_name", "e_mail", "group", "type_of_req") VALUES (NULL, '<b>mayank</b>', 'Singh', 'gurpal15034@iiitd.ac.in', 'Ind_user', 'Register'); args=[None, u'<b>mayank</b>', u'Singh', u'gurpal15034@iiitd.ac.in', u'Ind_user', 'Register']
+"POST /register/ HTTP/1.1" 200 70
+(2017-11-04 10:26:57) request from 127.0.0.1: /register/
+"GET /register/ HTTP/1.1" 200 3314
+(0.000) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."session_key" = '0rhjm46g97anur4y5yjqem2mzpvmrc8d' AND "django_session"."expire_date" > '2017-11-04 10:26:58.472218'); args=('0rhjm46g97anur4y5yjqem2mzpvmrc8d', u'2017-11-04 10:26:58.472218')
+(0.000) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 2; args=(2,)
+(2017-11-04 10:26:58) request from 127.0.0.1: /administrator/Register/
+(0.000) SELECT (1) AS "a" FROM "auth_group" INNER JOIN "auth_user_groups" ON ("auth_group"."id" = "auth_user_groups"."group_id") WHERE ("auth_user_groups"."user_id" = 2 AND "auth_group"."name" = 'Regular') LIMIT 1; args=(2, 'Regular')
+(0.000) SELECT (1) AS "a" FROM "auth_group" INNER JOIN "auth_user_groups" ON ("auth_group"."id" = "auth_user_groups"."group_id") WHERE ("auth_user_groups"."user_id" = 2 AND "auth_group"."name" = 'Administrator') LIMIT 1; args=(2, 'Administrator')
+(0.000) SELECT (1) AS "a" FROM "auth_group" INNER JOIN "auth_user_groups" ON ("auth_group"."id" = "auth_user_groups"."group_id") WHERE ("auth_user_groups"."user_id" = 2 AND "auth_group"."name" = 'Administrator') LIMIT 1; args=(2, 'Administrator')
+(0.000) SELECT "vault_registerrequests"."id", "vault_registerrequests"."user_data_id", "vault_registerrequests"."first_name", "vault_registerrequests"."last_name", "vault_registerrequests"."e_mail", "vault_registerrequests"."group", "vault_registerrequests"."type_of_req" FROM "vault_registerrequests" WHERE "vault_registerrequests"."type_of_req" = 'Register'; args=(u'Register',)
+"GET /administrator/Register/ HTTP/1.1" 200 6062
